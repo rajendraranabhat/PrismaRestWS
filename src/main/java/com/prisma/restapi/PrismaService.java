@@ -6,8 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
+
+
+
+
+
+
+
 //import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -17,10 +27,19 @@ import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
 
+import com.datastax.driver.core.Session;
 import com.prisma.pojo.DoctorRegistration;
+import com.prisma.pojo.IndexPatient;
 import com.prisma.pojo.OutComeICUPojo;
+import com.prisma.pojo.OutcomeRank1;
+import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.PatientDetails;
+import com.prisma.pojo.Reco;
+import com.prisma.pojo.RecoCase;
+import com.prisma.pojo.RecoTaken;
 import com.prisma.pojo.ReturnVal;
+import com.prisma.pojo.ReviewResult;
+import com.prisma.pojo.OutComeResult;
 
 @Path("/WebService")
 public class PrismaService {
@@ -68,6 +87,49 @@ public class PrismaService {
 			e.getStackTrace();
 		}
 		return icuOutcomeLists;
+	}
+	
+	@GET
+	@Path("/noOfAttempt")
+	@Produces(MediaType.APPLICATION_JSON)
+	public int noOfAttempt(@QueryParam("user") String username) {
+		
+		int attempt = 0;
+		try {			
+	
+			//logger.debug("<<<<<<<<<<<<<<<outcomeID="+outcomeID);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			attempt 			= prismaManager.noOfAttempt(username);
+			
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return attempt;
+	}
+	
+	@GET
+	@Path("/reviewResults")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ReviewResult reviewResults(@QueryParam("outcomeID") int outcomeID) {
+		
+		ReviewResult review = null;
+		int noUsers = 0;
+		try {			
+			/*if(logger.isDebugEnabled()){
+				logger.debug("This is debug : " + parameter);
+			}*/
+			logger.debug("<<<<<<<<<<<<<<<outcomeID="+outcomeID);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			review 			= prismaManager.reviewResults(outcomeID);
+			
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return review;
 	}
 	
 	@GET
@@ -166,6 +228,176 @@ public class PrismaService {
 		}
 		return noUsers;
 	}
+	
+	@POST
+	@Path("/insertOutcomeRank")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertOutcomeRank(OutcomeRank1 outcomeRank) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			// System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();
+
+			isSuccess = prismaManager.insertOutcomeRank(outcomeRank);
+
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+			
+	@POST
+	@Path("/insertRecoTable")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertRecoTable(Reco reco) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertRecoTable(reco);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@POST
+	@Path("/insertRecoCaseTable")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertRecoCaseTable(RecoCase recoCase) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertRecoCaseTable(recoCase);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@POST
+	@Path("/insertOutcomeStats")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertOutcomeStats(OutcomeStats outComeStats) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertOutcomeStats(outComeStats);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	
+	@POST
+	@Path("/insertRecoTakenTable")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertRecoTakenTable(RecoTaken recoTaken) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertRecoTakenTable(recoTaken);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@DELETE
+	@Path("/deleteidList")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal deleteidList(String patientId) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.deleteidList(patientId);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@POST
+	@Path("/insertOutcomeResult")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertOutcomeResult(OutComeResult outComeResult) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertOutcomeResult(outComeResult);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@POST
+	@Path("/insertIndexPatient")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertIndexPatient(IndexPatient indexPatient) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertIndexPatient(indexPatient);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
 
 	@POST
 	@Path("/insertDoctorTestResults")

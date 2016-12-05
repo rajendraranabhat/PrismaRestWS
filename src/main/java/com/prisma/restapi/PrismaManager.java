@@ -2,12 +2,21 @@ package com.prisma.restapi;
 
 //import java.sql.Connection;
 import com.datastax.driver.core.Session;
+import com.prisma.api.DeletedataApi;
 import com.prisma.api.GetApi;
 import com.prisma.api.InsertdateApi;
 import com.prisma.api.UpdateApi;
 import com.prisma.pojo.DoctorRegistration;
+import com.prisma.pojo.IndexPatient;
 import com.prisma.pojo.OutComeICUPojo;
+import com.prisma.pojo.OutComeResult;
+import com.prisma.pojo.OutcomeRank1;
+import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.PatientDetails;
+import com.prisma.pojo.Reco;
+import com.prisma.pojo.RecoCase;
+import com.prisma.pojo.RecoTaken;
+import com.prisma.pojo.ReviewResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +82,26 @@ public class PrismaManager {
 		}
 
 		return outComeICULists;
+	}
+	
+	public int noOfAttempt(String userName) throws Exception {
+
+		int attempt = 0;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			attempt = api.noOfAttempt(session, userName);
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return attempt;
 	}
 	
 	public List patientPrediction(String doctorId, String patientId, int outcomeId) throws Exception {
@@ -157,6 +186,26 @@ public class PrismaManager {
 		return noUsers;
 	}
 	
+	public ReviewResult reviewResults(int outcomeId) throws Exception {
+
+		ReviewResult review = null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			review = api.reviewResults(session, outcomeId);
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return review;
+	}
+	
 	public int login(String userId, String password) throws Exception {
 
 		int noUsers = 0;
@@ -195,7 +244,140 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
+	
+	public boolean insertOutcomeRank(OutcomeRank1 outcomeRank) throws Exception {
+		
+		boolean isSuccess = false;
 
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertOutcomeRank(session, outcomeRank);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertRecoTable(Reco reco) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertRecoTable(session, reco);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertRecoCaseTable(RecoCase recoCase) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertRecoCaseTable(session, recoCase);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertOutcomeStats(OutcomeStats outComeStats) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertOutcomeStats(session, outComeStats);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertRecoTakenTable(RecoTaken recoTaken) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertRecoTakenTable(session, recoTaken);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertOutcomeResult(OutComeResult outComeResult) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertOutcomeResult(session, outComeResult);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+
+	public boolean insertIndexPatient(IndexPatient indexPatient) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertIndexPatient(session, indexPatient);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+	
 	public boolean insertDoctorTestResult(DoctorRegistration doctorRegistration) throws Exception {
 
 		boolean isSuccess = false;
@@ -206,6 +388,24 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			InsertdateApi api = new InsertdateApi();
 			isSuccess = api.insertDoctorTestResults(session, doctorRegistration);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return isSuccess;
+	}
+
+	public boolean deleteidList(String patientId) throws Exception {
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			DeletedataApi api = new DeletedataApi();
+			isSuccess = api.deleteidList(session, patientId);
 		} catch (Exception e) {
 			throw e;
 		} finally {

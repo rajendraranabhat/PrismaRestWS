@@ -19,8 +19,13 @@ public class CassandraDBTest {
 		manager.patientPrediction("raj", "BB3XEDJ201",1);
 	}
 	
+	public static void noAttempt() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		manager.noOfAttempt("raj");
+	}
+	
 	public static void main(String[] args) throws Exception {		
-		patientPrediction();
+		noAttempt();
 	}
 
 }

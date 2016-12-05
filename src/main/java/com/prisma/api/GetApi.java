@@ -14,6 +14,7 @@ import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank;
 import com.prisma.pojo.PatientDetails;
 import com.prisma.pojo.OutcomeRankRifle7;
+import com.prisma.pojo.ReviewResult;
 import com.prisma.restapi.PrismaManager;
 
 public class GetApi {
@@ -62,6 +63,22 @@ public class GetApi {
 
 		System.out.println("results=" + results+" noRow="+noRow);
 		return noRow;		
+	}
+	
+	public int noOfAttempt(Session session, String userName){
+		
+		int noAttempt = 0;
+		
+		String attemptQuery = "select count(attempt) as attempt from prisma1.indexPatient where user='"+userName+"' allow filtering";
+		
+		ResultSet results = session.execute(attemptQuery);
+		for (Row row : results){
+			//System.out.println("cnt="+row.getLong("attempt"));
+			noAttempt = (int)row.getLong("attempt");
+			//System.out.println("noRow="+noAttempt);
+		}		
+		
+		return noAttempt;
 	}
 	
 	public List patientPrediction(Session session, String doctorId, String patientId,int outcomeId){
@@ -591,6 +608,30 @@ public class GetApi {
 		//System.out.println("patientSummary="+patientSummary.toString());
 
 		return patientDetailsList;		
+	}
+	
+	
+	public ReviewResult reviewResults(Session session, int outcomeId) {
+		
+		ReviewResult review = null;
+		String outcome="", description="";
+				
+		String reviewQuery = "select outcome,description from prisma1.outcomes where id="+outcomeId+" allow filtering";
+		logger.debug("reviewQuery="+reviewQuery);
+		
+		ResultSet results = session.execute(reviewQuery);
+		for (Row row : results){
+			review = new ReviewResult();
+			outcome     = row.getString("outcome");
+			description = row.getString("description");
+			review.setOutcome(outcome);
+			review.setDescription(description);
+		}
+		
+		logger.debug("outcome="+outcome+" description="+description);
+		System.out.println("outcome="+outcome+" description="+description);
+		
+		return review;
 	}
 	
 	public int getLogin(Session session, String userId, String password) {

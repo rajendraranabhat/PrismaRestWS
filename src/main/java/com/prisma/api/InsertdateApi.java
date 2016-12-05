@@ -8,7 +8,14 @@ import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
 import com.prisma.pojo.DoctorRegistration;
+import com.prisma.pojo.IndexPatient;
 import com.prisma.pojo.OutComeICUPojo;
+import com.prisma.pojo.OutComeResult;
+import com.prisma.pojo.OutcomeRank1;
+import com.prisma.pojo.OutcomeStats;
+import com.prisma.pojo.Reco;
+import com.prisma.pojo.RecoCase;
+import com.prisma.pojo.RecoTaken;
 
 public class InsertdateApi {
 	
@@ -34,7 +41,189 @@ public class InsertdateApi {
 	 * 
 	 * return OutcomeICUList; } catch (Exception e) { throw e; } }
 	 */
+	
+	public boolean insertOutcomeRank(Session session,OutcomeRank1 outcomeRank){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = outcomeRank.getUser();
+			String patientId = outcomeRank.getPatientId();
+			int outcomeId = outcomeRank.getOutcomeId();
+			String feature = outcomeRank.getFeature();
+			
+			String insertOutcomeRankQuery = "insert into prisma1.outcomeRank(id,user,feature,outcomeid) "
+					+ "values('"+patientId+"','"+user+"','"+feature+"',"+outcomeId+")";
+			
+			System.out.println(insertOutcomeRankQuery);
+			session.execute(insertOutcomeRankQuery);
+			
+			isSuccess = true;
+			return isSuccess;
 
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertRecoTable(Session session,Reco reco){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = reco.getUser();
+			String patientId = reco.getPatientId();
+			String recoNo = reco.getReco();
+			
+		
+			String insertRecoTableQuery = "insert into prisma1.recotable(id,user,reco) "
+					+ "values('"+patientId+"','"+user+"','"+recoNo+"')";
+			
+			System.out.println(insertRecoTableQuery);
+			session.execute(insertRecoTableQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertRecoCaseTable(Session session,RecoCase recoCase){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = recoCase.getUser();
+			String patientId = recoCase.getPatientId();
+			String caseNo = recoCase.getCaseno();
+			
+		
+			String insertRecoCaseTableQuery = "insert into prisma1.recoCaseTable(id,user,caseno) "
+					+ "values('"+patientId+"','"+user+"','"+caseNo+"')";
+			
+			System.out.println(insertRecoCaseTableQuery);
+			session.execute(insertRecoCaseTableQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+
+	public boolean insertOutcomeStats(Session session,OutcomeStats outComeStats){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = outComeStats.getUser();
+			String patientId = outComeStats.getPatientId();
+			int outcomeId = outComeStats.getOutcomeId();
+			float timeScreen1 = outComeStats.getTimeScreen1();
+			float timeScreen2 = outComeStats.getTimeScreen2();
+			int click1 = outComeStats.getClick1();
+			int click2 = outComeStats.getClick2();
+			
+		
+			String insertoutcomeStatsQuery = "insert into prisma1.outcomeStats(user,id,outcomeid,timescreen1,timescreen2,click1,click2) "
+					+ "values('"+user+"','"+patientId+"',"+outcomeId+","+timeScreen1+","+timeScreen2+","+click1+","+click2+")";
+			System.out.println(insertoutcomeStatsQuery);
+			session.execute(insertoutcomeStatsQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+	
+	
+	public boolean insertRecoTakenTable(Session session,RecoTaken recoTaken){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = recoTaken.getUser();
+			String patientId = recoTaken.getPatientId();
+			String reco = recoTaken.getReco();
+			
+		
+			String insertRecoTakenQuery = "insert into prisma1.recoTakenTable(id,user,reco) values('"+patientId+"','"+user+"','"+reco+"')";
+			System.out.println(insertRecoTakenQuery);
+			session.execute(insertRecoTakenQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+	
+	public boolean insertOutcomeResult(Session session,OutComeResult outComeResult){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = outComeResult.getUsername();
+			String patientId = outComeResult.getPatientId();
+			int outcomeId = outComeResult.getOutcomeId();
+			int attempt1 = outComeResult.getAttempt1();
+			int attempt2 = outComeResult.getAttempt2();
+	
+			
+			String outcomeResultQuery = "insert into prisma1.outcomeResult(user,id,outcomeID,attempt1,attempt2) values('"+user+"','"+patientId+"',"+outcomeId+","+attempt1+","+attempt2+"')";
+			System.out.println(outcomeResultQuery);
+			session.execute(outcomeResultQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+
+	public boolean insertIndexPatient(Session session,IndexPatient indexPatient){
+		
+		boolean isSuccess = false;
+		
+		try {
+			String user = indexPatient.getUser();
+			String patientId = indexPatient.getPatientId();
+			int noAttempt = indexPatient.getNoAttempt();
+			float timeScreen = indexPatient.getTimeScreen();
+			
+			String indePatientQuery = "insert into prisma1.indexPatient(id,user,attempt,timescreen) values('"+patientId+"','"+user+"',"+noAttempt+","+timeScreen+")";
+			System.out.println(indePatientQuery);
+			session.execute(indePatientQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
+	
 	public boolean insertDoctorInfo(Session session,
 			DoctorRegistration doctorRegistration) throws Exception {
 
