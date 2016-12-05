@@ -186,7 +186,7 @@ public class InsertdateApi {
 			int attempt2 = outComeResult.getAttempt2();
 	
 			
-			String outcomeResultQuery = "insert into prisma1.outcomeResult(user,id,outcomeID,attempt1,attempt2) values('"+user+"','"+patientId+"',"+outcomeId+","+attempt1+","+attempt2+"')";
+			String outcomeResultQuery = "insert into prisma1.outcomeResult(user,id,outcomeID,attempt1,attempt2) values('"+user+"','"+patientId+"',"+outcomeId+","+attempt1+","+attempt2+")";
 			System.out.println(outcomeResultQuery);
 			session.execute(outcomeResultQuery);
 			
