@@ -2,19 +2,19 @@ package com.prisma.pojo;
 
 public class OutcomeStats {
 	
-	private String user;
+	private String username;
 	private String patientId;
 	private int outcomeId;
 	private float timeScreen1;
 	private float timeScreen2;
 	private int click1;
-	private int click2;
+	private int click2;	
 	
-	public String getUser() {
-		return user;
+	public String getUsername() {
+		return username;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPatientId() {
 		return patientId;

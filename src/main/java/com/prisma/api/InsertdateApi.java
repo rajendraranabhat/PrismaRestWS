@@ -125,7 +125,7 @@ public class InsertdateApi {
 		boolean isSuccess = false;
 		
 		try {
-			String user = outComeStats.getUser();
+			String user = outComeStats.getUsername();
 			String patientId = outComeStats.getPatientId();
 			int outcomeId = outComeStats.getOutcomeId();
 			float timeScreen1 = outComeStats.getTimeScreen1();
@@ -155,7 +155,7 @@ public class InsertdateApi {
 		boolean isSuccess = false;
 		
 		try {
-			String user = recoTaken.getUser();
+			String user = recoTaken.getUsername();
 			String patientId = recoTaken.getPatientId();
 			String reco = recoTaken.getReco();
 			
