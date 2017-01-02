@@ -233,11 +233,12 @@ public class PrismaService {
 	@Path("/insertOutcomeRank")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertOutcomeRank(OutcomeRank1 outcomeRank) {
+	public ReturnVal insertOutcomeRank(OutcomeRank1[] outcomeRank) {
 		retVal = new ReturnVal();
-		boolean isSuccess;
+		boolean isSuccess=false;
 		try {
-			// System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			System.out.println("<<<<<<<<<<<<<<<"+outcomeRank.toString()+" length:"+outcomeRank.length);
+			
 			PrismaManager prismaManager = new PrismaManager();
 
 			isSuccess = prismaManager.insertOutcomeRank(outcomeRank);
@@ -254,7 +255,7 @@ public class PrismaService {
 	@Path("/insertRecoTable")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertRecoTable(Reco reco) {
+	public ReturnVal insertRecoTable(Reco[] reco) {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
@@ -275,7 +276,7 @@ public class PrismaService {
 	@Path("/insertRecoCaseTable")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertRecoCaseTable(RecoCase recoCase) {
+	public ReturnVal insertRecoCaseTable(RecoCase[] recoCase) {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
@@ -360,7 +361,7 @@ public class PrismaService {
 	@Path("/insertOutcomeResult")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertOutcomeResult(OutComeResult outComeResult) {
+	public ReturnVal insertOutcomeResult(OutComeResult[] outComeResult) {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {

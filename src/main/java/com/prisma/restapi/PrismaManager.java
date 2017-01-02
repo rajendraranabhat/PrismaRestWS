@@ -245,7 +245,7 @@ public class PrismaManager {
 		return isSuccess;
 	}
 	
-	public boolean insertOutcomeRank(OutcomeRank1 outcomeRank) throws Exception {
+	public boolean insertOutcomeRank(OutcomeRank1[] outcomeRank) throws Exception {
 		
 		boolean isSuccess = false;
 
@@ -264,7 +264,7 @@ public class PrismaManager {
 		return isSuccess;
 	}
 	
-	public boolean insertRecoTable(Reco reco) throws Exception {
+	public boolean insertRecoTable(Reco[] reco) throws Exception {
 		
 		boolean isSuccess = false;
 
@@ -283,7 +283,7 @@ public class PrismaManager {
 		return isSuccess;
 	}
 	
-	public boolean insertRecoCaseTable(RecoCase recoCase) throws Exception {
+	public boolean insertRecoCaseTable(RecoCase[] recoCase) throws Exception {
 		
 		boolean isSuccess = false;
 
@@ -340,7 +340,7 @@ public class PrismaManager {
 		return isSuccess;
 	}
 	
-	public boolean insertOutcomeResult(OutComeResult outComeResult) throws Exception {
+	public boolean insertOutcomeResult(OutComeResult[] outComeResult) throws Exception {
 		
 		boolean isSuccess = false;
 
