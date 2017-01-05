@@ -364,13 +364,13 @@ public class GetApi {
 		
 		String noBloodQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='noblood'";
 		noBLOOD = executeQuery(session, noBloodQuery,"value");		
-		if(Integer.parseInt(noBLOOD)==0)noBLOOD="no CBC analysis";
+		if(noBLOOD.isEmpty() || Integer.parseInt(noBLOOD)==0)noBLOOD="no CBC analysis";
 		else noBLOOD = noBLOOD+" blood tests";
 		//System.out.println("noBLOOD:"+noBLOOD);
 		
 		String noUrineQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='nourine'";
 		noURINE = executeQuery(session, noUrineQuery,"value");
-		if(Integer.parseInt(noURINE)==0)noURINE="no CBC analysis";
+		if(noURINE.isEmpty() || Integer.parseInt(noURINE)==0)noURINE="no CBC analysis";
 		else noURINE = noURINE+" urine tests";
 		//System.out.println("noURINE:"+noURINE);
 		
@@ -436,17 +436,20 @@ public class GetApi {
 		
 		String Prop_povQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='prop_pov'";
 		Prop_pov = executeQuery(session, Prop_povQuery,"value");
-		Prop_pov = Float.parseFloat(Prop_pov)*100+"";
+		if(!Prop_pov.isEmpty())
+			Prop_pov = Float.parseFloat(Prop_pov)*100+"";
 		//System.out.println("Prop_pov:"+Prop_pov);
 		
 		String prop_blackQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='prop_black'";
 		prop_black = executeQuery(session, prop_blackQuery,"value");
-		prop_black = Float.parseFloat(prop_black)*100+"";
+		if(!prop_black.isEmpty())
+			prop_black = Float.parseFloat(prop_black)*100+"";
 		//System.out.println("prop_black:"+prop_black);
 		
 		String prop_hispQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='prop_hisp'";
 		prop_hisp = executeQuery(session, prop_hispQuery,"value");
-		prop_hisp= Float.parseFloat(prop_hisp)*100+"";
+		if(!prop_hisp.isEmpty())
+			prop_hisp= Float.parseFloat(prop_hisp)*100+"";
 		//System.out.println("prop_hisp:"+prop_hisp);
 		
 		String pay_grpTmpQuery = "SELECT value FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='pay_grp'";
