@@ -242,7 +242,10 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess=false;
 		try {
+<<<<<<< HEAD
 			logger.debug("insertOutcomeRank ");
+=======
+>>>>>>> 1339062b3490dbfb2ad33810659b3701d7de3a03
 			System.out.println("<<<<<<<<<<<<<<<"+outcomeRank.toString()+" length:"+outcomeRank.length);
 			
 			PrismaManager prismaManager = new PrismaManager();
