@@ -1,13 +1,16 @@
 package com.prisma.pojo;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+//@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 public class OutComeResult {
 
 	private String username;
 	private String patientId;
 	private int outcomeId;
 	private int attempt1;
-	private int attempt2;
-	
+	private int attempt2;	
+
 	public String getUsername() {
 		return username;
 	}

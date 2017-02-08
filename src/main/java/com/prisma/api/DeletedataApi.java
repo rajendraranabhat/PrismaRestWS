@@ -12,6 +12,7 @@ public class DeletedataApi {
 		boolean isSuccess = false;
 
 		try {
+			logger.debug("Delete id "+patientId);
 			String deleteidListQuery = "Delete from prisma1.outcomeResult where id='"+patientId+"'";
 			System.out.println(deleteidListQuery);
 			session.execute(deleteidListQuery);

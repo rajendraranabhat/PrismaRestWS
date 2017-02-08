@@ -55,6 +55,7 @@ public class PrismaService {
 		String feeds = null;
 		ArrayList<ScorePojo> scoreLists = null;
 		try {			
+			logger.debug("GetScores");
 			PrismaManager prismaManager = new PrismaManager();
 			scoreLists = prismaManager.GetScoreObj();
 			
@@ -76,6 +77,7 @@ public class PrismaService {
 	public ArrayList icu_outcome() {
 		ArrayList<OutComeICUPojo> icuOutcomeLists = null;
 		try {			
+			logger.debug("GetICUOutCome ");
 			PrismaManager prismaManager = new PrismaManager();
 			icuOutcomeLists = prismaManager.GetOutcome_ICU();
 			//Gson gson = new Gson();
@@ -97,7 +99,7 @@ public class PrismaService {
 		int attempt = 0;
 		try {			
 	
-			//logger.debug("<<<<<<<<<<<<<<<outcomeID="+outcomeID);
+			logger.debug("noOfAttempt username="+username);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			attempt 			= prismaManager.noOfAttempt(username);
@@ -120,7 +122,7 @@ public class PrismaService {
 			/*if(logger.isDebugEnabled()){
 				logger.debug("This is debug : " + parameter);
 			}*/
-			logger.debug("<<<<<<<<<<<<<<<outcomeID="+outcomeID);
+			logger.debug("reviewResults outcomeID="+outcomeID);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			review 			= prismaManager.reviewResults(outcomeID);
@@ -140,6 +142,7 @@ public class PrismaService {
 		List outcomeRankList =null;
 		try {
 			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("OnePatientPrediction doctorId="+doctorId+" patientId="+patientId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			outcomeRankList 			= prismaManager.patientPrediction(doctorId,patientId,outcomeId);
@@ -159,6 +162,7 @@ public class PrismaService {
 		PatientDetails patientDetails = null;
 		try {
 			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("OnePatientDetail doctorId="+doctorId+" patientId="+patientId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			patientDetails 			= prismaManager.onePatient(doctorId,patientId);
@@ -177,6 +181,7 @@ public class PrismaService {
 		ArrayList<PatientDetails> patientDetails = null;
 		try {
 			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("patientDetail doctorId="+doctorId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			patientDetails 			= prismaManager.patientDetail(doctorId);
@@ -195,7 +200,7 @@ public class PrismaService {
 		int noUsers = 0;
 		try {
 			System.out.println("<<<<<<<<<<<<<<<userId="+userId);
-			logger.debug("<<<<<<<<<<<<<<<userId="+userId);
+			logger.debug("userCheck userId="+userId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			noUsers 			= prismaManager.userCheck(userId);
@@ -217,7 +222,7 @@ public class PrismaService {
 			/*if(logger.isDebugEnabled()){
 				logger.debug("This is debug : " + parameter);
 			}*/
-			logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("loginDoctor userId="+userId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			noUsers 			= prismaManager.login(userId, password);
@@ -233,11 +238,13 @@ public class PrismaService {
 	@Path("/insertOutcomeRank")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertOutcomeRank(OutcomeRank1 outcomeRank) {
+	public ReturnVal insertOutcomeRank(OutcomeRank1[] outcomeRank) {
 		retVal = new ReturnVal();
-		boolean isSuccess;
+		boolean isSuccess=false;
 		try {
-			// System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			logger.debug("insertOutcomeRank ");
+			System.out.println("<<<<<<<<<<<<<<<"+outcomeRank.toString()+" length:"+outcomeRank.length);
+			
 			PrismaManager prismaManager = new PrismaManager();
 
 			isSuccess = prismaManager.insertOutcomeRank(outcomeRank);
@@ -254,10 +261,11 @@ public class PrismaService {
 	@Path("/insertRecoTable")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertRecoTable(Reco reco) {
+	public ReturnVal insertRecoTable(Reco[] reco) {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("insertRecoTable ");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -275,10 +283,11 @@ public class PrismaService {
 	@Path("/insertRecoCaseTable")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertRecoCaseTable(RecoCase recoCase) {
+	public ReturnVal insertRecoCaseTable(RecoCase[] recoCase) {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("insertRecoCaseTable");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -300,6 +309,7 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("insertOutcomeStats");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -322,6 +332,7 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("insertRecoTakenTable");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -343,6 +354,7 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("deleteidList patientId="+patientId);
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -360,10 +372,11 @@ public class PrismaService {
 	@Path("/insertOutcomeResult")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ReturnVal insertOutcomeResult(OutComeResult outComeResult) {
+	public ReturnVal insertOutcomeResult(OutComeResult[] outComeResult) {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("insertOutcomeResult");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -385,6 +398,7 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess;
 		try {
+			logger.debug("insertIndexPatient");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
@@ -407,6 +421,7 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess, isSuccessDoctorReg;
 		try {
+			logger.debug("insertDoctorTestResults");
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			

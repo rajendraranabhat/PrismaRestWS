@@ -31,4 +31,6 @@ public class OutcomeRank1 {
 	public void setFeature(String feature) {
 		this.feature = feature;
 	}	
+	
+	
 }
