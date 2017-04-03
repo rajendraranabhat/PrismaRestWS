@@ -138,6 +138,26 @@ public class PrismaService {
 	@Path("/patientPrediction")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List OnePatientPrediction(@QueryParam("doctorId") String doctorId,
+			@QueryParam("patientId") String patientId) {
+		List outcomeRankList =null;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("OnePatientPrediction doctorId="+doctorId+" patientId="+patientId);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			outcomeRankList 			= prismaManager.patientPrediction(doctorId,patientId);
+			
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return outcomeRankList;
+	}
+	
+	/*@GET
+	@Path("/patientPrediction")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List OnePatientPrediction(@QueryParam("doctorId") String doctorId,
 			@QueryParam("patientId") String patientId, @QueryParam("outcomeId") int outcomeId) {
 		List outcomeRankList =null;
 		try {
@@ -152,7 +172,7 @@ public class PrismaService {
 			e.getStackTrace();
 		}
 		return outcomeRankList;
-	}
+	}*/
 	
 	@GET
 	@Path("/patientDetails")
@@ -242,10 +262,8 @@ public class PrismaService {
 		retVal = new ReturnVal();
 		boolean isSuccess=false;
 		try {
-<<<<<<< HEAD
 			logger.debug("insertOutcomeRank ");
-=======
->>>>>>> 1339062b3490dbfb2ad33810659b3701d7de3a03
+
 			System.out.println("<<<<<<<<<<<<<<<"+outcomeRank.toString()+" length:"+outcomeRank.length);
 			
 			PrismaManager prismaManager = new PrismaManager();

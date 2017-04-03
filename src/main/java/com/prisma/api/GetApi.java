@@ -81,7 +81,21 @@ public class GetApi {
 		return noAttempt;
 	}
 	
-	public List patientPrediction(Session session, String doctorId, String patientId,int outcomeId){
+	public List patientPrediction(Session session, String doctorId, String patientId){
+		int id;
+		List outcomeList = new ArrayList();
+		List ids = new ArrayList();
+		String outcomeTableQuery = "select id from prisma1.outcomes";
+		ResultSet results = session.execute(outcomeTableQuery);
+		for(Row row: results){
+			id = row.getInt("id");
+			outcomeList.add(patientPrediction(session, doctorId, patientId, id));
+		}
+		
+		return outcomeList;
+	}
+	
+	public List patientPrediction(Session session, String doctorId, String patientId, int outcomeId){
 		
 		String outcomeTable="",label="",outcome="";
 		List outcomeRankRifle7List = new ArrayList();

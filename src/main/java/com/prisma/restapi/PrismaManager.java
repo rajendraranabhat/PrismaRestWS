@@ -104,6 +104,27 @@ public class PrismaManager {
 		return attempt;
 	}
 	
+	public List patientPrediction(String doctorId, String patientId) throws Exception {
+
+		//ArrayList<PatientDetails> patientDetails = null;
+		List outcomeRank = null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			outcomeRank = api.patientPrediction(session, doctorId, patientId);
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return outcomeRank;
+	}
+	
 	public List patientPrediction(String doctorId, String patientId, int outcomeId) throws Exception {
 
 		//ArrayList<PatientDetails> patientDetails = null;
