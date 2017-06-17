@@ -2,6 +2,7 @@ package com.prisma.api;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -89,7 +90,14 @@ public class GetApi {
 		ResultSet results = session.execute(outcomeTableQuery);
 		for(Row row: results){
 			id = row.getInt("id");
-			outcomeList.add(patientPrediction(session, doctorId, patientId, id));
+			ids.add(id);
+			//outcomeList.add(patientPrediction(session, doctorId, patientId, id));
+		}
+		Collections.sort(ids);
+		
+		for(int i=0;i<ids.size();i++){
+			System.out.println("id="+ (Integer)ids.get(i) );
+			outcomeList.add(patientPrediction(session, doctorId, patientId, (Integer)ids.get(i)) );
 		}
 		
 		return outcomeList;
