@@ -39,6 +39,7 @@ import com.prisma.pojo.RecoCase;
 import com.prisma.pojo.RecoTaken;
 import com.prisma.pojo.ReturnVal;
 import com.prisma.pojo.ReviewResult;
+import com.prisma.pojo.RiskAssessment;
 import com.prisma.pojo.OutComeResult;
 
 @Path("/WebService")
@@ -455,5 +456,70 @@ public class PrismaService {
 			e.getStackTrace();
 		}
 		return doctorReg;
+	}
+	
+	@POST
+	@Path("/initialRiskAssessment")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal initialRiskAssessment(RiskAssessment riskAssessment) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			logger.debug("initialRiskAssessment");
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertRiskAssessment(riskAssessment, 1);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@POST
+	@Path("/finalRiskAssessment")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal finalRiskAssessment(RiskAssessment riskAssessment) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			logger.debug("finalRiskAssessment");
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertRiskAssessment(riskAssessment, 2);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@GET
+	@Path("/getRiskAssessment")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List getRiskAssessment(@QueryParam("doctorId") String doctorId,
+			@QueryParam("patientId") String patientId) {
+		
+		ArrayList<RiskAssessment> riskAssessments = null;
+		try {
+			logger.debug("getRiskAssessment");
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			riskAssessments 			= prismaManager.getRiskAssessment(doctorId, patientId);
+			
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return riskAssessments;
 	}
 }

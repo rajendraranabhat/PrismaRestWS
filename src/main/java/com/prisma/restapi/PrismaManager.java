@@ -17,6 +17,7 @@ import com.prisma.pojo.Reco;
 import com.prisma.pojo.RecoCase;
 import com.prisma.pojo.RecoTaken;
 import com.prisma.pojo.ReviewResult;
+import com.prisma.pojo.RiskAssessment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -435,5 +436,43 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
+	public boolean insertRiskAssessment(RiskAssessment riskAssessments, int riskAssessmentType) throws Exception {
+		
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertRiskAssessment(session, riskAssessments, riskAssessmentType);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		
+		return isSuccess;
+	}
+
+	public ArrayList<RiskAssessment> getRiskAssessment(String doctorId, String patientId) throws Exception {
+		
+		ArrayList<RiskAssessment> riskAssessment = null;
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			riskAssessment = api.getRiskAssessment(session, doctorId, patientId);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		
+		return riskAssessment;
+	}
 }

@@ -16,6 +16,7 @@ import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.Reco;
 import com.prisma.pojo.RecoCase;
 import com.prisma.pojo.RecoTaken;
+import com.prisma.pojo.RiskAssessment;
 
 public class InsertdateApi {
 	
@@ -287,6 +288,47 @@ public class InsertdateApi {
 						+ userName + "'," + i + ",'" + questions.get(i) + "')");
 			}
 
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+			throw e;
+		}
+	}
+
+	public boolean insertRiskAssessment(Session session, RiskAssessment riskAssessments, int riskAssessmentType) throws Exception {
+		
+		boolean isSuccess = false;
+		try {
+			String docId = riskAssessments.getDocId();
+			String patientId = riskAssessments.getPatientId();
+			
+			float rifle7 = riskAssessments.getRifle7();
+			float icu = riskAssessments.getIcu();
+			float ventilator = riskAssessments.getVentilator();
+			float cardiovascular = riskAssessments.getCardiovascular();
+			float sepsis = riskAssessments.getSepsis(); 
+			float neurological = riskAssessments.getNeurological();
+			float venous = riskAssessments.getVenous(); 
+			float wound = riskAssessments.getWound(); 
+			
+			System.out.println("docName: " + docId);
+			System.out.println("patientId: " + patientId);
+			
+			//System.out.println(i+": "+questions.get(i));
+			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+			
+			String insertQuery = "insert into prisma1.riskAssessment(docId, patientId, riskType, rifle7, icu, ventilator, cardiovascular, sepsis,"
+					+ " neurological, venous, wound) values('"
+					+ docId + "','" + patientId + "'," + riskAssessmentType + ","+ rifle7 + "," + icu + "," + ventilator + "," + cardiovascular + "," + sepsis + "," +
+					neurological + "," + venous + "," + wound + ")";
+			
+			System.out.println(insertQuery);
+			
+			session.execute(insertQuery);
+			
 			isSuccess = true;
 			return isSuccess;
 

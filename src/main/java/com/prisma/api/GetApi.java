@@ -16,6 +16,7 @@ import com.prisma.pojo.OutcomeRank;
 import com.prisma.pojo.PatientDetails;
 import com.prisma.pojo.OutcomeRankRifle7;
 import com.prisma.pojo.ReviewResult;
+import com.prisma.pojo.RiskAssessment;
 import com.prisma.restapi.PrismaManager;
 
 public class GetApi {
@@ -703,6 +704,41 @@ public class GetApi {
 
 			return OutcomeICUList;
 		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	public ArrayList<RiskAssessment>  getRiskAssessment(Session session, String doctorId, String patientId) throws Exception {
+		
+		ArrayList<RiskAssessment> riskAssessmentList = new ArrayList<RiskAssessment>();
+		RiskAssessment riskAssessment = null;
+		try {
+			
+			String riskQuery = "select * from prisma1.riskassessment where docid='"+doctorId+"' and patientid='"+patientId+"' and risktype="+1;
+			
+			ResultSet results = session.execute(riskQuery);
+			System.out.println(riskQuery);
+			//System.out.println("results=" + results);
+			
+			
+			for (Row row : results) {
+				riskAssessment = new RiskAssessment();
+				
+				riskAssessment.setCardiovascular(row.getFloat("cardiovascular"));
+				riskAssessment.setIcu(row.getFloat("icu"));
+				riskAssessment.setNeurological(row.getFloat("neurological"));
+				riskAssessment.setRifle7(row.getFloat("rifle7"));
+				riskAssessment.setSepsis(row.getFloat("sepsis"));
+				riskAssessment.setVenous(row.getFloat("venous"));
+				riskAssessment.setVentilator(row.getFloat("ventilator"));
+				riskAssessment.setWound(row.getFloat("wound"));
+				
+				riskAssessmentList.add(riskAssessment);
+			}
+
+			return riskAssessmentList;
+		} catch (Exception e) {
+			e.printStackTrace(System.out);
 			throw e;
 		}
 	}

@@ -16,9 +16,10 @@ public class JerseyClientGet {
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patients?doctorId=raj";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientDetails?doctorId=raj&patientId=BB3XEDJ201";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=raj&patientId=BB3XEDJ201&outcomeId=1";
-			String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=raj&patientId=BB3XEDJ201";
+			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=raj&patientId=BB3XEDJ201";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/reviewResults?outcomeID=1";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/noOfAttempt?user=raj";
+			String url = "http://localhost:8081/PrismaRestWS/rest/WebService/getRiskAssessment?doctorId=raj&patientId=A1F40528";
 			
 			WebResource webResource = client.resource(url);
 
