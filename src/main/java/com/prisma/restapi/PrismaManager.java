@@ -6,6 +6,8 @@ import com.prisma.api.DeletedataApi;
 import com.prisma.api.GetApi;
 import com.prisma.api.InsertdateApi;
 import com.prisma.api.UpdateApi;
+import com.prisma.pojo.DoctorInterventions;
+import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
 import com.prisma.pojo.OutComeICUPojo;
@@ -474,5 +476,43 @@ public class PrismaManager {
 		}
 		
 		return riskAssessment;
+	}
+
+	public boolean docInterventions(DoctorInterventions doctorInterventions) throws Exception {
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertDocInterventions(session, doctorInterventions);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		
+		return isSuccess;
+	}
+
+	public boolean docMitigations(DoctorMitigation doctorMitigation) throws Exception {
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertDocMitigations(session, doctorMitigation);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		
+		return isSuccess;
 	}
 }

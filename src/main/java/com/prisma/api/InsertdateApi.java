@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
+import com.prisma.pojo.DoctorInterventions;
+import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
 import com.prisma.pojo.OutComeICUPojo;
@@ -327,6 +329,87 @@ public class InsertdateApi {
 					+ " neurological, venous, wound) values('"
 					+ docId + "','" + patientId + "'," + riskAssessmentType + ","+ rifle7 + "," + icu + "," + ventilator + "," + cardiovascular + "," + sepsis + "," +
 					neurological + "," + venous + "," + wound + ")";
+			
+			System.out.println(insertQuery);
+			
+			session.execute(insertQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+			throw e;
+		}
+	}
+
+	public boolean insertDocInterventions(Session session, DoctorInterventions doctorInterventions) throws Exception {
+		boolean isSuccess = false;
+		try {
+			String docId = doctorInterventions.getDocId();
+			String patientId = doctorInterventions.getPatientId();
+			
+			String reco1 = doctorInterventions.getReco1();
+			String reco2 = doctorInterventions.getReco2();
+			String reco3 = doctorInterventions.getReco3();
+			String reco4 = doctorInterventions.getReco4();
+			String reco5 = doctorInterventions.getReco5();
+			String reco6 = doctorInterventions.getReco6();
+			String reco7 = doctorInterventions.getReco7();
+			String reco8 = doctorInterventions.getReco8();
+			String reco9 = doctorInterventions.getReco9();
+			String reco10 = doctorInterventions.getReco10();
+			String reco11 = doctorInterventions.getReco11();
+			String recoOther = doctorInterventions.getRecoOther();
+					
+			System.out.println("docName: " + docId);
+			System.out.println("patientId: " + patientId);
+			
+			//System.out.println(i+": "+questions.get(i));
+			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+			
+			String insertQuery = "insert into prisma1.docInterventions(docId, patientId, reco1, reco2, reco3, reco4, reco5, reco6, reco7, reco8, reco9, reco10, reco11, recoOther) "
+					+ "values('"+ docId + "','" + patientId + "','" + reco1 + "','"+ reco2 + "','" + reco3 + "','" + reco4 + "','" + reco5 + "','" + reco6 + "','" +
+					reco7 + "','" + reco8 + "','" + reco9 + "','" + reco10 + "','" + reco11 + "','" + recoOther + "')";
+			
+			System.out.println(insertQuery);
+			
+			session.execute(insertQuery);
+			
+			isSuccess = true;
+			return isSuccess;
+
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+			e.getStackTrace();
+			throw e;
+		}
+	}
+
+	public boolean insertDocMitigations(Session session, DoctorMitigation doctorMitigation) throws Exception {
+		boolean isSuccess = false;
+		try {
+			String docId = doctorMitigation.getDocId();
+			String patientId = doctorMitigation.getPatientId();
+			
+			String mitigation1 = doctorMitigation.getMitigation1();
+			String mitigation2 = doctorMitigation.getMitigation2();
+			String mitigation3 = doctorMitigation.getMitigation3();
+			String mitigation4 = doctorMitigation.getMitigation4();
+			String mitigation5 = doctorMitigation.getMitigation5();
+			String mitigation6 = doctorMitigation.getMitigation6();
+
+					
+			System.out.println("docName: " + docId);
+			System.out.println("patientId: " + patientId);
+			
+			//System.out.println(i+": "+questions.get(i));
+			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+			
+			String insertQuery = "insert into prisma1.docMitigations(docId, patientId, mitigation1, mitigation2, mitigation3, mitigation4, mitigation5, mitigation6) "
+					+ "values('"+ docId + "','" + patientId + "','" + mitigation1 + "','"+ mitigation2 + "','" + mitigation3 + "','" + mitigation4 + "','" + mitigation5
+					+ "','" + mitigation6+ "')";
 			
 			System.out.println(insertQuery);
 			

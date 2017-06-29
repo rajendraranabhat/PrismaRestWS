@@ -28,6 +28,8 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.datastax.driver.core.Session;
+import com.prisma.pojo.DoctorInterventions;
+import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
 import com.prisma.pojo.OutComeICUPojo;
@@ -521,5 +523,49 @@ public class PrismaService {
 			e.getStackTrace();
 		}
 		return riskAssessments;
+	}
+	
+	@POST
+	@Path("/docInterventions")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal docInterventions(DoctorInterventions doctorInterventions) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			logger.debug("docInterventions");
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.docInterventions(doctorInterventions);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
+	}
+	
+	@POST
+	@Path("/docMitigations")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal docMitigations(DoctorMitigation doctorMitigation) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			logger.debug("docMitigations");
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.docMitigations(doctorMitigation);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return retVal;
 	}
 }
