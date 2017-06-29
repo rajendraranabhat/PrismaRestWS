@@ -249,15 +249,18 @@ public class InsertdateApi {
 			String speciality = doctorRegistration.getSpeciality();
 			String experience = doctorRegistration.getExperience();
 			String name       = doctorRegistration.getFullName();
+			String email      = doctorRegistration.getEmail();
+			String phone      = doctorRegistration.getPhone();
 			
 			System.out.println("userName:" + userName+" password:"+password+" gender:"+gender+" age: "+age+" role:"+role+" speciality:"+
-							    speciality+" experience:"+experience+" name:"+name);			
+							    speciality+" experience:"+experience+" name:"+name+" email:"+email+" phone:"+phone);			
 			
-			System.out.println("insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality) "
-					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"')");
+			String insertQuery = "insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality,email,phone) "
+					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"','"+email+"','"+phone+"')";
 			
-			session.execute("insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality) "
-					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"')");
+			System.out.println(insertQuery);
+			
+			session.execute(insertQuery);
 			
 			isSuccess = true;
 			return isSuccess;
