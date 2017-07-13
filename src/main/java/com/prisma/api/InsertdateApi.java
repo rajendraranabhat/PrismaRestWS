@@ -1,6 +1,8 @@
 package com.prisma.api;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.apache.log4j.Logger;
 
@@ -251,14 +253,14 @@ public class InsertdateApi {
 			String speciality = doctorRegistration.getSpeciality();
 			String experience = doctorRegistration.getExperience();
 			String name       = doctorRegistration.getFullName();
-			String email      = doctorRegistration.getEmail();
-			String phone      = doctorRegistration.getPhone();
+			//String email      = doctorRegistration.getEmail();
+			//String phone      = doctorRegistration.getPhone();
 			
 			System.out.println("userName:" + userName+" password:"+password+" gender:"+gender+" age: "+age+" role:"+role+" speciality:"+
-							    speciality+" experience:"+experience+" name:"+name+" email:"+email+" phone:"+phone);			
+							    speciality+" experience:"+experience+" name:"+name);			
 			
-			String insertQuery = "insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality,email,phone) "
-					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"','"+email+"','"+phone+"')";
+			String insertQuery = "insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality) "
+					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"')";
 			
 			System.out.println(insertQuery);
 			
@@ -318,6 +320,11 @@ public class InsertdateApi {
 			float neurological = riskAssessments.getNeurological();
 			float venous = riskAssessments.getVenous(); 
 			float wound = riskAssessments.getWound(); 
+			int numAttempts = riskAssessments.getNumAttempts();
+			
+			Timestamp modifiedtime = new Timestamp(System.currentTimeMillis());
+			//System.out.println(timestamp);
+			//System.out.println(new Timestamp(new Date().getTime()));
 			
 			System.out.println("docName: " + docId);
 			System.out.println("patientId: " + patientId);
@@ -326,9 +333,9 @@ public class InsertdateApi {
 			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
 			
 			String insertQuery = "insert into prisma1.riskAssessment(docId, patientId, riskType, rifle7, icu, ventilator, cardiovascular, sepsis,"
-					+ " neurological, venous, wound) values('"
+					+ " neurological, venous, wound, modifiedtime, numattempts) values('"
 					+ docId + "','" + patientId + "'," + riskAssessmentType + ","+ rifle7 + "," + icu + "," + ventilator + "," + cardiovascular + "," + sepsis + "," +
-					neurological + "," + venous + "," + wound + ")";
+					neurological + "," + venous + "," + wound + ",'" + modifiedtime.toString() + "'," + numAttempts+")";
 			
 			System.out.println(insertQuery);
 			
@@ -399,6 +406,8 @@ public class InsertdateApi {
 			String mitigation4 = doctorMitigation.getMitigation4();
 			String mitigation5 = doctorMitigation.getMitigation5();
 			String mitigation6 = doctorMitigation.getMitigation6();
+			String mitigation7 = doctorMitigation.getMitigation7();
+			String mitigation8 = doctorMitigation.getMitigation8();
 
 					
 			System.out.println("docName: " + docId);
@@ -407,9 +416,9 @@ public class InsertdateApi {
 			//System.out.println(i+": "+questions.get(i));
 			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
 			
-			String insertQuery = "insert into prisma1.docMitigations(docId, patientId, mitigation1, mitigation2, mitigation3, mitigation4, mitigation5, mitigation6) "
+			String insertQuery = "insert into prisma1.docMitigations(docId, patientId, mitigation1, mitigation2, mitigation3, mitigation4, mitigation5, mitigation6, mitigation7, mitigation8) "
 					+ "values('"+ docId + "','" + patientId + "','" + mitigation1 + "','"+ mitigation2 + "','" + mitigation3 + "','" + mitigation4 + "','" + mitigation5
-					+ "','" + mitigation6+ "')";
+					+ "','" + mitigation6+"','" + mitigation7+"','" + mitigation8+ "')";
 			
 			System.out.println(insertQuery);
 			

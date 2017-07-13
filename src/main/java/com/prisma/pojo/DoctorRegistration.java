@@ -13,8 +13,8 @@ public class DoctorRegistration {
 	String currentRoles;
 	String speciality;
 	String experience;
-	String email;
-	String phone;
+	//String email;
+	//String phone;
 
 	public String getUsername() {
 		return username;
@@ -24,7 +24,7 @@ public class DoctorRegistration {
 		this.username = username;
 	}
 
-	public String getEmail() {
+	/*public String getEmail() {
 		return email;
 	}
 
@@ -38,7 +38,7 @@ public class DoctorRegistration {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
+	}*/
 
 	public ArrayList<String> getQuestions() {
 		return questions;

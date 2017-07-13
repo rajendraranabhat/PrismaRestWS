@@ -1,5 +1,8 @@
 package com.prisma.client;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import com.prisma.restapi.PrismaManager;
 
 public class CassandraDBTest {
@@ -25,7 +28,10 @@ public class CassandraDBTest {
 	}
 	
 	public static void main(String[] args) throws Exception {		
-		onePatient();
+		//onePatient();
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		System.out.println(timestamp.toString());
+		//System.out.println(new Timestamp(new Date().getTime()));
 	}
 
 }

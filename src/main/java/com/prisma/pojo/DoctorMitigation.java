@@ -9,6 +9,8 @@ public class DoctorMitigation {
 	private String mitigation4;
 	private String mitigation5;
 	private String mitigation6;
+	private String mitigation7;
+	private String mitigation8;
 
 	public String getPatientId() {
 		return patientId;
@@ -73,4 +75,21 @@ public class DoctorMitigation {
 	public void setMitigation6(String mitigation6) {
 		this.mitigation6 = mitigation6;
 	}
+
+	public String getMitigation7() {
+		return mitigation7;
+	}
+
+	public void setMitigation7(String mitigation7) {
+		this.mitigation7 = mitigation7;
+	}
+
+	public String getMitigation8() {
+		return mitigation8;
+	}
+
+	public void setMitigation8(String mitigation8) {
+		this.mitigation8 = mitigation8;
+	}
+	
 }

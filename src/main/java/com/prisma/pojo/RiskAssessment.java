@@ -13,6 +13,7 @@ public class RiskAssessment {
 	private float neurological;
 	private float venous;
 	private float wound;
+	private int numAttempts=0;
 	
 	public String getDocId() {
 		return docId;
@@ -73,6 +74,12 @@ public class RiskAssessment {
 	}
 	public void setWound(float wound) {
 		this.wound = wound;
+	}
+	public int getNumAttempts() {
+		return numAttempts;
+	}
+	public void setNumAttempts(int numAttempts) {
+		this.numAttempts = numAttempts;
 	}
 	
 }

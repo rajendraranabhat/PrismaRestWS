@@ -131,7 +131,7 @@ public class GetApi {
 		System.out.println("outcomeRankTable="+outcomeRankTable);
 		
 		//For positive case..
-		String tempViewPositiveQuery = "SELECT * FROM "+outcomeRankTable+" WHERE id='"+patientId+"' AND weight>0 AND rank<=5 order by rank asc allow filtering";
+		String tempViewPositiveQuery = "SELECT * FROM "+outcomeRankTable+" WHERE id='"+patientId+"' AND weight>0 AND rank<=3 order by rank asc allow filtering";
 		results = session.execute(tempViewPositiveQuery);
 		for (Row row : results){
 			outcomeRankRifle7 = new OutcomeRankRifle7();
@@ -166,18 +166,24 @@ public class GetApi {
 			if(outRankRfile7.getVar().equalsIgnoreCase("pr1")){
 				String pr1tmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='pr1'";
 				String value = executeQuery(session, pr1tmpQuery,"value");
-				int value1 = Integer.parseInt(value);
-				String pr1Query = "SELECT description FROM prisma1.pr1Map WHERE id='"+value1+"'";
-				String pr1Description = executeQuery(session, pr1Query,"description");
+				String pr1Description = "";
+				if(!value.isEmpty()){
+					int value1 = Integer.parseInt(value);
+					String pr1Query = "SELECT description FROM prisma1.pr1Map WHERE id='"+value1+"'";
+					pr1Description = executeQuery(session, pr1Query,"description");
+				}
 				outRankRfile7.setPr1Description(pr1Description);
 			}else if(outRankRfile7.getVar().equalsIgnoreCase("mdc")){ 
 				String mdctmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='mdc'";
 				String value = executeQuery(session, mdctmpQuery,"value");
-				int value1 = Integer.parseInt(value); 
-				String mdcQuery = "SELECT description FROM prisma1.mdcMap WHERE id='"+value1+"'";
-				//System.out.println("<<<<<<<<<<<mdcQuery="+mdcQuery);
-				String mdcDescription = executeQuery(session, mdcQuery,"description");
-				//System.out.println("mdcDescription="+mdcDescription);
+				String mdcDescription = "";
+				if(!value.isEmpty()){
+					int value1 = Integer.parseInt(value); 
+					String mdcQuery = "SELECT description FROM prisma1.mdcMap WHERE id='"+value1+"'";
+					//System.out.println("<<<<<<<<<<<mdcQuery="+mdcQuery);
+					mdcDescription = executeQuery(session, mdcQuery,"description");
+					//System.out.println("mdcDescription="+mdcDescription);
+				}
 				outRankRfile7.setMdcDescription(mdcDescription);
 			}			
 		}
@@ -191,7 +197,7 @@ public class GetApi {
 		//System.out.println(outcomeRankRifle7List.toString());
 		
 		//For Negative case
-		String tempViewNegativeQuery = "SELECT * FROM "+outcomeRankTable+" WHERE id='"+patientId+"' AND weight<0 ORDER BY rank DESC LIMIT 5 allow filtering";
+		String tempViewNegativeQuery = "SELECT * FROM "+outcomeRankTable+" WHERE id='"+patientId+"' AND weight<0 ORDER BY rank DESC LIMIT 3 allow filtering";
 		results = session.execute(tempViewNegativeQuery);
 		for (Row row : results){
 			outcomeRankRifle7 = new OutcomeRankRifle7();
@@ -226,16 +232,22 @@ public class GetApi {
 			if (outRankRfile7.getVar().equalsIgnoreCase("pr1")) {
 				String pr1tmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='" + patientId + "' AND feature='pr1'";
 				String value = executeQuery(session, pr1tmpQuery, "value");
-				int value1 = Integer.parseInt(value);
-				String pr1Query = "SELECT description FROM prisma1.pr1Map WHERE id='"+ value1 + "'";
-				String pr1Description = executeQuery(session, pr1Query,"description");
+				String pr1Description = "";
+				if(!value.isEmpty()){
+					int value1 = Integer.parseInt(value);
+					String pr1Query = "SELECT description FROM prisma1.pr1Map WHERE id='"+ value1 + "'";
+					pr1Description = executeQuery(session, pr1Query,"description");
+				}
 				outRankRfile7.setPr1Description(pr1Description);
 			} else if (outRankRfile7.getVar().equalsIgnoreCase("mdc")) {
 				String mdctmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+ patientId + "' AND feature='mdc'";
 				String value = executeQuery(session, mdctmpQuery, "value");
-				int value1 = Integer.parseInt(value);
-				String mdcQuery = "SELECT description FROM prisma1.mdcMap WHERE id='"+ value1 + "'";
-				String mdcDescription = executeQuery(session, mdcQuery,"description");
+				String mdcDescription = "";
+				if(!value.isEmpty()){
+					int value1 = Integer.parseInt(value);
+					String mdcQuery = "SELECT description FROM prisma1.mdcMap WHERE id='"+ value1 + "'";
+					mdcDescription = executeQuery(session, mdcQuery,"description");
+				}
 				outRankRfile7.setMdcDescription(mdcDescription);
 			}
 		}

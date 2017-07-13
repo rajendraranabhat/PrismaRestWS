@@ -15,7 +15,7 @@ public class JerseyClientPost {
 			WebResource webResource = client
 			   .resource("http://localhost:8081/PrismaRestWS/rest/WebService/insertDoctorTestResults");
 
-			String input = "{\"username\":\"raj\",\"email\":\"rbhat@ufl.com\",\"phone\":\"123456\",\"questions\":[\"4\",\"3\",\"4\",\"1 in 10\",\"1%\",\"4\",\"4\",\"3\",\"4\",\"5\",\"5\",\"6\",\"6\",\"5\"],\"fullName\":\"eee\",\"password\":\"raj\",\"gender\":\"Male\",\"age\":\"30 years or less\",\"currentRoles\":\"Attending Doctor\",\"speciality\":\"ER\",\"experience\":\"7\"}";
+			String input = "{\"username\":\"raj\",\"questions\":[\"4\",\"3\",\"4\",\"1 in 10\",\"1%\",\"4\",\"4\",\"3\",\"4\",\"5\",\"5\",\"6\",\"6\",\"5\"],\"fullName\":\"eee\",\"password\":\"raj\",\"gender\":\"Male\",\"age\":\"30 years or less\",\"currentRoles\":\"Attending Doctor\",\"speciality\":\"ER\",\"experience\":\"7\"}";
 
 			System.out.println(input);
 			ClientResponse response = webResource.type("application/json").post(ClientResponse.class, input);
