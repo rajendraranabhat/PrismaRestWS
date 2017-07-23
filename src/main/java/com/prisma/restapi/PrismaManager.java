@@ -459,7 +459,7 @@ public class PrismaManager {
 		return isSuccess;
 	}
 
-	public ArrayList<RiskAssessment> getRiskAssessment(String doctorId, String patientId) throws Exception {
+	public ArrayList<RiskAssessment> getRiskAssessment(String doctorId, String patientId, int riskAssessmentType) throws Exception {
 		
 		ArrayList<RiskAssessment> riskAssessment = null;
 		Dao dao = null;
@@ -467,7 +467,7 @@ public class PrismaManager {
 			dao = new Dao();
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
-			riskAssessment = api.getRiskAssessment(session, doctorId, patientId);
+			riskAssessment = api.getRiskAssessment(session, doctorId, patientId, riskAssessmentType);
 		} catch (Exception e) {
 			throw e;
 		} finally {

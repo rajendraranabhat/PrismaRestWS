@@ -94,7 +94,7 @@ public class CassandraTest {
 		try {
 			PrismaManager prismaManager = new PrismaManager();
 
-			riskAssessments = prismaManager.getRiskAssessment("raj", "A1F40528");
+			riskAssessments = prismaManager.getRiskAssessment("raj", "ABC329",1);
 			Gson gson = new Gson();
 			System.out.println(gson.toJson(riskAssessments));
 

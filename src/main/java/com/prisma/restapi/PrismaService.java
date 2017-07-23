@@ -508,7 +508,7 @@ public class PrismaService {
 	@Path("/getRiskAssessment")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List getRiskAssessment(@QueryParam("doctorId") String doctorId,
-			@QueryParam("patientId") String patientId) {
+			@QueryParam("patientId") String patientId, @QueryParam("riskAssessmentType") int riskAssessmentType) {
 		
 		ArrayList<RiskAssessment> riskAssessments = null;
 		try {
@@ -516,7 +516,7 @@ public class PrismaService {
 			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
-			riskAssessments 			= prismaManager.getRiskAssessment(doctorId, patientId);
+			riskAssessments 			= prismaManager.getRiskAssessment(doctorId, patientId, riskAssessmentType);
 			
 		} catch (Exception e) {
 			System.out.println("error");

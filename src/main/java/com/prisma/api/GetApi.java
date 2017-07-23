@@ -720,13 +720,13 @@ public class GetApi {
 		}
 	}
 
-	public ArrayList<RiskAssessment>  getRiskAssessment(Session session, String doctorId, String patientId) throws Exception {
+	public ArrayList<RiskAssessment>  getRiskAssessment(Session session, String doctorId, String patientId, int riskAssessmentType) throws Exception {
 		
 		ArrayList<RiskAssessment> riskAssessmentList = new ArrayList<RiskAssessment>();
 		RiskAssessment riskAssessment = null;
 		try {
 			
-			String riskQuery = "select * from prisma1.riskassessment where docid='"+doctorId+"' and patientid='"+patientId+"' and risktype="+1;
+			String riskQuery = "select * from prisma1.riskassessment where docid='"+doctorId+"' and patientid='"+patientId+"' and risktype="+riskAssessmentType;
 			
 			ResultSet results = session.execute(riskQuery);
 			System.out.println(riskQuery);
@@ -744,6 +744,8 @@ public class GetApi {
 				riskAssessment.setVenous(row.getFloat("venous"));
 				riskAssessment.setVentilator(row.getFloat("ventilator"));
 				riskAssessment.setWound(row.getFloat("wound"));
+				riskAssessment.setRisktype(row.getInt("risktype"));
+				riskAssessment.setNumAttempts(row.getInt("numattempts"));
 				
 				riskAssessmentList.add(riskAssessment);
 			}

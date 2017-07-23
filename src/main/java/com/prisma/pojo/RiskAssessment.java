@@ -13,7 +13,9 @@ public class RiskAssessment {
 	private float neurological;
 	private float venous;
 	private float wound;
-	private int numAttempts=0;
+	private int numAttempts;
+	
+	private int risktype; // 1 == initialrisk; 2 == finalrisk
 	
 	public String getDocId() {
 		return docId;
@@ -81,5 +83,10 @@ public class RiskAssessment {
 	public void setNumAttempts(int numAttempts) {
 		this.numAttempts = numAttempts;
 	}
-	
+	public int getRisktype() {
+		return risktype;
+	}
+	public void setRisktype(int risktype) {
+		this.risktype = risktype;
+	}	
 }

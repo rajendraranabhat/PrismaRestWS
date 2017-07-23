@@ -322,6 +322,8 @@ public class InsertdateApi {
 			float wound = riskAssessments.getWound(); 
 			int numAttempts = riskAssessments.getNumAttempts();
 			
+			//int riskAssessmentsType = riskAssessmentType; //1==initialrisktype; 2==finalrisktype
+			
 			Timestamp modifiedtime = new Timestamp(System.currentTimeMillis());
 			//System.out.println(timestamp);
 			//System.out.println(new Timestamp(new Date().getTime()));
