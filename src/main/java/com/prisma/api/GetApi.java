@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
+import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank;
 import com.prisma.pojo.PatientDetails;
@@ -751,6 +752,31 @@ public class GetApi {
 			}
 
 			return riskAssessmentList;
+		} catch (Exception e) {
+			e.printStackTrace(System.out);
+			throw e;
+		}
+	}
+
+	public Mortality mortality(Session session, String patientId) throws Exception {
+		
+		try {
+		Mortality patientMortality =new Mortality();
+		String outcomeTableQuery = "select * from prisma1.mortality where patientid='"+patientId+"'";
+		System.out.println(outcomeTableQuery);
+		ResultSet results = session.execute(outcomeTableQuery);
+		
+		patientMortality.setPatientId(patientId);
+		
+		for(Row row: results){
+			patientMortality.setMort_status_30d(row.getFloat("mort_status_30d"));
+			patientMortality.setMort_status_90d(row.getFloat("mort_status_90d"));
+			patientMortality.setMort_status_6m(row.getFloat("mort_status_6m"));
+			patientMortality.setMort_status_1y(row.getFloat("mort_status_1y"));
+			patientMortality.setMort_status_2y(row.getFloat("mort_status_2y"));
+		}
+		
+		return patientMortality;
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 			throw e;

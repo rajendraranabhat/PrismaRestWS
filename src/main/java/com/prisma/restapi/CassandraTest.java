@@ -7,6 +7,7 @@ import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
 import com.google.gson.Gson;
 import com.prisma.api.GetApi;
+import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.RiskAssessment;
 
@@ -102,12 +103,28 @@ public class CassandraTest {
 			System.out.println("error");
 		}
 	}
+	
+	public static void getMortality() {
+		Mortality mortality = null;
+		String feeds = null;
+		try {
+			PrismaManager prismaManager = new PrismaManager();
+
+			mortality = prismaManager.mortality("A1F42085");
+			Gson gson = new Gson();
+			System.out.println(gson.toJson(mortality));
+
+		} catch (Exception e) {
+			System.out.println("error");
+		}
+	}
 
 	public static void main(String[] args) throws Exception {
 		// getScores();
 		// getICUOutCome();
 		// updateICUOutCome();
 		//testCql();
-		getRiskAssessment();
+		//getRiskAssessment();
+		getMortality();
 	}
 }

@@ -10,6 +10,7 @@ import com.prisma.pojo.DoctorInterventions;
 import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
+import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutComeResult;
 import com.prisma.pojo.OutcomeRank1;
@@ -27,7 +28,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 public class PrismaManager {
-	
+
 	final static Logger logger = Logger.getLogger(PrismaManager.class);
 
 	public ArrayList<ScorePojo> GetScoreObj() throws Exception {
@@ -44,7 +45,7 @@ public class PrismaManager {
 			if (dao != null)
 				dao.close();
 		}
-		
+
 		return scoreLists;
 	}
 
@@ -67,8 +68,7 @@ public class PrismaManager {
 		return outComeICULists;
 	}
 
-	public ArrayList<OutComeICUPojo> UpdateOutcome_ICU(String id, String outcome)
-			throws Exception {
+	public ArrayList<OutComeICUPojo> UpdateOutcome_ICU(String id, String outcome) throws Exception {
 		ArrayList<OutComeICUPojo> outComeICULists = null;
 
 		Dao dao = null;
@@ -86,7 +86,7 @@ public class PrismaManager {
 
 		return outComeICULists;
 	}
-	
+
 	public int noOfAttempt(String userName) throws Exception {
 
 		int attempt = 0;
@@ -97,7 +97,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			attempt = api.noOfAttempt(session, userName);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -106,10 +106,10 @@ public class PrismaManager {
 		}
 		return attempt;
 	}
-	
+
 	public List patientPrediction(String doctorId, String patientId) throws Exception {
 
-		//ArrayList<PatientDetails> patientDetails = null;
+		// ArrayList<PatientDetails> patientDetails = null;
 		List outcomeRank = null;
 
 		Dao dao = null;
@@ -118,7 +118,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			outcomeRank = api.patientPrediction(session, doctorId, patientId);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -127,10 +127,10 @@ public class PrismaManager {
 		}
 		return outcomeRank;
 	}
-	
+
 	public List patientPrediction(String doctorId, String patientId, int outcomeId) throws Exception {
 
-		//ArrayList<PatientDetails> patientDetails = null;
+		// ArrayList<PatientDetails> patientDetails = null;
 		List outcomeRank = null;
 
 		Dao dao = null;
@@ -139,7 +139,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			outcomeRank = api.patientPrediction(session, doctorId, patientId, outcomeId);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -148,10 +148,10 @@ public class PrismaManager {
 		}
 		return outcomeRank;
 	}
-	
+
 	public PatientDetails onePatient(String doctorId, String patientId) throws Exception {
 
-		//ArrayList<PatientDetails> patientDetails = null;
+		// ArrayList<PatientDetails> patientDetails = null;
 		PatientDetails retVal = null;
 
 		Dao dao = null;
@@ -160,7 +160,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			retVal = api.onePatient(session, doctorId, patientId);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -169,7 +169,7 @@ public class PrismaManager {
 		}
 		return retVal;
 	}
-	
+
 	public ArrayList<PatientDetails> patientDetail(String doctorId) throws Exception {
 
 		ArrayList<PatientDetails> patientDetails = null;
@@ -180,7 +180,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			patientDetails = api.getPatientDetail(session, doctorId);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -189,7 +189,7 @@ public class PrismaManager {
 		}
 		return patientDetails;
 	}
-	
+
 	public int userCheck(String userId) throws Exception {
 
 		int noUsers = 0;
@@ -200,7 +200,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			noUsers = api.userCheck(session, userId);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -209,7 +209,7 @@ public class PrismaManager {
 		}
 		return noUsers;
 	}
-	
+
 	public ReviewResult reviewResults(int outcomeId) throws Exception {
 
 		ReviewResult review = null;
@@ -220,7 +220,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			review = api.reviewResults(session, outcomeId);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -229,7 +229,7 @@ public class PrismaManager {
 		}
 		return review;
 	}
-	
+
 	public int login(String userId, String password) throws Exception {
 
 		int noUsers = 0;
@@ -240,7 +240,7 @@ public class PrismaManager {
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
 			noUsers = api.getLogin(session, userId, password);
-			
+
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -249,7 +249,7 @@ public class PrismaManager {
 		}
 		return noUsers;
 	}
-	
+
 	public boolean insertDoctorInfo(DoctorRegistration doctorRegistration) throws Exception {
 
 		boolean isSuccess = false;
@@ -268,9 +268,9 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertOutcomeRank(OutcomeRank1[] outcomeRank) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -287,9 +287,9 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertRecoTable(Reco[] reco) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -306,9 +306,9 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertRecoCaseTable(RecoCase[] recoCase) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -325,9 +325,9 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertOutcomeStats(OutcomeStats outComeStats) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -344,9 +344,9 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertRecoTakenTable(RecoTaken recoTaken) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -363,9 +363,9 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertOutcomeResult(OutComeResult[] outComeResult) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -384,7 +384,7 @@ public class PrismaManager {
 	}
 
 	public boolean insertIndexPatient(IndexPatient indexPatient) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -401,7 +401,7 @@ public class PrismaManager {
 		}
 		return isSuccess;
 	}
-	
+
 	public boolean insertDoctorTestResult(DoctorRegistration doctorRegistration) throws Exception {
 
 		boolean isSuccess = false;
@@ -440,7 +440,7 @@ public class PrismaManager {
 	}
 
 	public boolean insertRiskAssessment(RiskAssessment riskAssessments, int riskAssessmentType) throws Exception {
-		
+
 		boolean isSuccess = false;
 
 		Dao dao = null;
@@ -455,12 +455,13 @@ public class PrismaManager {
 			if (dao != null)
 				dao.close();
 		}
-		
+
 		return isSuccess;
 	}
 
-	public ArrayList<RiskAssessment> getRiskAssessment(String doctorId, String patientId, int riskAssessmentType) throws Exception {
-		
+	public ArrayList<RiskAssessment> getRiskAssessment(String doctorId, String patientId, int riskAssessmentType)
+			throws Exception {
+
 		ArrayList<RiskAssessment> riskAssessment = null;
 		Dao dao = null;
 		try {
@@ -474,7 +475,7 @@ public class PrismaManager {
 			if (dao != null)
 				dao.close();
 		}
-		
+
 		return riskAssessment;
 	}
 
@@ -493,7 +494,7 @@ public class PrismaManager {
 			if (dao != null)
 				dao.close();
 		}
-		
+
 		return isSuccess;
 	}
 
@@ -512,7 +513,26 @@ public class PrismaManager {
 			if (dao != null)
 				dao.close();
 		}
-		
+
 		return isSuccess;
+	}
+
+	public Mortality mortality(String patientId) throws Exception {
+		Mortality patientMortality =null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			patientMortality = api.mortality(session, patientId);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return patientMortality;
 	}
 }

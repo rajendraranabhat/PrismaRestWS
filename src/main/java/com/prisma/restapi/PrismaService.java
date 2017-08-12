@@ -32,6 +32,7 @@ import com.prisma.pojo.DoctorInterventions;
 import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
+import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank1;
 import com.prisma.pojo.OutcomeStats;
@@ -567,5 +568,24 @@ public class PrismaService {
 			e.getStackTrace();
 		}
 		return retVal;
+	}
+	
+	@GET
+	@Path("/mortality")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Mortality mortality(@QueryParam("patientId") String patientId) {
+		Mortality patientMortality =null;
+		try {
+			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("mortality  patientId="+patientId);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			patientMortality 			= prismaManager.mortality(patientId);
+			
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return patientMortality;
 	}
 }
