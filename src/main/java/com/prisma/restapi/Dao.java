@@ -33,8 +33,8 @@ public class Dao {
 	public Session getSession() throws Exception {
 		try{
 			if(this.session==null){
-				//connect("deepc04.acis.ufl.edu",9042);
-				connect("localhost",9042);
+				connect("deepc04.acis.ufl.edu",9042);
+				//connect("localhost",9042);
 			}				
 		}
 		catch(Exception e){

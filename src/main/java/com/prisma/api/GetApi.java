@@ -15,7 +15,8 @@ import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank;
 import com.prisma.pojo.PatientDetails;
-import com.prisma.pojo.OutcomeRankRifle7;
+import com.prisma.pojo.PatientRecord;
+import com.prisma.pojo.OutcomeRankFeature;
 import com.prisma.pojo.ReviewResult;
 import com.prisma.pojo.RiskAssessment;
 import com.prisma.restapi.PrismaManager;
@@ -28,20 +29,23 @@ public class GetApi {
 		String returnVal = "";
 		//System.out.println("query="+query+" colName="+colName);
 		//System.out.println("query="+query);
-		ResultSet results = session.execute(query);
+		ResultSet results = session.execute(query.toLowerCase());
 		for(Row row: results){
 			returnVal = row.getString(colName);
 		}
 		//System.out.println("<<<<<<returnVal="+returnVal);
+
 		return returnVal;
 	}
 	
 	public ArrayList executeQuery1(Session session, String query, String colName){
 		ArrayList<String> returnVal = new ArrayList<String>();
+		String retVal = "";
 		//System.out.println("query="+query+" colName="+colName);
-		ResultSet results = session.execute(query);
+		ResultSet results = session.execute(query.toLowerCase());
 		for(Row row: results){
-			returnVal.add(row.getString(colName));
+			retVal=row.getString(colName);
+			returnVal.add(retVal);
 		}
 		//System.out.println("<<<<<<returnVal="+returnVal);
 		return returnVal;
@@ -84,7 +88,7 @@ public class GetApi {
 		return noAttempt;
 	}
 	
-	public List patientPrediction(Session session, String doctorId, String patientId){
+	/*public List patientPrediction(Session session, String doctorId, String patientId){
 		int id;
 		List outcomeList = new ArrayList();
 		List ids = new ArrayList();
@@ -103,168 +107,91 @@ public class GetApi {
 		}
 		
 		return outcomeList;
-	}
+	}*/
 	
-	public List patientPrediction(Session session, String doctorId, String patientId, int outcomeId){
+	public List patientPrediction(Session session, String doctorId, String patientId){
 		
 		String outcomeTable="",label="",outcome="";
-		List outcomeRankRifle7List = new ArrayList();
-		ArrayList<OutcomeRankRifle7> outcomeRankRifle7PositiveList = new ArrayList<OutcomeRankRifle7>();//id,var,rank,weight
-		ArrayList<OutcomeRankRifle7> outcomeRankRifle7NegativeList = new ArrayList<OutcomeRankRifle7>();//id,var,rank,weight
-		OutcomeRank outcomeRankPositive = new OutcomeRank();
-		OutcomeRank outcomeRankNegative = new OutcomeRank();
-
-		OutcomeRankRifle7 outcomeRankRifle7 = null;
+		//List outcomeRankRifle7List = new ArrayList();
+		ArrayList<OutcomeRankFeature> outcomeRankFeatureList = new ArrayList<OutcomeRankFeature>();//id,var,rank,weight
+		ArrayList<OutcomeRankFeature> outcomeRankFeatures = new ArrayList<OutcomeRankFeature>();//id,var,rank,weight
+		
+		OutcomeRankFeature outcomeRankFeature = null;
 				
-		String outcomeTableQuery = "select outcome,description from prisma1.outcomes where id="+outcomeId+" allow filtering";
+		/*String outcomeTableQuery = "select outcome,description from prisma1.outcomes where id="+outcomeId+" allow filtering";
 		ResultSet results = session.execute(outcomeTableQuery);
 		for(Row row: results){
 			outcomeTable = row.getString("outcome");
 			label 		 = row.getString("description");			
 		}
-		System.out.println("outcomeTable="+outcomeTable+" label="+label);
+		System.out.println("outcomeTable="+outcomeTable+" label="+label);*/
 		
-		String outcomeQuery = "select outcome from prisma1.outcome_"+outcomeTable+" where id='"+patientId+"'";
-		outcome = executeQuery(session, outcomeQuery,"outcome");
-		System.out.println("outcome="+outcome);
-		
-		String outcomeRankTable = "prisma1.outcomeRank_"+outcomeTable;
-		System.out.println("outcomeRankTable="+outcomeRankTable);
-		
-		//For positive case..
-		String tempViewPositiveQuery = "SELECT * FROM "+outcomeRankTable+" WHERE id='"+patientId+"' AND weight>0 AND rank<=3 order by rank asc allow filtering";
-		results = session.execute(tempViewPositiveQuery);
+		String cvcomppred="", icucomppred="", mvcomppred="", neurodelpred="", proc_wound_pred="", sepsispred="", vtepred="";
+		String riskScores = "select * from prisma1.allriskscores where patient_deiden_id='"+patientId+"' allow filtering";
+		ResultSet results = session.execute(riskScores);
 		for (Row row : results){
-			outcomeRankRifle7 = new OutcomeRankRifle7();
-			outcomeRankRifle7.setId(row.getString("id"));
-			outcomeRankRifle7.setVar(row.getString("var").toLowerCase());
-			outcomeRankRifle7.setRank(row.getInt("rank"));
-			outcomeRankRifle7.setWeight(row.getFloat("weight"));
-			outcomeRankRifle7PositiveList.add(outcomeRankRifle7);
+			cvcomppred = row.getString("cvcomppred");
+			icucomppred = row.getString("icucomppred");
+			mvcomppred = row.getString("mvcomppred");
+			neurodelpred = row.getString("neurodelpred");
+			proc_wound_pred = row.getString("proc_wound_pred");
+			sepsispred = row.getString("sepsispred");
+			vtepred = row.getString("vtepred");
 		}
 		
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7PositiveList){
-			String valueQuery = "SELECT * FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='"+outRankRfile7.getVar()+"'";
-			String value = executeQuery(session, valueQuery,"value");
-			outRankRfile7.setActual(value);
-		}
-		
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7PositiveList){
-			String descriptionQuery = "SELECT * FROM prisma1.varDef WHERE id='"+outRankRfile7.getVar()+"'";
-			String description = executeQuery(session, descriptionQuery,"description");
-			outRankRfile7.setDescription(description);
-		}
-		
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7PositiveList){
-			String descriptionQuery = "SELECT * FROM prisma1.varMap WHERE id='"+outRankRfile7.getVar()+"' and map='"+outRankRfile7.getActual()+"'";
-			String value = executeQuery(session, descriptionQuery,"value");
-			outRankRfile7.setValue(value);
-		}
-		//Finally check pr1 and mdc
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7PositiveList){
+		String impFeatureQuery = "select * from prisma1.impfeatures where patient_deiden_id='"+patientId+"' allow filtering";
+		results = session.execute(impFeatureQuery);
+
+		for (Row row : results){
+			outcomeRankFeature = new OutcomeRankFeature();
+			outcomeRankFeature.setEncounter_deiden_id(row.getString("encounter_deiden_id"));
+			outcomeRankFeature.setPatient_deiden_id(row.getString("patient_deiden_id"));
+			String complicationName = row.getString("complicationname");
+			//outcomeRankFeature.setComplicationname(complicationName);
 			
-			System.out.println("outRankRfile7.getVar()="+outRankRfile7.getVar());
-			if(outRankRfile7.getVar().equalsIgnoreCase("pr1")){
-				String pr1tmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='pr1'";
-				String value = executeQuery(session, pr1tmpQuery,"value");
-				String pr1Description = "";
-				if(!value.isEmpty()){
-					int value1 = Integer.parseInt(value);
-					String pr1Query = "SELECT description FROM prisma1.pr1Map WHERE id='"+value1+"'";
-					pr1Description = executeQuery(session, pr1Query,"description");
-				}
-				outRankRfile7.setPr1Description(pr1Description);
-			}else if(outRankRfile7.getVar().equalsIgnoreCase("mdc")){ 
-				String mdctmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='mdc'";
-				String value = executeQuery(session, mdctmpQuery,"value");
-				String mdcDescription = "";
-				if(!value.isEmpty()){
-					int value1 = Integer.parseInt(value); 
-					String mdcQuery = "SELECT description FROM prisma1.mdcMap WHERE id='"+value1+"'";
-					//System.out.println("<<<<<<<<<<<mdcQuery="+mdcQuery);
-					mdcDescription = executeQuery(session, mdcQuery,"description");
-					//System.out.println("mdcDescription="+mdcDescription);
-				}
-				outRankRfile7.setMdcDescription(mdcDescription);
-			}			
-		}
-		
-		outcomeRankPositive.setOutcomeRankName("outcomeRank"+outcomeTable+"Positive");
-		outcomeRankPositive.setOutcome(outcome);
-		outcomeRankPositive.setLabel(label);
-		outcomeRankPositive.setTable(outcomeTable);
-		outcomeRankPositive.setOutcomeRankPositiveList(outcomeRankRifle7PositiveList);
-		
-		//System.out.println(outcomeRankRifle7List.toString());
-		
-		//For Negative case
-		String tempViewNegativeQuery = "SELECT * FROM "+outcomeRankTable+" WHERE id='"+patientId+"' AND weight<0 ORDER BY rank DESC LIMIT 3 allow filtering";
-		results = session.execute(tempViewNegativeQuery);
-		for (Row row : results){
-			outcomeRankRifle7 = new OutcomeRankRifle7();
-			outcomeRankRifle7.setId(row.getString("id"));
-			outcomeRankRifle7.setVar(row.getString("var").toLowerCase());
-			outcomeRankRifle7.setRank(row.getInt("rank"));
-			outcomeRankRifle7.setWeight(row.getFloat("weight"));
-			outcomeRankRifle7NegativeList.add(outcomeRankRifle7);
-		}
-		
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7NegativeList){
-			String valueQuery = "SELECT * FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='"+outRankRfile7.getVar()+"'";
-			String value = executeQuery(session, valueQuery,"value");
-			outRankRfile7.setActual(value);
-		}
-		
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7NegativeList){
-			String descriptionQuery = "SELECT * FROM prisma1.varDef WHERE id='"+outRankRfile7.getVar()+"'";
-			String description = executeQuery(session, descriptionQuery,"description");
-			outRankRfile7.setDescription(description);
-		}
-		
-		for(OutcomeRankRifle7 outRankRfile7:outcomeRankRifle7NegativeList){
-			String descriptionQuery = "SELECT * FROM prisma1.varMap WHERE id='"+outRankRfile7.getVar()+"' and map='"+outRankRfile7.getActual()+"'";
-			String value = executeQuery(session, descriptionQuery,"value");
-			outRankRfile7.setValue(value);
-		}
-		
-		// Finally check pr1 and mdc
-		for (OutcomeRankRifle7 outRankRfile7 : outcomeRankRifle7NegativeList) {
-			System.out.println("outRankRfile7.getVar() negative="+outRankRfile7.getVar());
-			if (outRankRfile7.getVar().equalsIgnoreCase("pr1")) {
-				String pr1tmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='" + patientId + "' AND feature='pr1'";
-				String value = executeQuery(session, pr1tmpQuery, "value");
-				String pr1Description = "";
-				if(!value.isEmpty()){
-					int value1 = Integer.parseInt(value);
-					String pr1Query = "SELECT description FROM prisma1.pr1Map WHERE id='"+ value1 + "'";
-					pr1Description = executeQuery(session, pr1Query,"description");
-				}
-				outRankRfile7.setPr1Description(pr1Description);
-			} else if (outRankRfile7.getVar().equalsIgnoreCase("mdc")) {
-				String mdctmpQuery = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+ patientId + "' AND feature='mdc'";
-				String value = executeQuery(session, mdctmpQuery, "value");
-				String mdcDescription = "";
-				if(!value.isEmpty()){
-					int value1 = Integer.parseInt(value);
-					String mdcQuery = "SELECT description FROM prisma1.mdcMap WHERE id='"+ value1 + "'";
-					mdcDescription = executeQuery(session, mdcQuery,"description");
-				}
-				outRankRfile7.setMdcDescription(mdcDescription);
+			if(complicationName.equalsIgnoreCase("ICU_duration")){
+				outcomeRankFeature.setRiskScore(icucomppred);
+				outcomeRankFeature.setComplicationname("ICU Admission > 48 hours");
 			}
+			else if(complicationName.equalsIgnoreCase("cardiovasc_comp_comb")){
+				outcomeRankFeature.setRiskScore(cvcomppred);
+				outcomeRankFeature.setComplicationname("Cardiovascular complications");
+			}
+			else if(complicationName.equalsIgnoreCase("neuro_comp_comb")){
+				outcomeRankFeature.setRiskScore(neurodelpred);
+				outcomeRankFeature.setComplicationname("Neurologic complications");
+			}
+			else if(complicationName.equalsIgnoreCase("post_op_mech_proc_comb")){
+				outcomeRankFeature.setRiskScore(mvcomppred);
+				outcomeRankFeature.setComplicationname("Wound complications");
+			}
+			else if(complicationName.equalsIgnoreCase("sepsis_comb")){
+				outcomeRankFeature.setRiskScore(sepsispred);
+				outcomeRankFeature.setComplicationname("Severe sepsis");
+			}
+			else if(complicationName.equalsIgnoreCase("venos_throm_comb")){
+				outcomeRankFeature.setRiskScore(proc_wound_pred);
+				outcomeRankFeature.setComplicationname("Venous thromboembolism");
+			}
+			else if(complicationName.equalsIgnoreCase("vent_duration")){
+				outcomeRankFeature.setRiskScore(vtepred);
+				outcomeRankFeature.setComplicationname("Mechanical Ventilation > 48 hours");
+			}
+			
+			
+			outcomeRankFeature.setTopfeature1(row.getString("topfeature1"));
+			outcomeRankFeature.setTopfeature2(row.getString("topfeature2"));
+			outcomeRankFeature.setTopfeature3(row.getString("topfeature3"));
+			
+			outcomeRankFeature.setBtmfeature1(row.getString("btmfeature1"));
+			outcomeRankFeature.setBtmfeature2(row.getString("btmfeature2"));
+			outcomeRankFeature.setBtmfeature3(row.getString("btmfeature3"));
+			
+			outcomeRankFeatureList.add(outcomeRankFeature);
 		}
 		
-		outcomeRankNegative.setOutcomeRankName("outcomeRank"+outcomeTable+"Negative");
-		outcomeRankNegative.setOutcome(outcome);
-		outcomeRankNegative.setLabel(label);
-		outcomeRankNegative.setTable(outcomeTable);
-		outcomeRankNegative.setOutcomeRankNegativeList(outcomeRankRifle7NegativeList);
-		
-		System.out.println(outcomeRankRifle7NegativeList.toString());
-		
-		outcomeRankRifle7List.add(outcomeRankPositive);
-		outcomeRankRifle7List.add(outcomeRankNegative);
-		
-		return outcomeRankRifle7List;
+		//System.out.println(outcomeRankFeatureList);
+		return outcomeRankFeatureList;
 	}
 	
 	
@@ -275,39 +202,38 @@ public class GetApi {
 		String docName= "";
 		int noOfAttempt=0;
 		String name, age, race, gender, cci, service, admission_type = "";
-		String attend_doc, pr1_temp, pr1, mdcVal, mdc, pr1_day, admit_day, admission_source = "";
+		String attend_doc, pr1_temp, pr1="", mdcVal, mdc="", pr1_day, admit_day, admission_source = "";
 		String combordities, HGB, HCT, PROTUR, GLUURN, HGBUR, noBLOOD, noURINE, cr_base, eGFR_epi,MDRD_Cr ="";
 		String Medications, county, area, med_inc, total, Prop_pov, prop_black, prop_hisp, pay_grp, net_decisions="";
 		
 		String docNameQuery = "select name from prisma1.userinfo where id='"+doctorId+"'";
 		docName = executeQuery(session, docNameQuery,"name");
 		
-		String noOfAttemptQuery = "select count(attempt) as attempt from prisma1.indexPatient where user='"+doctorId+"' allow filtering";
+		String noOfAttemptQuery = "select count(attempt) as attempt from prisma1.indexPatient where user='"+doctorId+"' allow filtering";//
 		ResultSet results = session.execute(noOfAttemptQuery);
 		for(Row row: results){
 			noOfAttempt= (int)row.getLong("attempt");
 		}
 		//System.out.println("noOfAttempt="+noOfAttempt);	
-		
-		String ageQuery = "select value from prisma1.patientdetails where id='"+patientId+"' and feature='age'";
+		String ageQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='age' allow filtering";//
 		age = executeQuery(session, ageQuery,"value");
 		//System.out.println("age="+age);	
 		
-		String raceQuery1 = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='race'";
+		String raceQuery1 = "SELECT VALUE FROM prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND feature='race' allow filtering";//
 		String map_tmp = executeQuery(session, raceQuery1,"value");
 		String raceQuery = "SELECT VALUE FROM prisma1.varMap WHERE id= 'race' AND map='"+map_tmp+"'";
 		race = executeQuery(session, raceQuery,"value");
 		//System.out.println("race="+race);
 		
-		String genderQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='gender'";
+		String genderQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='sex' allow filtering";//
 		gender = executeQuery(session, genderQuery,"value");
 		//System.out.println("gender:"+gender);
 		
-		String cciQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='cci'";
+		String cciQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='cci' allow filtering";//
 		cci = executeQuery(session, cciQuery,"value");
 		//System.out.println("cci:"+cci);
 		
-		if(Integer.parseInt(cci)==0){
+		if(cci!=null && Integer.parseInt(cci)==0){
 			combordities = "with <b>no known combordities</b>";
 		}
 		else{		
@@ -315,66 +241,73 @@ public class GetApi {
 		}
 		//System.out.println("combordities:"+combordities);
 		
-		String serviceQuery = "SELECT value FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='service'";
+		String serviceQuery = "SELECT value FROM prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND feature='service' allow filtering";
 		service = executeQuery(session, serviceQuery,"value");
 		serviceQuery = "SELECT value FROM prisma1.varMap WHERE map='"+service+"' allow filtering";
 		service = executeQuery(session, serviceQuery,"value");	
 		//System.out.println("service:"+service);
 		
-		String admissionTypeQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='admission_type'";
+		String admissionTypeQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='admitting_type' allow filtering";//
 		admission_type = executeQuery(session, admissionTypeQuery,"value");
 		//System.out.println("admissionType:"+admission_type);
 		
-		String attend_docQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='attend_doc'";
+		String attend_docQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='attend_doc' allow filtering";//
 		attend_doc = executeQuery(session, attend_docQuery,"value");
 		//System.out.println("attend_doc:"+attend_doc);
 		
-		String pr1_tempQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='pr1'";
+		String pr1_tempQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='pr1' allow filtering";
 		pr1_temp = executeQuery(session, pr1_tempQuery,"value");		
 		
-		String pr1Query = "select description from prisma1.pr1Map where id='"+pr1_temp+"'";
-		pr1 = executeQuery(session, pr1Query,"description");
-		//System.out.println("pr1:"+pr1);
+		if(!pr1_temp.isEmpty()){
+			String pr1Query = "select description from prisma1.pr1Map where id='"+pr1_temp+"'";
+			pr1 = executeQuery(session, pr1Query,"description");
+			//System.out.println("pr1:"+pr1);
+		}
 		
-		String mdcValQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='mdc'";
+		
+		String mdcValQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='mdc' allow filtering";
 		mdcVal = executeQuery(session, mdcValQuery,"value");
-		mdcVal = Integer.parseInt(mdcVal)+"";
-		//System.out.println("mdcVal:"+mdcVal);
+		System.out.println("mdcVal:"+mdcVal);
+		if(mdcVal!=null && !mdcVal.isEmpty()){
+			mdcVal = Integer.parseInt(mdcVal)+"";
+			//System.out.println("mdcVal:"+mdcVal);
+			
+			String MDCQuery = "select description from prisma1.mdcMap where id='"+mdcVal+"'";
+			mdc = executeQuery(session, MDCQuery,"description");
+			//System.out.println("mdc:"+mdc);
+		}
 		
-		String MDCQuery = "select description from prisma1.mdcMap where id='"+mdcVal+"'";
-		mdc = executeQuery(session, MDCQuery,"description");
-		//System.out.println("mdc:"+mdc);
 		
-		String pr1_dayQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='pr1_day'";
+		String pr1_dayQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='pr1_day' allow filtering";
 		pr1_day = executeQuery(session, pr1_dayQuery,"value");			
-		if(Integer.parseInt(pr1_day)==0)pr1_day="Today";
+		if(pr1_day!=null && !pr1_day.isEmpty() && Integer.parseInt(pr1_day)==0)pr1_day="Today";
 		else pr1_day=pr1_day+" day(s) ago";
 		//System.out.println("pr1_day:"+pr1_day);
 		
-		String admit_dayQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='admit_day'";
+		String admit_dayQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='admit_day' allow filtering";//
 		admit_day = executeQuery(session, admit_dayQuery,"value");
 		//System.out.println("admit_day:"+admit_day);
 		
-		String admission_sourceQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='admission_source'";
+		String admission_sourceQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='admission_source' allow filtering";//
 		admission_source = executeQuery(session, admission_sourceQuery,"value");
 		//System.out.println("admission_source:"+admission_source);
 		
 		
-		String HGBQueryQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='hgb'";
+		String HGBQueryQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='hgb' allow filtering";
 		HGB = executeQuery(session, HGBQueryQuery,"value");
 		if(HGB.isEmpty())
 			HGB="Not Measured";
 		else HGB = HGB + " g/dl";		
 		//System.out.println("HGB:"+HGB);
 		
-		String HCTQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='hct'";
+		String HCTQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='hct' allow filtering";
 		HCT = executeQuery(session, HCTQuery,"value");
 		if(HCT.isEmpty())
 			HCT="Not Measured";
 		else HCT = HCT + " %";
 		//System.out.println("HCT:"+HCT);
 		
-		String PROTURTmpQuery = "SELECT value FROM  prisma1.patientDetails WHERE id='"+patientId+"' AND feature='protur'";
+		String PROTURTmpQuery = "SELECT value FROM  prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND feature='protur' allow filtering";
 		String PROTUR_tmp = executeQuery(session, PROTURTmpQuery,"value");
 		String PROTURQuery = "SELECT value FROM prisma1.varMap WHERE map='"+PROTUR_tmp+"' AND id='protur'";
 		PROTUR = executeQuery(session, PROTURQuery,"value");
@@ -382,7 +315,7 @@ public class GetApi {
 			PROTUR="Not Measured";
 		//System.out.println("PROTUR:"+PROTUR);
 		
-		String GLUURNTmpQuery = "SELECT VALUE FROM  prisma1.patientDetails WHERE id='"+patientId+"' AND feature='gluurn'";
+		String GLUURNTmpQuery = "SELECT VALUE FROM  prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND feature='gluurn' allow filtering";
 		String GLUURNT_tmp = executeQuery(session, GLUURNTmpQuery,"value");
 		String GLUURNQuery = "SELECT VALUE FROM prisma1.varMap WHERE map='"+GLUURNT_tmp+"' AND id='gluurn'";
 		GLUURN = executeQuery(session, GLUURNQuery,"value");
@@ -390,7 +323,7 @@ public class GetApi {
 			GLUURN="Not Measured";
 		//System.out.println("GLUURN:"+GLUURN);
 		
-		String HGBURTmpQuery = "SELECT VALUE FROM  prisma1.patientDetails WHERE id='"+patientId+"' AND feature='hgbur'";
+		String HGBURTmpQuery = "SELECT VALUE FROM  prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND feature='hgbur' allow filtering";
 		String HGBUR_tmp = executeQuery(session, HGBURTmpQuery,"value");
 		String HGBURQuery = "SELECT VALUE FROM prisma1.varMap WHERE map='"+HGBUR_tmp+"' AND id='hgbur'";
 		HGBUR = executeQuery(session, HGBURQuery,"value");
@@ -398,31 +331,31 @@ public class GetApi {
 			HGBUR="Not Measured";
 		//System.out.println("HGBUR:"+HGBUR);
 		
-		String noBloodQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='noblood'";
+		String noBloodQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='noblood' allow filtering";
 		noBLOOD = executeQuery(session, noBloodQuery,"value");		
 		if(noBLOOD.isEmpty() || Integer.parseInt(noBLOOD)==0)noBLOOD="no CBC analysis";
 		else noBLOOD = noBLOOD+" blood tests";
 		//System.out.println("noBLOOD:"+noBLOOD);
 		
-		String noUrineQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='nourine'";
+		String noUrineQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='nourine' allow filtering";
 		noURINE = executeQuery(session, noUrineQuery,"value");
 		if(noURINE.isEmpty() || Integer.parseInt(noURINE)==0)noURINE="no CBC analysis";
 		else noURINE = noURINE+" urine tests";
 		//System.out.println("noURINE:"+noURINE);
 		
-		String cr_baseQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='cr_base'";
+		String cr_baseQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='cr_base' allow filtering";
 		cr_base = executeQuery(session, cr_baseQuery,"value");
 		//System.out.println("cr_base:"+cr_base);
 		
-		String eGFR_epiQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='egfr_epi'";
+		String eGFR_epiQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='egfr_epi' allow filtering";
 		eGFR_epi = executeQuery(session, eGFR_epiQuery,"value");
 		//System.out.println("eGFR_epi:"+eGFR_epi);
 		
-		String MDRD_CrQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='mdrd_cr'";
+		String MDRD_CrQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='mdrd_cr' allow filtering";
 		MDRD_Cr = executeQuery(session, MDRD_CrQuery,"value");
 		//System.out.println("MDRD_Cr:"+MDRD_Cr);
 		
-		String MedicationsQuery = "SELECT feature FROM  prisma1.patientDetails WHERE id='"+patientId+"' AND VALUE='1' allow filtering";
+		String MedicationsQuery = "SELECT feature FROM  prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND VALUE='1' allow filtering";
 		//System.out.println(MedicationsQuery);
 		results = session.execute(MedicationsQuery); 
 		ArrayList<String> medicationTmp = new ArrayList<String>();
@@ -454,41 +387,41 @@ public class GetApi {
 		
 		//System.out.println("Medications:"+Medications);
 		
-		String countyQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='county'";
+		String countyQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='county' allow filtering";
 		county = executeQuery(session, countyQuery,"value");
 		//System.out.println("county:"+county);
 		
-		String areaQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='area'";
+		String areaQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='area' allow filtering";
 		area = executeQuery(session, areaQuery,"value");
 		//System.out.println("area:"+area);
 		
-		String med_incQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='med_inc'";
+		String med_incQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='med_inc' allow filtering";
 		med_inc = executeQuery(session, med_incQuery,"value");
 		//System.out.println("med_inc:"+med_inc);
 		
-		String totalQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='total'";
+		String totalQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='total' allow filtering";
 		total = executeQuery(session, totalQuery,"value");
 		//System.out.println("total:"+total);
 		
-		String Prop_povQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='prop_pov'";
+		String Prop_povQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='prop_pov' allow filtering";
 		Prop_pov = executeQuery(session, Prop_povQuery,"value");
 		if(!Prop_pov.isEmpty())
 			Prop_pov = Float.parseFloat(Prop_pov)*100+"";
 		//System.out.println("Prop_pov:"+Prop_pov);
 		
-		String prop_blackQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='prop_black'";
+		String prop_blackQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='prop_black' allow filtering";
 		prop_black = executeQuery(session, prop_blackQuery,"value");
 		if(!prop_black.isEmpty())
 			prop_black = Float.parseFloat(prop_black)*100+"";
 		//System.out.println("prop_black:"+prop_black);
 		
-		String prop_hispQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='prop_hisp'";
+		String prop_hispQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='prop_hisp' allow filtering";
 		prop_hisp = executeQuery(session, prop_hispQuery,"value");
 		if(!prop_hisp.isEmpty())
 			prop_hisp= Float.parseFloat(prop_hisp)*100+"";
 		//System.out.println("prop_hisp:"+prop_hisp);
 		
-		String pay_grpTmpQuery = "SELECT value FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='pay_grp'";
+		String pay_grpTmpQuery = "SELECT value FROM prisma1.patientdetailstemp WHERE patient_id='"+patientId+"' AND feature='pay_grp' allow filtering";
 		String pay_grp_tmp = executeQuery(session, pay_grpTmpQuery,"value");
 		String pay_grpQuery = "SELECT value FROM prisma1.varMap WHERE id='pay_grp' AND map='"+pay_grp_tmp+"'";
 		pay_grp = executeQuery(session, pay_grpQuery,"value");
@@ -529,7 +462,8 @@ public class GetApi {
 	public ArrayList<PatientDetails> getPatientDetail(Session session, String doctorId) {
 		
 		ResultSet results = null;
-		ArrayList<String> patientID = new ArrayList<String>();
+		ArrayList<String> encounterIds = new ArrayList<String>();
+		ArrayList<String> patientIDs = new ArrayList<String>();
 		ArrayList<String> patientSummary = new ArrayList<String>();
 		ArrayList<PatientDetails> patientDetailsList = new ArrayList<PatientDetails>();
 		PatientDetails patientDetails = null;
@@ -542,11 +476,14 @@ public class GetApi {
 		String docName  = executeQuery(session, docNameQuery,"name");			
 		//System.out.println("docName="+docName);
 		
-		//doctorId = "raj";		
-		String patentIdQuery = "select id from prisma1.patientdetails where feature='attend_doc' and value='"+doctorId+"' allow filtering";
+		//doctorId = "raj";		select * from patientdetailstemp where feature='attend_doc' allow filtering;
+		String patentIdQuery = "select encounter_id, patient_id from prisma1.patientdetailstemp where feature='attend_doc' and value='"+doctorId+"' allow filtering";//
 		//System.out.println("query2="+patentIdQuery);
-		patientID = executeQuery1(session,patentIdQuery,"id");		
-		System.out.println("patientID=" + patientID);
+		encounterIds = executeQuery1(session, patentIdQuery, "encounter_id");		
+		System.out.println("encounterIds=" + encounterIds);
+		
+		patientIDs = executeQuery1(session, patentIdQuery, "patient_id");		
+		System.out.println("patientIDs=" + patientIDs);
 		
 		//System.out.println("patientID=" + patientID.get(0));
 		
@@ -555,49 +492,52 @@ public class GetApi {
 		String name, age, race, gender, cci, service, admission_type = "";
 		String attend_doc, pr1_temp, pr1, mdcVal, mdc, pr1_day, admit_day, admission_source = "";
 		String combordities="";
+		int patientIdx=0;
 		
-		for(String patientId:patientID){
+		for(String encounterId:encounterIds){
 			
-			String nameQuery = "select value from prisma1.patientdetails where id='"+patientId+"' and feature = 'name'";
-			name = executeQuery(session, nameQuery,"value");
+			//String nameQuery = "select value from prisma1.patientdetails where id='"+encounterId+"' and feature = 'name'";
+			//name = executeQuery(session, nameQuery,"value");
 					
-			String ageQuery = "select value from prisma1.patientdetails where id='"+patientId+"' and feature='age'";
+			String ageQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='age'";//
 			age = executeQuery(session, ageQuery,"value");
 			//System.out.println("age="+age);	
 			
-			String raceQuery1 = "SELECT VALUE FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='race'";
+			String raceQuery1 = "SELECT VALUE FROM prisma1.patientdetailstemp WHERE encounter_id='"+encounterId+"' AND feature='race'";//
 			String map_tmp = executeQuery(session, raceQuery1,"value");
+			
 			String raceQuery = "SELECT VALUE FROM prisma1.varMap WHERE id= 'race' AND map='"+map_tmp+"'";
 			race = executeQuery(session, raceQuery,"value");
 						
-			String genderQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='gender'";
+			String genderQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='sex'";//
 			gender = executeQuery(session, genderQuery,"value");			
 			
-			String cciQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='cci'";
+			String cciQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='cci'";//
 			cci = executeQuery(session, cciQuery,"value");
 			//System.out.println("cci:"+cci);
-			
-			if(Integer.parseInt(cci)==0){
+			if(cci!=null && Integer.parseInt(cci)==0){
 				combordities = "with <b>no known combordities</b>";
 			}
 			else{		
 				combordities = "has <b>"+cci+" combordities";
 			}	
 			
-			String serviceQuery = "SELECT value FROM prisma1.patientDetails WHERE id='"+patientId+"' AND feature='service'";
+			/*
+			String serviceQuery = "SELECT value FROM prisma1.patientdetailstemp WHERE encounter_id='"+encounterId+"' AND feature='service'";
 			service = executeQuery(session, serviceQuery,"value");
 			serviceQuery = "SELECT value FROM prisma1.varMap WHERE map='"+service+"' allow filtering";
-			service = executeQuery(session, serviceQuery,"value");			
+			service = executeQuery(session, serviceQuery,"value");	*/		
 			
-			String admissionTypeQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='admission_type'";
+			String admissionTypeQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='admitting_type'";//
 			admission_type = executeQuery(session, admissionTypeQuery,"value");
 			//System.out.println("admissionType:"+admission_type);
 			
-			String attend_docQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='attend_doc'";
+			String attend_docQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='attend_doc'";//
 			attend_doc = executeQuery(session, attend_docQuery,"value");
 			//System.out.println("attend_doc:"+attend_doc);
 			
-			String pr1_tempQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='pr1'";
+			/*
+			String pr1_tempQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='pr1'";
 			pr1_temp = executeQuery(session, pr1_tempQuery,"value");
 			//System.out.println("pr1_temp:"+pr1_temp);
 			
@@ -605,7 +545,7 @@ public class GetApi {
 			pr1 = executeQuery(session, pr1Query,"description");
 			//System.out.println("pr1:"+pr1);
 			
-			String mdcValQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='mdc'";
+			String mdcValQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='mdc'";
 			mdcVal = executeQuery(session, mdcValQuery,"value");
 			mdcVal = Integer.parseInt(mdcVal)+"";
 			
@@ -613,31 +553,38 @@ public class GetApi {
 			mdc = executeQuery(session, MDCQuery,"description");
 			//System.out.println("mdc:"+mdc);
 			
-			String pr1_dayQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='pr1_day'";
+			String pr1_dayQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='pr1_day'";
 			pr1_day = executeQuery(session, pr1_dayQuery,"value");			
 			if(Integer.parseInt(pr1_day)==0)pr1_day="Today";
 			else pr1_day=pr1_day+" day(s) ago";
-			//System.out.println("pr1_day:"+pr1_day);
+			//System.out.println("pr1_day:"+pr1_day);*/
 			
-			String admit_dayQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='admit_day'";
+			String admit_dayQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='admit_day'";//
 			admit_day = executeQuery(session, admit_dayQuery,"value");
 			//System.out.println("admit_day:"+admit_day);
 			
-			String admission_sourceQuery = "select value from prisma1.patientDetails where id='"+patientId+"' and feature='admission_source'";
+			String admission_sourceQuery = "select value from prisma1.patientdetailstemp where encounter_id='"+encounterId+"' and feature='admission_source'";//
 			admission_source = executeQuery(session, admission_sourceQuery,"value");
 			//System.out.println("admission_source:"+admission_source);
 			
+			/*
 			String story = "Your patient is <b>"+name+"</b>, and is <b>"+ age+" year old "+race+" "+gender+" </b> "+ combordities+
 					" . The patient was admitted to hospital <b>"+pr1_day+" </b> on <b>"+admit_day+" </b> from <b>"+admission_source+
 					" </b> setting with primary diagnosis related to <b>"+mdc+"</b> and is scheduled to have a <b>"+
-					admission_type+" "+ service+" "+ pr1+"</b> by <b>Dr."+docName+"</b>.";
+					admission_type+" "+ service+" "+ pr1+"</b> by <b>Dr."+docName+"</b>.";*/
+			
+			String story = "Your patient is <b>"+ age+" year old "+race+" "+gender+" </b> "+ combordities+
+					" . The patient was admitted to hospital on <b>"+admit_day+" </b> from <b>"+admission_source+
+					" </b> setting with primary diagnosis by <b>Dr."+docName+"</b>.";
 			
 			patientSummary.add(story);
 			patientDetails = new PatientDetails();
 			
 			patientDetails.setDoctorId(doctorId);
 			patientDetails.setDoctorName(docName);
-			patientDetails.setPatientId(patientId);
+			patientDetails.setEncounterId(encounterId);
+			patientDetails.setPatientId(patientIDs.get(patientIdx)); 
+			patientIdx++;
 			patientDetails.setStory1(story);
 			
 			patientDetailsList.add(patientDetails);
@@ -762,24 +709,61 @@ public class GetApi {
 		
 		try {
 		Mortality patientMortality =new Mortality();
-		String outcomeTableQuery = "select * from prisma1.mortality where patientid='"+patientId+"'";
+		String outcomeTableQuery = "select * from prisma1.mortalityscores where patient_deiden_id='"+patientId+"' allow filtering";
 		System.out.println(outcomeTableQuery);
 		ResultSet results = session.execute(outcomeTableQuery);
 		
 		patientMortality.setPatientId(patientId);
 		
 		for(Row row: results){
-			patientMortality.setMort_status_30d(row.getFloat("mort_status_30d"));
-			patientMortality.setMort_status_90d(row.getFloat("mort_status_90d"));
-			patientMortality.setMort_status_6m(row.getFloat("mort_status_6m"));
-			patientMortality.setMort_status_1y(row.getFloat("mort_status_1y"));
-			patientMortality.setMort_status_2y(row.getFloat("mort_status_2y"));
+			patientMortality.setMort_status_30d(row.getString("mort_status_30d"));
+			patientMortality.setMort_status_90d(row.getString("mort_status_90d"));
+			patientMortality.setMort_status_6m(row.getString("mort_status_6m"));
+			patientMortality.setMort_status_1y(row.getString("mort_status_1y"));
+			patientMortality.setMort_status_2y(row.getString("mort_status_2y"));
 		}
-		
+		//System.out.println(patientMortality);
 		return patientMortality;
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 			throw e;
 		}
+	}
+
+	public PatientRecord getPatienRecords(Session session, String patientId) throws Exception {
+		try {
+			PatientRecord patientRecords =new PatientRecord();
+			patientRecords.setPatientid(patientId);
+			
+			String medDataQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='meddata' allow filtering";
+			System.out.println(medDataQuery);
+			ResultSet results = session.execute(medDataQuery);
+						
+			for(Row row: results){
+				patientRecords.setMeddata(row.getString("value"));
+			}
+			
+			String labDataQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='labdata' allow filtering";
+			System.out.println(labDataQuery);
+			results = session.execute(labDataQuery);
+						
+			for(Row row: results){
+				patientRecords.setLabdata(row.getString("value"));
+			}
+			
+			String dgnDataQuery = "select value from prisma1.patientdetailstemp where patient_id='"+patientId+"' and feature='dgnData' allow filtering";
+			System.out.println(dgnDataQuery);
+			results = session.execute(dgnDataQuery);
+						
+			for(Row row: results){
+				patientRecords.setDgndata(row.getString("value"));
+			}
+			
+			System.out.println(patientRecords);
+			return patientRecords;
+			} catch (Exception e) {
+				e.printStackTrace(System.out);
+				throw e;
+			}
 	}
 }

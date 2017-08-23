@@ -37,6 +37,7 @@ import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank1;
 import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.PatientDetails;
+import com.prisma.pojo.PatientRecord;
 import com.prisma.pojo.Reco;
 import com.prisma.pojo.RecoCase;
 import com.prisma.pojo.RecoTaken;
@@ -587,5 +588,25 @@ public class PrismaService {
 			e.getStackTrace();
 		}
 		return patientMortality;
+	}
+	
+	@GET
+	@Path("/patientRecords")
+	@Produces(MediaType.APPLICATION_JSON)
+	public PatientRecord patienRecords(@QueryParam("patientId") String patientId) {
+		
+		PatientRecord patientRecords = null;
+		try {
+			logger.debug("patientRecords");
+			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			patientRecords 			= prismaManager.getPatienRecords(patientId);
+			
+		} catch (Exception e) {
+			System.out.println("error");
+			e.getStackTrace();
+		}
+		return patientRecords;
 	}
 }

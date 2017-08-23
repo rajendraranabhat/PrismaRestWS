@@ -6,6 +6,7 @@ public class PatientDetails {
 	
 	private String doctorId;
 	private String doctorName;
+	private String encounterId;
 	private String patientId;
 	private String story1;
 	private String story2;
@@ -47,4 +48,11 @@ public class PatientDetails {
 	public void setLabels(HashMap<Integer, String> labels) {
 		this.labels = labels;
 	}
+	public String getEncounterId() {
+		return encounterId;
+	}
+	public void setEncounterId(String encounterId) {
+		this.encounterId = encounterId;
+	}
+	
 }

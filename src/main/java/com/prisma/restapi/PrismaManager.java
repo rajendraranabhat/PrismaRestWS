@@ -16,6 +16,7 @@ import com.prisma.pojo.OutComeResult;
 import com.prisma.pojo.OutcomeRank1;
 import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.PatientDetails;
+import com.prisma.pojo.PatientRecord;
 import com.prisma.pojo.Reco;
 import com.prisma.pojo.RecoCase;
 import com.prisma.pojo.RecoTaken;
@@ -128,7 +129,7 @@ public class PrismaManager {
 		return outcomeRank;
 	}
 
-	public List patientPrediction(String doctorId, String patientId, int outcomeId) throws Exception {
+	/*public List patientPrediction(String doctorId, String patientId, int outcomeId) throws Exception {
 
 		// ArrayList<PatientDetails> patientDetails = null;
 		List outcomeRank = null;
@@ -147,7 +148,7 @@ public class PrismaManager {
 				dao.close();
 		}
 		return outcomeRank;
-	}
+	}*/
 
 	public PatientDetails onePatient(String doctorId, String patientId) throws Exception {
 
@@ -534,5 +535,24 @@ public class PrismaManager {
 				dao.close();
 		}
 		return patientMortality;
+	}
+
+	public PatientRecord getPatienRecords(String patientId) throws Exception {
+		PatientRecord patientRecords =null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			patientRecords = api.getPatienRecords(session, patientId);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return patientRecords;
 	}
 }
