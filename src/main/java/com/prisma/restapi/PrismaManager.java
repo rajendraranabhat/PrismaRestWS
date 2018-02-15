@@ -16,6 +16,7 @@ import com.prisma.pojo.OutComeResult;
 import com.prisma.pojo.OutcomeRank1;
 import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.PatientDetails;
+import com.prisma.pojo.PatientDetailsRaw;
 import com.prisma.pojo.PatientRecord;
 import com.prisma.pojo.Reco;
 import com.prisma.pojo.RecoCase;
@@ -23,6 +24,7 @@ import com.prisma.pojo.RecoTaken;
 import com.prisma.pojo.ReviewResult;
 import com.prisma.pojo.RiskAssessment;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -554,5 +556,43 @@ public class PrismaManager {
 				dao.close();
 		}
 		return patientRecords;
+	}
+	
+	public boolean uploadDoctorAgreement(InputStream uploadedInputStream, String fileName) throws Exception {
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.uploadDoctorAgreement(session, uploadedInputStream, fileName);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+
+		return isSuccess;
+	}
+
+	public ArrayList<PatientDetailsRaw> OnePatientDetailsRaw(String patientId) throws Exception {
+		ArrayList<PatientDetailsRaw> patientDetailsRaw =null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			patientDetailsRaw = api.getPatientDetailsRaw(session, patientId);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return patientDetailsRaw;
 	}
 }

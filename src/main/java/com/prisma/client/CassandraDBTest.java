@@ -3,6 +3,7 @@ package com.prisma.client;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import com.prisma.pojo.Mortality;
 import com.prisma.pojo.PatientRecord;
 import com.prisma.restapi.PrismaManager;
 
@@ -35,10 +36,18 @@ public class CassandraDBTest {
 	
 	public static void getMortality() throws Exception{
 		PrismaManager manager = new PrismaManager();
-		manager.mortality("3496");
+		Mortality mort = manager.mortality("3496");
+		System.out.println(mort.getMort_status_30d());
+		
 	}
 	
-	public static void main(String[] args) throws Exception {		
+	public static void getPatientRaw() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		manager.OnePatientDetailsRaw("5059");
+	}
+	
+	public static void main(String[] args) throws Exception {
+		//getPatientDetails();
 		//onePatient();
 		//patientPrediction();
 		//getPatienRecords();
@@ -46,6 +55,7 @@ public class CassandraDBTest {
 		//Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		//System.out.println(timestamp.toString());
 		//System.out.println(new Timestamp(new Date().getTime()));
+		//getPatientRaw();
 	}
 
 }

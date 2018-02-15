@@ -148,7 +148,7 @@ public class CassandraDemo {
 		
 	public static void main(String[] args) {
 		CassandraDemo client = new CassandraDemo();
-		client.connect("deepc04.acis.ufl.edu",9042);
+		client.connect("anest-dl02.ahc.ufl.edu",9042);
 		//client.createSchema();
 		//client.loadData();
 		//client.printResults();

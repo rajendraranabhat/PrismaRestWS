@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.prisma.api.GetApi;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
+import com.prisma.pojo.PatientDetailsRaw;
 import com.prisma.pojo.RiskAssessment;
 
 public class CassandraTest {
@@ -118,6 +119,22 @@ public class CassandraTest {
 			System.out.println("error");
 		}
 	}
+	
+	public static void getPatientDetailRaw(String patientId) {
+		ArrayList<PatientDetailsRaw> patientDetailsRaw = null;
+		Gson gson = new Gson();
+		try {
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			patientDetailsRaw 			= prismaManager.OnePatientDetailsRaw(patientId);
+			
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+		
+		System.out.println(gson.toJson(patientDetailsRaw));
+	}
 
 	public static void main(String[] args) throws Exception {
 		// getScores();
@@ -125,6 +142,7 @@ public class CassandraTest {
 		// updateICUOutCome();
 		//testCql();
 		//getRiskAssessment();
-		getMortality();
+		//getMortality();
+		getPatientDetailRaw("7160");
 	}
 }

@@ -16,12 +16,12 @@ public class JerseyClientGet {
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patients?doctorId=raj";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientDetails?doctorId=raj&patientId=BB3XEDJ201";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=raj&patientId=BB3XEDJ201&outcomeId=1";
-			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=raj&patientId=BB3XEDJ201";
+			String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=5923&patientId=4881";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/reviewResults?outcomeID=1";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/noOfAttempt?user=raj";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/getRiskAssessment?doctorId=raj&patientId=A1F40528";
-			//String url="http://localhost:8081/PrismaRestWS/rest/WebService/mortality?patientId=A1F42085";
-			String url="http://localhost:8081/PrismaRestWS/rest/WebService/patienRecords?patientId=3496";
+			//String url="http://localhost:8081/PrismaRestWS/rest/WebService/mortality?patientId=826";
+			//String url="http://localhost:8081/PrismaRestWS/rest/WebService/patienRecords?patientId=3496";
 			
 			WebResource webResource = client.resource(url);
 

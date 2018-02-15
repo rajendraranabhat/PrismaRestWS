@@ -1,5 +1,9 @@
 package com.prisma.api;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,7 +40,7 @@ public class InsertdateApi {
 	 * session.execute("update prisma1.outcome_icu set outcome = '"
 	 * +outcome+"' where id = '"+id+"'"); //ResultSet results =
 	 * session.execute("select id, outcome from prisma1.outcome_icu");
-	 * System.out.println("results="+ results);
+	 * logger.debug("results="+ results);
 	 * 
 	 * for (Row row : results) { System.out.format("%s %s\n",
 	 * row.getString("id"), row.getString("outcome")); OutComeICUPojo outcomeICU
@@ -62,7 +66,7 @@ public class InsertdateApi {
 				String insertOutcomeRankQuery = "insert into prisma1.outcomeRank(id,user,feature,outcomeid) "
 						+ "values('"+patientId+"','"+user+"','"+feature+"',"+outcomeId+")";
 				
-				System.out.println(insertOutcomeRankQuery);
+				logger.debug(insertOutcomeRankQuery);
 				session.execute(insertOutcomeRankQuery);
 				
 				isSuccess = true;
@@ -70,7 +74,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -90,7 +94,7 @@ public class InsertdateApi {
 				String insertRecoTableQuery = "insert into prisma1.recotable(id,user,reco) "
 						+ "values('"+patientId+"','"+user+"','"+recoNo+"')";
 				
-				System.out.println(insertRecoTableQuery);
+				logger.debug(insertRecoTableQuery);
 				session.execute(insertRecoTableQuery);
 				
 				isSuccess = true;
@@ -98,7 +102,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -118,7 +122,7 @@ public class InsertdateApi {
 				String insertRecoCaseTableQuery = "insert into prisma1.recoCaseTable(id,user,caseno) "
 						+ "values('"+patientId+"','"+user+"','"+caseNo+"')";
 				
-				System.out.println(insertRecoCaseTableQuery);
+				logger.debug(insertRecoCaseTableQuery);
 				session.execute(insertRecoCaseTableQuery);
 				
 				isSuccess = true;
@@ -126,7 +130,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -148,14 +152,14 @@ public class InsertdateApi {
 		
 			String insertoutcomeStatsQuery = "insert into prisma1.outcomeStats(user,id,outcomeid,timescreen1,timescreen2,click1,click2) "
 					+ "values('"+user+"','"+patientId+"',"+outcomeId+","+timeScreen1+","+timeScreen2+","+click1+","+click2+")";
-			System.out.println(insertoutcomeStatsQuery);
+			logger.debug(insertoutcomeStatsQuery);
 			session.execute(insertoutcomeStatsQuery);
 			
 			isSuccess = true;
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -173,14 +177,14 @@ public class InsertdateApi {
 			
 		
 			String insertRecoTakenQuery = "insert into prisma1.recoTakenTable(id,user,reco) values('"+patientId+"','"+user+"','"+reco+"')";
-			System.out.println(insertRecoTakenQuery);
+			logger.debug(insertRecoTakenQuery);
 			session.execute(insertRecoTakenQuery);
 			
 			isSuccess = true;
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -201,7 +205,7 @@ public class InsertdateApi {
 		
 				
 				String outcomeResultQuery = "insert into prisma1.outcomeResult(user,id,outcomeID,attempt1,attempt2) values('"+user+"','"+patientId+"',"+outcomeId+","+attempt1+","+attempt2+")";
-				System.out.println(outcomeResultQuery);
+				logger.debug(outcomeResultQuery);
 				session.execute(outcomeResultQuery);
 				
 				isSuccess = true;
@@ -209,7 +213,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -226,14 +230,14 @@ public class InsertdateApi {
 			float timeScreen = indexPatient.getTimeScreen();
 			
 			String indePatientQuery = "insert into prisma1.indexPatient(id,user,attempt,timescreen) values('"+patientId+"','"+user+"',"+noAttempt+","+timeScreen+")";
-			System.out.println(indePatientQuery);
+			logger.debug(indePatientQuery);
 			session.execute(indePatientQuery);
 			
 			isSuccess = true;
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 		}
 		return isSuccess;
@@ -256,13 +260,13 @@ public class InsertdateApi {
 			//String email      = doctorRegistration.getEmail();
 			//String phone      = doctorRegistration.getPhone();
 			
-			System.out.println("userName:" + userName+" password:"+password+" gender:"+gender+" age: "+age+" role:"+role+" speciality:"+
+			logger.debug("userName:" + userName+" password:"+password+" gender:"+gender+" age: "+age+" role:"+role+" speciality:"+
 							    speciality+" experience:"+experience+" name:"+name);			
 			
 			String insertQuery = "insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality) "
 					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"')";
 			
-			System.out.println(insertQuery);
+			logger.debug(insertQuery);
 			
 			session.execute(insertQuery);
 			
@@ -270,7 +274,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 			throw e;
 		}
@@ -285,12 +289,12 @@ public class InsertdateApi {
 			ArrayList<String> questions = doctorRegistration.getQuestions();
 			int questLen = questions.size();
 
-			System.out.println("userName: " + userName);
-			System.out.println("questions: " + questions);
+			logger.debug("userName: " + userName);
+			logger.debug("questions: " + questions);
 
 			for (int i = 0; i < questLen; i++) {
-				// System.out.println(i+": "+questions.get(i));
-				// System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+				// logger.debug(i+": "+questions.get(i));
+				// logger.debug("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
 				session.execute("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"
 						+ userName + "'," + i + ",'" + questions.get(i) + "')");
 			}
@@ -299,7 +303,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 			throw e;
 		}
@@ -325,21 +329,21 @@ public class InsertdateApi {
 			//int riskAssessmentsType = riskAssessmentType; //1==initialrisktype; 2==finalrisktype
 			
 			Timestamp modifiedtime = new Timestamp(System.currentTimeMillis());
-			//System.out.println(timestamp);
-			//System.out.println(new Timestamp(new Date().getTime()));
+			//logger.debug(timestamp);
+			//logger.debug(new Timestamp(new Date().getTime()));
 			
-			System.out.println("docName: " + docId);
-			System.out.println("patientId: " + patientId);
+			logger.debug("docName: " + docId);
+			logger.debug("patientId: " + patientId);
 			
-			//System.out.println(i+": "+questions.get(i));
-			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+			//logger.debug(i+": "+questions.get(i));
+			//logger.debug("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
 			
 			String insertQuery = "insert into prisma1.riskAssessment(docId, patientId, riskType, rifle7, icu, ventilator, cardiovascular, sepsis,"
 					+ " neurological, venous, wound, modifiedtime, numattempts) values('"
 					+ docId + "','" + patientId + "'," + riskAssessmentType + ","+ rifle7 + "," + icu + "," + ventilator + "," + cardiovascular + "," + sepsis + "," +
 					neurological + "," + venous + "," + wound + ",'" + modifiedtime.toString() + "'," + numAttempts+")";
 			
-			System.out.println(insertQuery);
+			logger.debug(insertQuery);
 			
 			session.execute(insertQuery);
 			
@@ -347,7 +351,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 			throw e;
 		}
@@ -372,17 +376,17 @@ public class InsertdateApi {
 			String reco11 = doctorInterventions.getReco11();
 			String recoOther = doctorInterventions.getRecoOther();
 					
-			System.out.println("docName: " + docId);
-			System.out.println("patientId: " + patientId);
+			logger.debug("docName: " + docId);
+			logger.debug("patientId: " + patientId);
 			
-			//System.out.println(i+": "+questions.get(i));
-			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+			//logger.debug(i+": "+questions.get(i));
+			//logger.debug("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
 			
 			String insertQuery = "insert into prisma1.docInterventions(docId, patientId, reco1, reco2, reco3, reco4, reco5, reco6, reco7, reco8, reco9, reco10, reco11, recoOther) "
 					+ "values('"+ docId + "','" + patientId + "','" + reco1 + "','"+ reco2 + "','" + reco3 + "','" + reco4 + "','" + reco5 + "','" + reco6 + "','" +
 					reco7 + "','" + reco8 + "','" + reco9 + "','" + reco10 + "','" + reco11 + "','" + recoOther + "')";
 			
-			System.out.println(insertQuery);
+			logger.debug(insertQuery);
 			
 			session.execute(insertQuery);
 			
@@ -390,7 +394,7 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 			throw e;
 		}
@@ -412,17 +416,17 @@ public class InsertdateApi {
 			String mitigation8 = doctorMitigation.getMitigation8();
 
 					
-			System.out.println("docName: " + docId);
-			System.out.println("patientId: " + patientId);
+			logger.debug("docName: " + docId);
+			logger.debug("patientId: " + patientId);
 			
-			//System.out.println(i+": "+questions.get(i));
-			//System.out.println("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
+			//logger.debug(i+": "+questions.get(i));
+			//logger.debug("insert into prisma1.doctortestresults(id,quesno,ansdoc) values('"+userName+"',"+i+",'"+questions.get(i)+"')");
 			
 			String insertQuery = "insert into prisma1.docMitigations(docId, patientId, mitigation1, mitigation2, mitigation3, mitigation4, mitigation5, mitigation6, mitigation7, mitigation8) "
 					+ "values('"+ docId + "','" + patientId + "','" + mitigation1 + "','"+ mitigation2 + "','" + mitigation3 + "','" + mitigation4 + "','" + mitigation5
 					+ "','" + mitigation6+"','" + mitigation7+"','" + mitigation8+ "')";
 			
-			System.out.println(insertQuery);
+			logger.debug(insertQuery);
 			
 			session.execute(insertQuery);
 			
@@ -430,9 +434,28 @@ public class InsertdateApi {
 			return isSuccess;
 
 		} catch (Exception e) {
-			System.out.println("Error: " + e.getMessage());
+			logger.debug("Error: " + e.getMessage());
 			e.getStackTrace();
 			throw e;
 		}
+	}
+
+	public boolean uploadDoctorAgreement(Session session, InputStream uploadedInputStream, String fileName) {
+		// TODO Auto-generated method stub
+		try {
+			OutputStream out = new FileOutputStream(new File(fileName));
+			int read = 0;
+			byte[] bytes = new byte[1024];
+
+			out = new FileOutputStream(new File(fileName));
+			while ((read = uploadedInputStream.read(bytes)) != -1) {
+				out.write(bytes, 0, read);
+			}
+			out.flush();
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

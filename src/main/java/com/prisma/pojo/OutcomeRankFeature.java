@@ -2,6 +2,7 @@ package com.prisma.pojo;
 
 public class OutcomeRankFeature {
 
+	private int orderId;
 	private String encounter_deiden_id;
 	private String patient_deiden_id;
 	private String complicationname;
@@ -15,6 +16,14 @@ public class OutcomeRankFeature {
 	private String topfeature3;
 	
 	private String riskScore;
+	
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
 
 	public String getEncounter_deiden_id() {
 		return encounter_deiden_id;

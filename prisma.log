@@ -1,0 +1,1400 @@
+2018-01-08 21:05:35 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-08 21:05:35 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-08 21:05:35 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-08 21:05:35 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-08 21:05:35 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-08 21:05:35 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-08 21:05:35 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-08 21:05:35 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-08 21:05:35 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-08 21:05:35 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-08 21:05:35 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-08 21:05:35 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-08 21:05:35 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-08 21:05:35 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-08 21:05:35 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-08 21:05:35 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-08 21:05:35 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-08 21:05:35 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-08 21:05:35 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-08 21:05:35 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-08 21:05:35 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x93c7aafe5d169a9f (took 7 ms)
+2018-01-08 21:05:35 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-08 21:05:35 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-08 21:05:35 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-08 21:05:35 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-01-08 21:05:35 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-01-08 21:05:38 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-01-08 21:05:38 DEBUG PoolThreadCache:243 - Freed 9 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-01-16 21:26:08 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-16 21:26:08 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-16 21:26:08 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-16 21:26:08 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-16 21:26:08 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-16 21:26:08 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-16 21:26:08 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-16 21:26:08 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-16 21:26:08 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-16 21:26:08 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-16 21:26:08 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-16 21:26:08 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-16 21:26:08 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-16 21:26:08 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-16 21:26:08 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-16 21:26:08 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-16 21:26:08 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-16 21:26:08 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-16 21:26:08 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-16 21:26:08 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-16 21:26:08 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x2202d270dc3e5770 (took 8 ms)
+2018-01-16 21:26:08 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-16 21:26:08 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-16 21:26:08 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-16 21:31:32 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-16 21:31:32 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-16 21:31:32 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-16 21:31:32 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-16 21:31:32 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-16 21:31:32 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-16 21:31:32 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-16 21:31:32 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-16 21:31:32 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-16 21:31:32 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-16 21:31:32 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-16 21:31:32 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-16 21:31:32 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-16 21:31:32 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-16 21:31:32 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-16 21:31:32 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-16 21:31:32 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-16 21:31:32 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-16 21:31:32 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-16 21:31:33 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-16 21:31:33 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x2c2f48c8182b4e5b (took 10 ms)
+2018-01-16 21:31:33 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-16 21:31:33 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-16 21:31:33 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-16 21:34:01 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-16 21:34:01 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-16 21:34:01 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-16 21:34:01 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-16 21:34:01 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-16 21:34:01 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-16 21:34:01 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-16 21:34:01 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-16 21:34:01 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-16 21:34:01 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-16 21:34:01 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-16 21:34:01 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-16 21:34:01 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-16 21:34:01 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-16 21:34:01 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-16 21:34:01 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-16 21:34:01 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-16 21:34:01 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-16 21:34:01 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-16 21:34:01 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-16 21:34:02 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x26fbf4f497461159 (took 7 ms)
+2018-01-16 21:34:02 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-16 21:34:02 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-16 21:34:02 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-16 21:34:02 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-01-16 21:34:02 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-01-16 21:34:05 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-01-16 21:34:05 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-01-16 21:35:27 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-16 21:35:28 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-16 21:35:28 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-16 21:35:28 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-16 21:35:28 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-16 21:35:28 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-16 21:35:28 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-16 21:35:28 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-16 21:35:28 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-16 21:35:28 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-16 21:35:28 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-16 21:35:28 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-16 21:35:28 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-16 21:35:28 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-16 21:35:28 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-16 21:35:28 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-16 21:35:28 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-16 21:35:28 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-16 21:35:28 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-16 21:35:28 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-16 21:35:28 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x23782490edbaaa3a (took 8 ms)
+2018-01-16 21:35:28 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-16 21:35:28 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-16 21:35:28 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-18 14:59:19 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-18 14:59:19 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-18 14:59:19 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-18 14:59:19 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-18 14:59:19 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-18 14:59:19 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-18 14:59:19 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-18 14:59:19 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-18 14:59:19 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-18 14:59:19 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-18 14:59:19 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-18 14:59:19 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-18 14:59:19 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-18 14:59:19 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-18 14:59:19 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-18 14:59:19 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-18 14:59:19 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-18 14:59:19 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-18 14:59:19 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-18 14:59:20 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-18 14:59:20 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xf088f4b4017af1da (took 8 ms)
+2018-01-18 14:59:20 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-18 14:59:20 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-18 14:59:20 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-18 14:59:20 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-01-18 14:59:20 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-01-18 14:59:20 DEBUG GetApi:811 - select * from patientdetails_raw where patient_id='6689' allow filtering
+2018-01-18 14:59:23 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-01-18 14:59:23 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-01-18 14:59:45 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-01-18 14:59:45 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-01-18 14:59:45 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-01-18 14:59:45 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-01-18 14:59:45 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-01-18 14:59:45 DEBUG PlatformDependent:666 - Java version: 8
+2018-01-18 14:59:45 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-01-18 14:59:45 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-01-18 14:59:45 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-01-18 14:59:45 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-01-18 14:59:45 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-01-18 14:59:45 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-01-18 14:59:45 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-01-18 14:59:45 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-01-18 14:59:45 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-01-18 14:59:45 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-01-18 14:59:45 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-01-18 14:59:45 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-01-18 14:59:45 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-01-18 14:59:45 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-01-18 14:59:45 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x76f047db386e1159 (took 7 ms)
+2018-01-18 14:59:45 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-01-18 14:59:45 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-01-18 14:59:45 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-01-18 14:59:45 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-01-18 14:59:45 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-01-18 14:59:46 DEBUG GetApi:811 - select * from prisma1.patientdetails_raw where patient_id='6689' allow filtering
+2018-01-18 14:59:46 DEBUG GetApi:823 - [com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36, com.prisma.pojo.PatientDetailsRaw@1a482e36]
+2018-01-18 14:59:49 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-01-18 14:59:49 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:16:38 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:16:38 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:16:38 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:16:38 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:16:38 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:16:38 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:16:38 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:16:38 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:16:38 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:16:38 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:16:38 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:16:38 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:16:38 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:16:38 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:16:38 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:16:38 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:16:38 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:16:38 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:16:38 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:16:38 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:16:38 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x9cc651028897983e (took 8 ms)
+2018-02-04 14:16:38 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:16:38 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:16:38 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:16:38 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:16:38 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:16:39 DEBUG GetApi:910 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:16:41 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:16:41 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:19:01 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:19:01 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:19:01 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:19:01 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:19:01 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:19:01 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:19:01 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:19:01 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:19:01 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:19:01 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:19:01 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:19:01 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:19:01 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:19:01 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:19:01 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:19:01 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:19:01 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:19:01 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:19:01 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:19:01 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:19:01 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x5a4b9aa7775f6765 (took 8 ms)
+2018-02-04 14:19:01 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:19:01 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:19:01 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:19:02 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:19:02 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:19:03 DEBUG GetApi:910 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:19:05 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:19:05 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:19:56 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:19:56 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:19:56 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:19:56 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:19:56 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:19:56 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:19:56 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:19:56 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:19:56 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:19:56 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:19:56 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:19:56 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:19:56 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:19:56 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:19:56 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:19:56 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:19:56 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:19:56 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:19:56 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:19:56 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:19:56 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x04c6e739282d6379 (took 8 ms)
+2018-02-04 14:19:56 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:19:56 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:19:56 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:19:56 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:19:56 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:19:56 DEBUG GetApi:910 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:19:59 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:19:59 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:24:48 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:24:48 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:24:48 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:24:48 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:24:48 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:24:48 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:24:48 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:24:48 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:24:48 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:24:48 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:24:48 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:24:48 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:24:48 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:24:48 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:24:48 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:24:48 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:24:48 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:24:48 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:24:48 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:24:49 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:24:49 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xa72cde43526d3594 (took 8 ms)
+2018-02-04 14:24:49 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:24:49 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:24:49 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:24:49 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:24:49 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:24:49 DEBUG GetApi:910 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:24:52 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:24:52 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:52:33 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:52:33 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:52:33 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:52:33 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:52:33 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:52:33 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:52:33 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:52:33 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:52:33 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:52:33 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:52:33 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:52:33 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:52:33 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:52:33 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:52:33 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:52:33 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:52:33 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:52:33 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:52:33 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:52:33 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:52:33 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x7a12c186d4fd1769 (took 8 ms)
+2018-02-04 14:52:33 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:52:33 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:52:33 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:52:34 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:52:34 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:52:34 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:52:37 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:52:37 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:54:03 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:54:03 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:54:03 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:54:03 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:54:03 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:54:03 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:54:03 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:54:03 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:54:03 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:54:03 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:54:03 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:54:03 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:54:03 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:54:03 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:54:03 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:54:03 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:54:03 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:54:03 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:54:03 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:54:04 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:54:04 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x30a1a7a05378f2b4 (took 8 ms)
+2018-02-04 14:54:04 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:54:04 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:54:04 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:54:04 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:54:04 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:54:04 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:54:07 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:54:07 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:54:17 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:54:17 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:54:17 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:54:17 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:54:17 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:54:17 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:54:17 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:54:17 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:54:17 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:54:17 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:54:17 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:54:17 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:54:17 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:54:17 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:54:17 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:54:17 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:54:17 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:54:17 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:54:17 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:54:17 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:54:17 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x88724d029d4fc91e (took 8 ms)
+2018-02-04 14:54:17 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:54:17 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:54:17 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:54:17 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:54:17 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:54:17 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:54:17 DEBUG GetApi:927 - featureValue: {u'cpt_8_description': nan, u'sched_trauma_room_y_n': u'N', u'sched_cpt_1_description': u'NOT INCLUDED IN ORIGINAL SOURCE', u'base_procedure_1': u'EXPLORATORY LAPAROTOMY   900001', u'base_procedure_code_10': nan, u'cpt_3': nan, u'cpt_2': nan, u'cpt_1': u'?', u'encounter_deiden_id': u'5059_1', u'cpt_6': nan, u'cpt_5': nan, u'cpt_4': nan, u'cpt_9': nan, u'cpt_8': nan, u'sched_cpt_6_description': nan, u'cpt_1_description': u'NOT INCLUDED IN ORIGINAL SOURCE', u'cpt_10': nan, u'location': u'SUF', u'main_surgeon_deiden_id': 9292, u'cpt_5_description': nan, u'anesthesia_stop_datetime': u'2015/01/10 00:35:00', u'cpt_10_description': nan, u'sched_surgeon_deiden_id': 9292, u'cpt_6_description': nan, u'sched_cpt_5_description': nan, u'site_description': u'South Tower', u'cpt_7': nan, u'surgery_type': u'EMERGENT', u'sched_location': u'GNV SOUTH OR', u'sched_cpt_9_description': nan, u'sched_start_time_char': 2125, u'sched_cpt_3': nan, u'patient_deiden_id': 5059, u'sched_anesthesia_type': u'General', u'sched_service': u'Trauma - Acute Care Surgery', u'sched_cpt_3_description': nan, u'incision_datetime': u'2015/01/09 22:20:00', u'main_anesthesiologist_deiden_id': 4464, u'sched_cpt_1': u'?', u'sched_cpt_10_description': nan, u'sched_cpt_2': nan, u'sched_cpt_5': nan, u'sched_cpt_4': nan, u'sched_cpt_7': nan, u'sched_cpt_6': nan, u'sched_cpt_9': nan, u'sched_cpt_8': nan, u'sched_room': u'ST OR 07', u'base_procedure_code_9': nan, u'base_procedure_code_8': nan, u'cpt_4_description': nan, u'base_procedure_code_3': nan, u'base_procedure_code_2': nan, u'base_procedure_code_1': 900001.0, u'base_procedure_code_7': nan, u'base_procedure_code_6': nan, u'base_procedure_code_5': nan, u'base_procedure_code_4': nan, u'sched_stop_time_char': 2324, u'sched_room_type': u'Main OR - South Tower', u'gi_room_yn': u'N', u'room_start_datetime': u'2015/01/09 22:20:00', u'cpt_9_description': nan, u'sched_surg_service': nan, u'sched_cpt_7_description': nan, u'base_procedure_2': nan, u'base_procedure_3': nan, u'base_procedure_4': nan, u'base_procedure_5': nan, u'base_procedure_6': nan, u'base_procedure_7': nan, u'base_procedure_8': nan, u'base_procedure_9': nan, u'sched_site': u'SORA', u'room_end_datetime': u'2015/01/09 23:41:00', u'sched_patient_class_code': u'SURGERY ADMIT', u'sched_cpt_10': nan, u'cpt_2_description': nan, u'sched_north_south': u'South Tower', u'service': u'Trauma - Acute Care Surgery', u'sched_case_date': u'2015-01-09 00:00:00', u'site': u'SORA', u'base_procedure_10': nan, u'sched_start_datetime': u'2015-01-09 21:25:00', u'sched_base_procedure_code_10': nan, u'sched_cpt_8_description': nan, u'sched_base_procedure_8': nan, u'sched_base_procedure_9': nan, u'sched_base_procedure_2': nan, u'sched_base_procedure_3': nan, u'sched_base_procedure_1': u'EXPLORATORY LAPAROTOMY   900001', u'sched_base_procedure_6': nan, u'sched_base_procedure_7': nan, u'sched_base_procedure_4': nan, u'sched_base_procedure_5': nan, u'anesthesia_start_datetime': u'2015/01/09 22:18:00', u'cpt_3_description': nan, u'sched_base_procedure_code_9': nan, u'sched_base_procedure_code_8': nan, u'nora_yn': u'N', u'sched_base_procedure_code_1': 900001, u'sched_base_procedure_code_3': nan, u'sched_base_procedure_code_2': nan, u'sched_base_procedure_code_5': nan, u'sched_base_procedure_code_4': nan, u'sched_base_procedure_code_7': nan, u'sched_base_procedure_code_6': nan, u'sched_base_procedure_10': nan, u'sched_site_description': u'South Tower', u'sched_post_op_location': u'4WSTICU', u'sched_cpt_4_description': nan, u'cpt_7_description': nan, u'sched_cpt_2_description': nan, u'dressing_datetime': u'2015/01/09 23:11:00', u'case_status': u'Completed', u'case_class': nan, u'room_type': u'Main OR - South Tower'}
+2018-02-04 14:54:17 DEBUG GetApi:933 - [com.prisma.pojo.PatientDetailsRaw@747ddf94, com.prisma.pojo.PatientDetailsRaw@35e2d654, com.prisma.pojo.PatientDetailsRaw@1bd4fdd, com.prisma.pojo.PatientDetailsRaw@55183b20, com.prisma.pojo.PatientDetailsRaw@4f83df68, com.prisma.pojo.PatientDetailsRaw@6cf0e0ba, com.prisma.pojo.PatientDetailsRaw@7d8995e, com.prisma.pojo.PatientDetailsRaw@130d63be, com.prisma.pojo.PatientDetailsRaw@42a48628, com.prisma.pojo.PatientDetailsRaw@293a5bf6, com.prisma.pojo.PatientDetailsRaw@6aeb35e6, com.prisma.pojo.PatientDetailsRaw@1283bb96, com.prisma.pojo.PatientDetailsRaw@74f0ea28, com.prisma.pojo.PatientDetailsRaw@f6efaab, com.prisma.pojo.PatientDetailsRaw@3c19aaa5, com.prisma.pojo.PatientDetailsRaw@3349e9bb, com.prisma.pojo.PatientDetailsRaw@409bf450, com.prisma.pojo.PatientDetailsRaw@38d8f54a, com.prisma.pojo.PatientDetailsRaw@49e53c76, com.prisma.pojo.PatientDetailsRaw@351d00c0, com.prisma.pojo.PatientDetailsRaw@2a3b5b47, com.prisma.pojo.PatientDetailsRaw@55b699ef, com.prisma.pojo.PatientDetailsRaw@35d019a3, com.prisma.pojo.PatientDetailsRaw@689604d9, com.prisma.pojo.PatientDetailsRaw@18078bef, com.prisma.pojo.PatientDetailsRaw@799f10e1, com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf]
+2018-02-04 14:54:20 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:54:20 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:54:43 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:54:43 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:54:43 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:54:43 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:54:43 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:54:43 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:54:43 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:54:43 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:54:43 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:54:43 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:54:43 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:54:43 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:54:43 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:54:43 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:54:43 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:54:43 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:54:43 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:54:43 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:54:43 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:54:43 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:54:43 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x8a9b07b6176e3955 (took 7 ms)
+2018-02-04 14:54:43 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:54:43 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:54:43 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:54:43 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:54:43 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:54:44 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:54:44 DEBUG GetApi:933 - [com.prisma.pojo.PatientDetailsRaw@747ddf94, com.prisma.pojo.PatientDetailsRaw@35e2d654, com.prisma.pojo.PatientDetailsRaw@1bd4fdd, com.prisma.pojo.PatientDetailsRaw@55183b20, com.prisma.pojo.PatientDetailsRaw@4f83df68, com.prisma.pojo.PatientDetailsRaw@6cf0e0ba, com.prisma.pojo.PatientDetailsRaw@7d8995e, com.prisma.pojo.PatientDetailsRaw@130d63be, com.prisma.pojo.PatientDetailsRaw@42a48628, com.prisma.pojo.PatientDetailsRaw@293a5bf6, com.prisma.pojo.PatientDetailsRaw@6aeb35e6, com.prisma.pojo.PatientDetailsRaw@1283bb96, com.prisma.pojo.PatientDetailsRaw@74f0ea28, com.prisma.pojo.PatientDetailsRaw@f6efaab, com.prisma.pojo.PatientDetailsRaw@3c19aaa5, com.prisma.pojo.PatientDetailsRaw@3349e9bb, com.prisma.pojo.PatientDetailsRaw@409bf450, com.prisma.pojo.PatientDetailsRaw@38d8f54a, com.prisma.pojo.PatientDetailsRaw@49e53c76, com.prisma.pojo.PatientDetailsRaw@351d00c0, com.prisma.pojo.PatientDetailsRaw@2a3b5b47, com.prisma.pojo.PatientDetailsRaw@55b699ef, com.prisma.pojo.PatientDetailsRaw@35d019a3, com.prisma.pojo.PatientDetailsRaw@689604d9, com.prisma.pojo.PatientDetailsRaw@18078bef, com.prisma.pojo.PatientDetailsRaw@799f10e1, com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf]
+2018-02-04 14:54:46 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:54:46 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:55:57 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:55:57 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:55:57 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:55:57 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:55:57 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:55:57 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:55:57 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:55:57 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:55:57 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:55:57 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:55:57 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:55:57 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:55:57 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:55:57 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:55:57 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:55:57 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:55:57 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:55:57 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:55:57 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:55:57 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:55:57 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x6c6e65ce755e3275 (took 8 ms)
+2018-02-04 14:55:57 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:55:57 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:55:57 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:55:57 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:55:57 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:55:58 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:55:58 DEBUG GetApi:933 - [com.prisma.pojo.PatientDetailsRaw@747ddf94, com.prisma.pojo.PatientDetailsRaw@35e2d654, com.prisma.pojo.PatientDetailsRaw@1bd4fdd, com.prisma.pojo.PatientDetailsRaw@55183b20, com.prisma.pojo.PatientDetailsRaw@4f83df68, com.prisma.pojo.PatientDetailsRaw@6cf0e0ba, com.prisma.pojo.PatientDetailsRaw@7d8995e, com.prisma.pojo.PatientDetailsRaw@130d63be, com.prisma.pojo.PatientDetailsRaw@42a48628, com.prisma.pojo.PatientDetailsRaw@293a5bf6, com.prisma.pojo.PatientDetailsRaw@6aeb35e6, com.prisma.pojo.PatientDetailsRaw@1283bb96, com.prisma.pojo.PatientDetailsRaw@74f0ea28, com.prisma.pojo.PatientDetailsRaw@f6efaab, com.prisma.pojo.PatientDetailsRaw@3c19aaa5, com.prisma.pojo.PatientDetailsRaw@3349e9bb, com.prisma.pojo.PatientDetailsRaw@409bf450, com.prisma.pojo.PatientDetailsRaw@38d8f54a, com.prisma.pojo.PatientDetailsRaw@49e53c76, com.prisma.pojo.PatientDetailsRaw@351d00c0, com.prisma.pojo.PatientDetailsRaw@2a3b5b47, com.prisma.pojo.PatientDetailsRaw@55b699ef, com.prisma.pojo.PatientDetailsRaw@35d019a3, com.prisma.pojo.PatientDetailsRaw@689604d9, com.prisma.pojo.PatientDetailsRaw@18078bef, com.prisma.pojo.PatientDetailsRaw@799f10e1, com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf]
+2018-02-04 14:56:00 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:56:00 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:56:36 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:56:36 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:56:36 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:56:36 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:56:36 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:56:36 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:56:36 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:56:36 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:56:36 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:56:36 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:56:36 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:56:36 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:56:36 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:56:36 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:56:36 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:56:36 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:56:36 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:56:36 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:56:36 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:56:37 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:56:37 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xa0342c1863e99ae8 (took 8 ms)
+2018-02-04 14:56:37 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:56:37 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:56:37 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:56:37 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:56:37 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:56:37 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:56:37 DEBUG GetApi:933 - [com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf, com.prisma.pojo.PatientDetailsRaw@62379589, com.prisma.pojo.PatientDetailsRaw@4afcd809, com.prisma.pojo.PatientDetailsRaw@175c2241, com.prisma.pojo.PatientDetailsRaw@5bf0d49, com.prisma.pojo.PatientDetailsRaw@5b7a5baa, com.prisma.pojo.PatientDetailsRaw@776aec5c, com.prisma.pojo.PatientDetailsRaw@1d296da, com.prisma.pojo.PatientDetailsRaw@7c7a06ec, com.prisma.pojo.PatientDetailsRaw@75d4a5c2, com.prisma.pojo.PatientDetailsRaw@557caf28, com.prisma.pojo.PatientDetailsRaw@408d971b, com.prisma.pojo.PatientDetailsRaw@6c6cb480, com.prisma.pojo.PatientDetailsRaw@3c46e67a, com.prisma.pojo.PatientDetailsRaw@c730b35, com.prisma.pojo.PatientDetailsRaw@206a70ef, com.prisma.pojo.PatientDetailsRaw@292b08d6, com.prisma.pojo.PatientDetailsRaw@22555ebf, com.prisma.pojo.PatientDetailsRaw@36ebc363, com.prisma.pojo.PatientDetailsRaw@45752059, com.prisma.pojo.PatientDetailsRaw@34e9fd99, com.prisma.pojo.PatientDetailsRaw@3c41ed1d, com.prisma.pojo.PatientDetailsRaw@54d9d12d, com.prisma.pojo.PatientDetailsRaw@38425407, com.prisma.pojo.PatientDetailsRaw@43bc63a3, com.prisma.pojo.PatientDetailsRaw@702657cc, com.prisma.pojo.PatientDetailsRaw@6a6cb05c]
+2018-02-04 14:56:40 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:56:40 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:57:44 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:57:44 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:57:44 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:57:44 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:57:44 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:57:44 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:57:44 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:57:44 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:57:44 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:57:44 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:57:44 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:57:44 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:57:44 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:57:44 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:57:44 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:57:44 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:57:44 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:57:44 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:57:44 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:57:44 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:57:44 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x3b7e4ff767104198 (took 8 ms)
+2018-02-04 14:57:44 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:57:44 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:57:44 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:57:44 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:57:44 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:57:45 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:57:47 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:57:47 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:58:06 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:58:06 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:58:06 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:58:06 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:58:06 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:58:06 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:58:06 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:58:06 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:58:06 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:58:06 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:58:06 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:58:06 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:58:06 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:58:06 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:58:06 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:58:06 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:58:06 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:58:06 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:58:06 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:58:06 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:58:06 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xbf6013c908659ef3 (took 7 ms)
+2018-02-04 14:58:06 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:58:06 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:58:06 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:58:06 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:58:06 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:58:06 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:58:09 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:58:09 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 14:58:53 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 14:58:53 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 14:58:53 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 14:58:53 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 14:58:53 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 14:58:53 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 14:58:53 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 14:58:53 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 14:58:53 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 14:58:53 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 14:58:53 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 14:58:53 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 14:58:53 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 14:58:53 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 14:58:53 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 14:58:53 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 14:58:53 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 14:58:53 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 14:58:53 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 14:58:53 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 14:58:54 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xe76bfd706fc0a276 (took 8 ms)
+2018-02-04 14:58:54 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 14:58:54 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 14:58:54 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 14:58:54 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 14:58:54 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 14:58:54 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 14:58:57 DEBUG PoolThreadCache:243 - Freed 27 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 14:58:57 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 15:01:48 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 15:01:48 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 15:01:48 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 15:01:48 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 15:01:48 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 15:01:48 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 15:01:48 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 15:01:48 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 15:01:48 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 15:01:48 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 15:01:48 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 15:01:48 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 15:01:48 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 15:01:48 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 15:01:48 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 15:01:48 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 15:01:48 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 15:01:48 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 15:01:48 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 15:01:48 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 15:01:48 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x4f88a1424efe23e4 (took 8 ms)
+2018-02-04 15:01:48 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 15:01:48 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 15:01:48 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 15:01:48 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 15:01:48 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 15:01:49 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 15:01:49 DEBUG GetApi:937 - [com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf, com.prisma.pojo.PatientDetailsRaw@62379589, com.prisma.pojo.PatientDetailsRaw@4afcd809, com.prisma.pojo.PatientDetailsRaw@175c2241, com.prisma.pojo.PatientDetailsRaw@5bf0d49, com.prisma.pojo.PatientDetailsRaw@5b7a5baa, com.prisma.pojo.PatientDetailsRaw@776aec5c, com.prisma.pojo.PatientDetailsRaw@1d296da, com.prisma.pojo.PatientDetailsRaw@7c7a06ec, com.prisma.pojo.PatientDetailsRaw@75d4a5c2, com.prisma.pojo.PatientDetailsRaw@557caf28, com.prisma.pojo.PatientDetailsRaw@408d971b, com.prisma.pojo.PatientDetailsRaw@6c6cb480, com.prisma.pojo.PatientDetailsRaw@3c46e67a, com.prisma.pojo.PatientDetailsRaw@c730b35, com.prisma.pojo.PatientDetailsRaw@206a70ef, com.prisma.pojo.PatientDetailsRaw@292b08d6, com.prisma.pojo.PatientDetailsRaw@22555ebf, com.prisma.pojo.PatientDetailsRaw@36ebc363, com.prisma.pojo.PatientDetailsRaw@45752059, com.prisma.pojo.PatientDetailsRaw@34e9fd99, com.prisma.pojo.PatientDetailsRaw@3c41ed1d, com.prisma.pojo.PatientDetailsRaw@54d9d12d, com.prisma.pojo.PatientDetailsRaw@38425407, com.prisma.pojo.PatientDetailsRaw@43bc63a3, com.prisma.pojo.PatientDetailsRaw@702657cc, com.prisma.pojo.PatientDetailsRaw@6a6cb05c]
+2018-02-04 15:01:51 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 15:01:51 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-04 15:02:18 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-04 15:02:18 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-04 15:02:18 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-04 15:02:18 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-04 15:02:18 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-04 15:02:18 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-04 15:02:18 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-04 15:02:18 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-04 15:02:18 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-04 15:02:18 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-04 15:02:18 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-04 15:02:18 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-04 15:02:18 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-04 15:02:18 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-04 15:02:18 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-04 15:02:18 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-04 15:02:18 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-04 15:02:18 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-04 15:02:18 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-04 15:02:19 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-04 15:02:19 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x4ab94df2135068db (took 12 ms)
+2018-02-04 15:02:19 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-04 15:02:19 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-04 15:02:19 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-04 15:02:19 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-04 15:02:19 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-04 15:02:19 DEBUG GetApi:911 - select * from prisma1.patientdetails_raw where patient_id='5059' allow filtering
+2018-02-04 15:02:19 DEBUG GetApi:937 - [com.prisma.pojo.PatientDetailsRaw@747ddf94, com.prisma.pojo.PatientDetailsRaw@35e2d654, com.prisma.pojo.PatientDetailsRaw@1bd4fdd, com.prisma.pojo.PatientDetailsRaw@55183b20, com.prisma.pojo.PatientDetailsRaw@4f83df68, com.prisma.pojo.PatientDetailsRaw@6cf0e0ba, com.prisma.pojo.PatientDetailsRaw@7d8995e, com.prisma.pojo.PatientDetailsRaw@130d63be, com.prisma.pojo.PatientDetailsRaw@42a48628, com.prisma.pojo.PatientDetailsRaw@293a5bf6, com.prisma.pojo.PatientDetailsRaw@6aeb35e6, com.prisma.pojo.PatientDetailsRaw@1283bb96, com.prisma.pojo.PatientDetailsRaw@74f0ea28, com.prisma.pojo.PatientDetailsRaw@f6efaab, com.prisma.pojo.PatientDetailsRaw@3c19aaa5, com.prisma.pojo.PatientDetailsRaw@3349e9bb, com.prisma.pojo.PatientDetailsRaw@409bf450, com.prisma.pojo.PatientDetailsRaw@38d8f54a, com.prisma.pojo.PatientDetailsRaw@49e53c76, com.prisma.pojo.PatientDetailsRaw@351d00c0, com.prisma.pojo.PatientDetailsRaw@2a3b5b47, com.prisma.pojo.PatientDetailsRaw@55b699ef, com.prisma.pojo.PatientDetailsRaw@35d019a3, com.prisma.pojo.PatientDetailsRaw@689604d9, com.prisma.pojo.PatientDetailsRaw@18078bef, com.prisma.pojo.PatientDetailsRaw@799f10e1, com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf]
+2018-02-04 15:02:22 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-04 15:02:22 DEBUG PoolThreadCache:243 - Freed 14 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:03:14 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:03:14 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:03:14 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:03:14 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:03:14 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:03:14 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:03:14 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:03:14 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:03:14 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:03:14 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:03:14 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:03:14 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:03:14 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:03:14 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:03:14 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:03:14 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:03:14 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:03:14 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:03:14 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:03:14 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:03:14 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x5e819c938a7dd12f (took 7 ms)
+2018-02-12 09:03:14 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:03:14 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:03:14 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:03:14 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:03:14 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:03:15 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:03:15 DEBUG GetApi:855 - com.prisma.pojo.Mortality@21de60b4
+2018-02-12 09:03:17 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:03:17 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:04:27 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:04:27 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:04:27 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:04:27 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:04:27 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:04:27 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:04:27 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:04:27 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:04:27 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:04:27 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:04:27 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:04:27 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:04:27 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:04:27 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:04:27 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:04:27 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:04:27 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:04:27 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:04:27 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:04:27 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:04:27 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xbf58e45ba221d69f (took 8 ms)
+2018-02-12 09:04:27 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:04:27 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:04:27 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:04:27 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:04:27 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:04:28 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:04:28 DEBUG GetApi:855 - com.prisma.pojo.Mortality@21de60b4
+2018-02-12 09:04:30 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:04:30 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:42:14 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:42:14 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:42:14 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:42:14 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:42:14 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:42:14 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:42:14 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:42:14 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:42:14 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:42:14 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:42:14 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:42:14 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:42:14 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:42:14 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:42:14 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:42:14 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:42:14 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:42:14 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:42:14 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:42:14 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:42:14 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x2f17cf81b715e777 (took 8 ms)
+2018-02-12 09:42:14 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:42:14 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:42:14 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:42:14 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:42:14 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:42:15 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:42:15 DEBUG GetApi:855 - com.prisma.pojo.Mortality@c267ef4
+2018-02-12 09:42:17 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:42:17 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:43:27 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:43:27 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:43:27 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:43:27 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:43:27 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:43:27 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:43:27 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:43:27 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:43:27 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:43:27 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:43:27 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:43:27 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:43:27 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:43:27 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:43:27 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:43:27 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:43:27 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:43:27 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:43:27 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:43:27 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:43:27 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x84ce62959b5c1e63 (took 8 ms)
+2018-02-12 09:43:27 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:43:27 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:43:27 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:43:27 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:43:27 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:43:27 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:43:27 DEBUG GetApi:855 - com.prisma.pojo.Mortality@c267ef4
+2018-02-12 09:43:30 DEBUG PoolThreadCache:243 - Freed 27 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:43:30 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:43:52 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:43:52 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:43:52 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:43:52 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:43:52 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:43:52 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:43:52 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:43:52 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:43:52 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:43:52 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:43:52 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:43:52 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:43:52 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:43:52 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:43:52 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:43:53 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:43:53 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:43:53 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:43:53 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:43:53 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:43:53 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xef008c755eb7e348 (took 8 ms)
+2018-02-12 09:43:53 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:43:53 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:43:53 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:43:53 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:43:53 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:43:53 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:43:53 DEBUG GetApi:855 - com.prisma.pojo.Mortality@c267ef4
+2018-02-12 09:43:56 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:43:56 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:44:56 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:44:56 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:44:56 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:44:56 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:44:56 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:44:56 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:44:56 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:44:56 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:44:56 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:44:56 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:44:56 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:44:56 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:44:56 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:44:56 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:44:56 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:44:56 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:44:56 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:44:56 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:44:56 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:44:56 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:44:56 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xac3fe6149ab55939 (took 8 ms)
+2018-02-12 09:44:56 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:44:56 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:44:56 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:44:56 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:44:56 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:44:56 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:44:56 DEBUG GetApi:855 - com.prisma.pojo.Mortality@c267ef4
+2018-02-12 09:44:59 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:44:59 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:46:11 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:46:11 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:46:11 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:46:11 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:46:11 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:46:11 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:46:11 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:46:11 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:46:11 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:46:11 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:46:11 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:46:11 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:46:11 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:46:11 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:46:11 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:46:11 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:46:11 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:46:11 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:46:11 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:46:11 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:46:11 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0xf6b139a46e46cabc (took 8 ms)
+2018-02-12 09:46:11 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:46:11 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:46:11 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:46:12 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:46:12 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:46:12 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:46:12 DEBUG GetApi:855 - com.prisma.pojo.Mortality@c267ef4
+2018-02-12 09:46:15 DEBUG PoolThreadCache:243 - Freed 29 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:46:15 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:46:56 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:46:56 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:46:56 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:46:56 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:46:56 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:46:56 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:46:56 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:46:56 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:46:56 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:46:56 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:46:56 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:46:56 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:46:56 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:46:56 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:46:56 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:46:56 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:46:56 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:46:56 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:46:56 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:46:56 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:46:56 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x1e582bca6cdf78fd (took 8 ms)
+2018-02-12 09:46:56 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:46:56 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:46:56 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:47:11 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:47:11 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:47:11 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:47:11 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:47:11 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:47:11 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:47:11 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:47:11 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:47:11 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:47:11 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:47:11 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:47:11 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:47:11 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:47:11 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:47:11 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:47:11 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:47:11 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:47:11 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:47:11 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:47:11 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:47:11 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x8b05562078b1d49f (took 8 ms)
+2018-02-12 09:47:11 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:47:11 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:47:11 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:47:11 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:47:11 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:47:12 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:47:12 DEBUG GetApi:855 - com.prisma.pojo.Mortality@c267ef4
+2018-02-12 09:47:15 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:47:15 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-12 09:48:10 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-12 09:48:10 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-12 09:48:10 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-12 09:48:10 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-12 09:48:10 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-12 09:48:10 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-12 09:48:10 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-12 09:48:10 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-12 09:48:10 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-12 09:48:10 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-12 09:48:10 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-12 09:48:10 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-12 09:48:10 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-12 09:48:10 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-12 09:48:10 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-12 09:48:10 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-12 09:48:10 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-12 09:48:10 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-12 09:48:10 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-12 09:48:11 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-12 09:48:11 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x6e8d5ccb224d9f12 (took 8 ms)
+2018-02-12 09:48:11 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-12 09:48:11 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-12 09:48:11 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-12 09:48:11 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-12 09:48:11 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-12 09:48:11 DEBUG GetApi:843 - select * from prisma1.mortalityscores where patient_deiden_id='3496' allow filtering
+2018-02-12 09:48:11 DEBUG GetApi:855 - com.prisma.pojo.Mortality@21de60b4
+2018-02-12 09:48:14 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-12 09:48:14 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-13 19:35:25 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-13 19:35:25 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-13 19:35:25 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-13 19:35:25 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-13 19:35:25 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-13 19:35:25 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-13 19:35:25 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-13 19:35:25 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-13 19:35:25 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-13 19:35:25 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-13 19:35:25 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-13 19:35:25 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-13 19:35:25 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-13 19:35:25 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-13 19:35:25 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-13 19:35:25 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-13 19:35:25 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-13 19:35:26 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-13 19:35:26 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-13 19:35:26 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-13 19:35:26 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x43047a837115ed56 (took 8 ms)
+2018-02-13 19:35:26 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-13 19:35:26 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-13 19:35:26 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-13 19:35:26 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-13 19:35:26 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-13 19:35:26 DEBUG GetApi:911 - select * from prisma1.unprocessed_data where patient_id='6689' allow filtering
+2018-02-13 19:35:26 DEBUG GetApi:937 - []
+2018-02-13 19:35:29 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-13 19:35:29 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-13 19:36:22 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-13 19:36:22 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-13 19:36:22 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-13 19:36:22 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-13 19:36:22 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-13 19:36:22 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-13 19:36:22 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-13 19:36:22 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-13 19:36:22 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-13 19:36:22 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-13 19:36:22 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-13 19:36:22 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-13 19:36:22 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-13 19:36:22 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-13 19:36:22 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-13 19:36:22 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-13 19:36:22 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-13 19:36:22 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-13 19:36:22 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-13 19:36:23 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-13 19:36:23 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x63972a446245f176 (took 8 ms)
+2018-02-13 19:36:23 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-13 19:36:23 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-13 19:36:23 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-13 19:36:23 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-13 19:36:23 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-13 19:36:23 DEBUG GetApi:911 - select * from prisma1.unprocessed_data where patient_id='7160' allow filtering
+2018-02-13 19:36:23 DEBUG GetApi:937 - [com.prisma.pojo.PatientDetailsRaw@747ddf94, com.prisma.pojo.PatientDetailsRaw@35e2d654, com.prisma.pojo.PatientDetailsRaw@1bd4fdd, com.prisma.pojo.PatientDetailsRaw@55183b20, com.prisma.pojo.PatientDetailsRaw@4f83df68, com.prisma.pojo.PatientDetailsRaw@6cf0e0ba, com.prisma.pojo.PatientDetailsRaw@7d8995e, com.prisma.pojo.PatientDetailsRaw@130d63be, com.prisma.pojo.PatientDetailsRaw@42a48628, com.prisma.pojo.PatientDetailsRaw@293a5bf6, com.prisma.pojo.PatientDetailsRaw@6aeb35e6, com.prisma.pojo.PatientDetailsRaw@1283bb96, com.prisma.pojo.PatientDetailsRaw@74f0ea28, com.prisma.pojo.PatientDetailsRaw@f6efaab, com.prisma.pojo.PatientDetailsRaw@3c19aaa5, com.prisma.pojo.PatientDetailsRaw@3349e9bb, com.prisma.pojo.PatientDetailsRaw@409bf450, com.prisma.pojo.PatientDetailsRaw@38d8f54a, com.prisma.pojo.PatientDetailsRaw@49e53c76, com.prisma.pojo.PatientDetailsRaw@351d00c0, com.prisma.pojo.PatientDetailsRaw@2a3b5b47, com.prisma.pojo.PatientDetailsRaw@55b699ef, com.prisma.pojo.PatientDetailsRaw@35d019a3, com.prisma.pojo.PatientDetailsRaw@689604d9, com.prisma.pojo.PatientDetailsRaw@18078bef, com.prisma.pojo.PatientDetailsRaw@799f10e1, com.prisma.pojo.PatientDetailsRaw@4c371370, com.prisma.pojo.PatientDetailsRaw@145f66e3, com.prisma.pojo.PatientDetailsRaw@3023df74, com.prisma.pojo.PatientDetailsRaw@313ac989, com.prisma.pojo.PatientDetailsRaw@4562e04d, com.prisma.pojo.PatientDetailsRaw@2a65fe7c, com.prisma.pojo.PatientDetailsRaw@4135c3b, com.prisma.pojo.PatientDetailsRaw@6302bbb1, com.prisma.pojo.PatientDetailsRaw@31304f14, com.prisma.pojo.PatientDetailsRaw@34a3d150, com.prisma.pojo.PatientDetailsRaw@2a4fb17b, com.prisma.pojo.PatientDetailsRaw@5c6648b0, com.prisma.pojo.PatientDetailsRaw@6f1de4c7, com.prisma.pojo.PatientDetailsRaw@459e9125, com.prisma.pojo.PatientDetailsRaw@128d2484, com.prisma.pojo.PatientDetailsRaw@7cc0cdad, com.prisma.pojo.PatientDetailsRaw@7c7b252e, com.prisma.pojo.PatientDetailsRaw@4d5d943d, com.prisma.pojo.PatientDetailsRaw@368f2016, com.prisma.pojo.PatientDetailsRaw@4c583ecf, com.prisma.pojo.PatientDetailsRaw@692f203f, com.prisma.pojo.PatientDetailsRaw@48f2bd5b, com.prisma.pojo.PatientDetailsRaw@7b2bbc3, com.prisma.pojo.PatientDetailsRaw@a1153bc, com.prisma.pojo.PatientDetailsRaw@1aafa419, com.prisma.pojo.PatientDetailsRaw@47eaca72, com.prisma.pojo.PatientDetailsRaw@55141def, com.prisma.pojo.PatientDetailsRaw@55182842, com.prisma.pojo.PatientDetailsRaw@3270d194, com.prisma.pojo.PatientDetailsRaw@235834f2, com.prisma.pojo.PatientDetailsRaw@5656be13, com.prisma.pojo.PatientDetailsRaw@4218d6a3, com.prisma.pojo.PatientDetailsRaw@76505305, com.prisma.pojo.PatientDetailsRaw@14cd1699, com.prisma.pojo.PatientDetailsRaw@77888435, com.prisma.pojo.PatientDetailsRaw@73a1e9a9, com.prisma.pojo.PatientDetailsRaw@71d44a3, com.prisma.pojo.PatientDetailsRaw@7b98f307, com.prisma.pojo.PatientDetailsRaw@4802796d, com.prisma.pojo.PatientDetailsRaw@34123d65, com.prisma.pojo.PatientDetailsRaw@59474f18, com.prisma.pojo.PatientDetailsRaw@65fb9ffc, com.prisma.pojo.PatientDetailsRaw@3e694b3f, com.prisma.pojo.PatientDetailsRaw@1bb5a082, com.prisma.pojo.PatientDetailsRaw@78691363, com.prisma.pojo.PatientDetailsRaw@41d477ed, com.prisma.pojo.PatientDetailsRaw@3590fc5b, com.prisma.pojo.PatientDetailsRaw@397fbdb, com.prisma.pojo.PatientDetailsRaw@33d512c1, com.prisma.pojo.PatientDetailsRaw@515c6049, com.prisma.pojo.PatientDetailsRaw@639c2c1d, com.prisma.pojo.PatientDetailsRaw@5fe94a96, com.prisma.pojo.PatientDetailsRaw@443118b0, com.prisma.pojo.PatientDetailsRaw@765d7657, com.prisma.pojo.PatientDetailsRaw@74235045, com.prisma.pojo.PatientDetailsRaw@618b19ad, com.prisma.pojo.PatientDetailsRaw@2d3379b4, com.prisma.pojo.PatientDetailsRaw@30c15d8b, com.prisma.pojo.PatientDetailsRaw@5e0e82ae, com.prisma.pojo.PatientDetailsRaw@6771beb3, com.prisma.pojo.PatientDetailsRaw@51399530, com.prisma.pojo.PatientDetailsRaw@6b2ea799, com.prisma.pojo.PatientDetailsRaw@411f53a0, com.prisma.pojo.PatientDetailsRaw@2b71e916, com.prisma.pojo.PatientDetailsRaw@36fc695d, com.prisma.pojo.PatientDetailsRaw@28701274, com.prisma.pojo.PatientDetailsRaw@13c9d689, com.prisma.pojo.PatientDetailsRaw@3754a4bf, com.prisma.pojo.PatientDetailsRaw@62379589, com.prisma.pojo.PatientDetailsRaw@4afcd809, com.prisma.pojo.PatientDetailsRaw@175c2241, com.prisma.pojo.PatientDetailsRaw@5bf0d49, com.prisma.pojo.PatientDetailsRaw@5b7a5baa, com.prisma.pojo.PatientDetailsRaw@776aec5c, com.prisma.pojo.PatientDetailsRaw@1d296da, com.prisma.pojo.PatientDetailsRaw@7c7a06ec, com.prisma.pojo.PatientDetailsRaw@75d4a5c2, com.prisma.pojo.PatientDetailsRaw@557caf28, com.prisma.pojo.PatientDetailsRaw@408d971b, com.prisma.pojo.PatientDetailsRaw@6c6cb480, com.prisma.pojo.PatientDetailsRaw@3c46e67a, com.prisma.pojo.PatientDetailsRaw@c730b35, com.prisma.pojo.PatientDetailsRaw@206a70ef, com.prisma.pojo.PatientDetailsRaw@292b08d6, com.prisma.pojo.PatientDetailsRaw@22555ebf, com.prisma.pojo.PatientDetailsRaw@36ebc363, com.prisma.pojo.PatientDetailsRaw@45752059, com.prisma.pojo.PatientDetailsRaw@34e9fd99, com.prisma.pojo.PatientDetailsRaw@3c41ed1d, com.prisma.pojo.PatientDetailsRaw@54d9d12d, com.prisma.pojo.PatientDetailsRaw@38425407, com.prisma.pojo.PatientDetailsRaw@43bc63a3, com.prisma.pojo.PatientDetailsRaw@702657cc, com.prisma.pojo.PatientDetailsRaw@6a6cb05c, com.prisma.pojo.PatientDetailsRaw@40a4337a, com.prisma.pojo.PatientDetailsRaw@6025e1b6, com.prisma.pojo.PatientDetailsRaw@22ff4249, com.prisma.pojo.PatientDetailsRaw@2d1ef81a, com.prisma.pojo.PatientDetailsRaw@4c402120, com.prisma.pojo.PatientDetailsRaw@327514f, com.prisma.pojo.PatientDetailsRaw@5b12b668, com.prisma.pojo.PatientDetailsRaw@1165b38, com.prisma.pojo.PatientDetailsRaw@4c12331b, com.prisma.pojo.PatientDetailsRaw@7586beff, com.prisma.pojo.PatientDetailsRaw@3b69e7d1, com.prisma.pojo.PatientDetailsRaw@815b41f, com.prisma.pojo.PatientDetailsRaw@5542c4ed, com.prisma.pojo.PatientDetailsRaw@1573f9fc, com.prisma.pojo.PatientDetailsRaw@6150c3ec, com.prisma.pojo.PatientDetailsRaw@44c03695, com.prisma.pojo.PatientDetailsRaw@7e6f74c, com.prisma.pojo.PatientDetailsRaw@dd05255, com.prisma.pojo.PatientDetailsRaw@6a78afa0, com.prisma.pojo.PatientDetailsRaw@2f4948e4, com.prisma.pojo.PatientDetailsRaw@1f2586d6, com.prisma.pojo.PatientDetailsRaw@10683d9d, com.prisma.pojo.PatientDetailsRaw@3fc2959f, com.prisma.pojo.PatientDetailsRaw@5aa9e4eb, com.prisma.pojo.PatientDetailsRaw@6989da5e, com.prisma.pojo.PatientDetailsRaw@385c9627, com.prisma.pojo.PatientDetailsRaw@139982de, com.prisma.pojo.PatientDetailsRaw@682b2fa, com.prisma.pojo.PatientDetailsRaw@217ed35e, com.prisma.pojo.PatientDetailsRaw@7dcf94f8, com.prisma.pojo.PatientDetailsRaw@229f66ed, com.prisma.pojo.PatientDetailsRaw@31190526, com.prisma.pojo.PatientDetailsRaw@662ac478, com.prisma.pojo.PatientDetailsRaw@6743e411, com.prisma.pojo.PatientDetailsRaw@3eb25e1a, com.prisma.pojo.PatientDetailsRaw@477b4cdf, com.prisma.pojo.PatientDetailsRaw@77c2494c, com.prisma.pojo.PatientDetailsRaw@f5958c9, com.prisma.pojo.PatientDetailsRaw@233795b6, com.prisma.pojo.PatientDetailsRaw@3eb738bb, com.prisma.pojo.PatientDetailsRaw@5bda8e08, com.prisma.pojo.PatientDetailsRaw@1e800aaa, com.prisma.pojo.PatientDetailsRaw@185a6e9, com.prisma.pojo.PatientDetailsRaw@6f03482, com.prisma.pojo.PatientDetailsRaw@9d5509a, com.prisma.pojo.PatientDetailsRaw@179ece50, com.prisma.pojo.PatientDetailsRaw@3b0090a4, com.prisma.pojo.PatientDetailsRaw@3cd3e762, com.prisma.pojo.PatientDetailsRaw@1fa121e2, com.prisma.pojo.PatientDetailsRaw@7eac9008, com.prisma.pojo.PatientDetailsRaw@4116aac9, com.prisma.pojo.PatientDetailsRaw@62ddbd7e, com.prisma.pojo.PatientDetailsRaw@74e52ef6, com.prisma.pojo.PatientDetailsRaw@6ed3ccb2, com.prisma.pojo.PatientDetailsRaw@1a677343, com.prisma.pojo.PatientDetailsRaw@15de0b3c, com.prisma.pojo.PatientDetailsRaw@489115ef, com.prisma.pojo.PatientDetailsRaw@3857f613, com.prisma.pojo.PatientDetailsRaw@198b6731, com.prisma.pojo.PatientDetailsRaw@7c6908d7, com.prisma.pojo.PatientDetailsRaw@3c9754d8, com.prisma.pojo.PatientDetailsRaw@3bf7ca37, com.prisma.pojo.PatientDetailsRaw@79079097, com.prisma.pojo.PatientDetailsRaw@4d1c00d0, com.prisma.pojo.PatientDetailsRaw@4b2bac3f, com.prisma.pojo.PatientDetailsRaw@4e08711f, com.prisma.pojo.PatientDetailsRaw@bcec361, com.prisma.pojo.PatientDetailsRaw@26794848, com.prisma.pojo.PatientDetailsRaw@302552ec, com.prisma.pojo.PatientDetailsRaw@3d285d7e, com.prisma.pojo.PatientDetailsRaw@40005471, com.prisma.pojo.PatientDetailsRaw@2cd76f31, com.prisma.pojo.PatientDetailsRaw@367ffa75, com.prisma.pojo.PatientDetailsRaw@49438269, com.prisma.pojo.PatientDetailsRaw@ba2f4ec]
+2018-02-13 19:36:26 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-13 19:36:26 DEBUG PoolThreadCache:243 - Freed 13 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-13 19:45:02 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-13 19:45:02 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-13 19:45:02 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-13 19:45:02 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-13 19:45:02 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-13 19:45:02 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-13 19:45:02 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-13 19:45:02 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-13 19:45:02 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-13 19:45:02 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-13 19:45:02 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-13 19:45:02 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-13 19:45:02 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-13 19:45:02 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-13 19:45:02 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-13 19:45:02 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-13 19:45:02 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-13 19:45:02 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-13 19:45:02 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-13 19:45:02 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-13 19:45:02 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x79f49b7959f3f5d3 (took 9 ms)
+2018-02-13 19:45:02 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-13 19:45:02 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-13 19:45:02 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-13 19:45:03 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-13 19:45:03 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-13 19:45:03 DEBUG GetApi:911 - select * from prisma1.unprocessed_data where patient_id='7160' allow filtering
+2018-02-13 19:45:03 DEBUG GetApi:941 - [com.prisma.pojo.PatientDetailsRaw@747ddf94]
+2018-02-13 19:45:06 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-13 19:45:06 DEBUG PoolThreadCache:243 - Freed 13 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-02-13 19:53:58 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-13 19:53:58 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-13 19:53:58 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-13 19:53:58 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-13 19:53:58 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-13 19:53:58 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-13 19:53:58 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-13 19:53:58 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-13 19:53:58 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-13 19:53:58 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-13 19:53:58 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-13 19:53:58 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-13 19:53:58 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-13 19:53:58 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-13 19:53:58 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-13 19:53:58 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-13 19:53:58 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-13 19:53:58 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-13 19:53:58 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-13 19:53:58 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-13 19:53:58 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x2826c5f01bc30f81 (took 8 ms)
+2018-02-13 19:53:58 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-13 19:53:58 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-13 19:53:58 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-13 19:54:12 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-02-13 19:54:12 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-02-13 19:54:12 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-02-13 19:54:12 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-02-13 19:54:12 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-02-13 19:54:12 DEBUG PlatformDependent:666 - Java version: 8
+2018-02-13 19:54:12 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-02-13 19:54:12 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-02-13 19:54:12 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-02-13 19:54:12 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-02-13 19:54:12 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-02-13 19:54:12 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-02-13 19:54:12 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-02-13 19:54:12 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-02-13 19:54:12 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-02-13 19:54:12 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-02-13 19:54:12 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-02-13 19:54:12 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-02-13 19:54:12 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-02-13 19:54:12 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-02-13 19:54:12 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x15b705d90da3d810 (took 7 ms)
+2018-02-13 19:54:12 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-02-13 19:54:12 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-02-13 19:54:12 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-02-13 19:54:12 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-02-13 19:54:12 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-02-13 19:54:13 DEBUG GetApi:911 - select * from prisma1.unprocessed_data where patient_id='7160' allow filtering
+2018-02-13 19:54:13 DEBUG GetApi:941 - [com.prisma.pojo.PatientDetailsRaw@747ddf94]
+2018-02-13 19:54:15 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-02-13 19:54:15 DEBUG PoolThreadCache:243 - Freed 13 thread-local buffer(s) from thread: cluster1-nio-worker-1

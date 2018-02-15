@@ -1,5 +1,6 @@
 package com.prisma.pojo;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 
 public class PatientDetails {
@@ -8,6 +9,8 @@ public class PatientDetails {
 	private String doctorName;
 	private String encounterId;
 	private String patientId;
+	private Long timestamp;
+	private String timeStampDate; 
 	private String story1;
 	private String story2;
 	private HashMap<Integer, String> labels;	
@@ -53,6 +56,18 @@ public class PatientDetails {
 	}
 	public void setEncounterId(String encounterId) {
 		this.encounterId = encounterId;
+	}
+	public Long getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(Long timestamp) {
+		this.timestamp = timestamp;
+	}
+	public String getTimeStampDate() {
+		return timeStampDate;
+	}
+	public void setTimeStampDate(String timeStampDate) {
+		this.timeStampDate = timeStampDate;
 	}
 	
 }

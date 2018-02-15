@@ -1,19 +1,8 @@
 package com.prisma.restapi;
 
 import java.util.ArrayList;
-
-
 import java.util.List;
-
-
-
-
-
-
-
-
-
-
+import java.util.Properties;
 
 //import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
@@ -28,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.datastax.driver.core.Session;
+import com.google.gson.Gson;
 import com.prisma.pojo.DoctorInterventions;
 import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
@@ -37,6 +27,7 @@ import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank1;
 import com.prisma.pojo.OutcomeStats;
 import com.prisma.pojo.PatientDetails;
+import com.prisma.pojo.PatientDetailsRaw;
 import com.prisma.pojo.PatientRecord;
 import com.prisma.pojo.Reco;
 import com.prisma.pojo.RecoCase;
@@ -46,12 +37,19 @@ import com.prisma.pojo.ReviewResult;
 import com.prisma.pojo.RiskAssessment;
 import com.prisma.pojo.OutComeResult;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import com.sun.jersey.core.header.FormDataContentDisposition;
+import com.sun.jersey.multipart.FormDataParam;
+
 @Path("/WebService")
 public class PrismaService {
 	
 	private ReturnVal retVal = null;
 	private String apiValues = null;
 	final static Logger logger = Logger.getLogger(PrismaService.class);
+	private Gson gson = new Gson();
 
 	@GET
 	@Path("/GetScores")
@@ -64,13 +62,14 @@ public class PrismaService {
 			PrismaManager prismaManager = new PrismaManager();
 			scoreLists = prismaManager.GetScoreObj();
 			
-			System.out.println("<<<<<<<<<<<<<<<<"+scoreLists);
+			logger.debug("<<<<<<<<<<<<<<<<"+scoreLists);
 			//Gson gson = new Gson();
-			//System.out.println(gson.toJson(scoreLists));
+			//logger.debug(gson.toJson(scoreLists));
 			//feeds = gson.toJson(scoreLists);
+			logger.debug(gson.toJson(scoreLists));
 
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 		}
 		//return feeds;
 		return scoreLists;
@@ -86,13 +85,14 @@ public class PrismaService {
 			PrismaManager prismaManager = new PrismaManager();
 			icuOutcomeLists = prismaManager.GetOutcome_ICU();
 			//Gson gson = new Gson();
-			//System.out.println(gson.toJson(icuOutcomeLists));
+			//logger.debug(gson.toJson(icuOutcomeLists));
 			//apiValues = gson.toJson(icuOutcomeLists);
 
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(icuOutcomeLists));
 		return icuOutcomeLists;
 	}
 	
@@ -110,9 +110,10 @@ public class PrismaService {
 			attempt 			= prismaManager.noOfAttempt(username);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(attempt));
 		return attempt;
 	}
 	
@@ -133,9 +134,10 @@ public class PrismaService {
 			review 			= prismaManager.reviewResults(outcomeID);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(review));
 		return review;
 	}
 	
@@ -143,19 +145,23 @@ public class PrismaService {
 	@Path("/patientPrediction")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List OnePatientPrediction(@QueryParam("doctorId") String doctorId,
-			@QueryParam("patientId") String patientId) {
+			@QueryParam("patientId") String patientId) throws Exception {
 		List outcomeRankList =null;
+		
 		try {
-			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
 			logger.debug("OnePatientPrediction doctorId="+doctorId+" patientId="+patientId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			outcomeRankList 			= prismaManager.patientPrediction(doctorId,patientId);
+			Gson gson = new Gson();
+			logger.debug(gson.toJson(outcomeRankList));
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(outcomeRankList));
 		return outcomeRankList;
 	}
 	
@@ -166,14 +172,14 @@ public class PrismaService {
 			@QueryParam("patientId") String patientId, @QueryParam("outcomeId") int outcomeId) {
 		List outcomeRankList =null;
 		try {
-			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
 			logger.debug("OnePatientPrediction doctorId="+doctorId+" patientId="+patientId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			outcomeRankList 			= prismaManager.patientPrediction(doctorId,patientId,outcomeId);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
 		return outcomeRankList;
@@ -186,16 +192,18 @@ public class PrismaService {
 			@QueryParam("patientId") String patientId) {
 		PatientDetails patientDetails = null;
 		try {
-			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
 			logger.debug("OnePatientDetail doctorId="+doctorId+" patientId="+patientId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			patientDetails 			= prismaManager.onePatient(doctorId,patientId);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		
+		logger.debug(gson.toJson(patientDetails));
 		return patientDetails;
 	}
 	
@@ -205,17 +213,39 @@ public class PrismaService {
 	public ArrayList<PatientDetails> patientDetail(@QueryParam("doctorId") String doctorId) {
 		ArrayList<PatientDetails> patientDetails = null;
 		try {
-			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
 			logger.debug("patientDetail doctorId="+doctorId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			patientDetails 			= prismaManager.patientDetail(doctorId);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(patientDetails));
 		return patientDetails;
+	}
+	
+	@GET
+	@Path("/patientDetailsRaw")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<PatientDetailsRaw> OnePatientDetailsRaw(@QueryParam("patientId") String patientId) {
+		ArrayList<PatientDetailsRaw> patientDetailsRaw = null;
+		try {
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("OnePatientDetailsRaw patientId="+patientId);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			patientDetailsRaw 			= prismaManager.OnePatientDetailsRaw(patientId);
+			
+		} catch (Exception e) {
+			logger.debug("error");
+			e.getStackTrace();
+		}
+		
+		logger.debug(gson.toJson(patientDetailsRaw));
+		return patientDetailsRaw;
 	}
 
 	@GET
@@ -224,16 +254,17 @@ public class PrismaService {
 	public int userCheck(@QueryParam("user") String userId) {
 		int noUsers = 0;
 		try {
-			System.out.println("<<<<<<<<<<<<<<<userId="+userId);
+			logger.debug("<<<<<<<<<<<<<<<userId="+userId);
 			logger.debug("userCheck userId="+userId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			noUsers 			= prismaManager.userCheck(userId);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(noUsers));
 		return noUsers;
 	}	
 	
@@ -253,9 +284,10 @@ public class PrismaService {
 			noUsers 			= prismaManager.login(userId, password);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(noUsers));
 		return noUsers;
 	}
 	
@@ -269,7 +301,7 @@ public class PrismaService {
 		try {
 			logger.debug("insertOutcomeRank ");
 
-			System.out.println("<<<<<<<<<<<<<<<"+outcomeRank.toString()+" length:"+outcomeRank.length);
+			logger.debug("<<<<<<<<<<<<<<<"+outcomeRank.toString()+" length:"+outcomeRank.length);
 			
 			PrismaManager prismaManager = new PrismaManager();
 
@@ -277,9 +309,10 @@ public class PrismaService {
 
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 			
@@ -292,16 +325,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("insertRecoTable ");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertRecoTable(reco);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -314,16 +348,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("insertRecoCaseTable");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertRecoCaseTable(recoCase);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -336,16 +371,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("insertOutcomeStats");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertOutcomeStats(outComeStats);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -359,16 +395,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("insertRecoTakenTable");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertRecoTakenTable(recoTaken);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -381,16 +418,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("deleteidList patientId="+patientId);
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.deleteidList(patientId);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -403,16 +441,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("insertOutcomeResult");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertOutcomeResult(outComeResult);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -425,16 +464,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("insertIndexPatient");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertIndexPatient(indexPatient);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -448,7 +488,7 @@ public class PrismaService {
 		boolean isSuccess, isSuccessDoctorReg;
 		try {
 			logger.debug("insertDoctorTestResults");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertDoctorTestResult(doctorReg);
@@ -456,9 +496,10 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess && isSuccessDoctorReg);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(doctorReg));
 		return doctorReg;
 	}
 	
@@ -471,16 +512,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("initialRiskAssessment");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertRiskAssessment(riskAssessment, 1);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -493,16 +535,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("finalRiskAssessment");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.insertRiskAssessment(riskAssessment, 2);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -515,15 +558,16 @@ public class PrismaService {
 		ArrayList<RiskAssessment> riskAssessments = null;
 		try {
 			logger.debug("getRiskAssessment");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			riskAssessments 			= prismaManager.getRiskAssessment(doctorId, patientId, riskAssessmentType);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(riskAssessments));
 		return riskAssessments;
 	}
 	
@@ -536,16 +580,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("docInterventions");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.docInterventions(doctorInterventions);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -558,16 +603,17 @@ public class PrismaService {
 		boolean isSuccess;
 		try {
 			logger.debug("docMitigations");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.docMitigations(doctorMitigation);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
 	
@@ -577,16 +623,17 @@ public class PrismaService {
 	public Mortality mortality(@QueryParam("patientId") String patientId) {
 		Mortality patientMortality =null;
 		try {
-			//System.out.println("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
 			logger.debug("mortality  patientId="+patientId);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			patientMortality 			= prismaManager.mortality(patientId);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(patientMortality));
 		return patientMortality;
 	}
 	
@@ -598,15 +645,43 @@ public class PrismaService {
 		PatientRecord patientRecords = null;
 		try {
 			logger.debug("patientRecords");
-			//System.out.println("<<<<<<<<<<<<<<<"+doctorReg);
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			patientRecords 			= prismaManager.getPatienRecords(patientId);
 			
 		} catch (Exception e) {
-			System.out.println("error");
+			logger.debug("error");
 			e.getStackTrace();
 		}
+		logger.debug(gson.toJson(patientRecords));
 		return patientRecords;
 	}
+	
+	@POST
+	@Path("/insertDoctorAgreement")
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public ReturnVal uploadDoctorAgreement(@FormDataParam("file") InputStream uploadedInputStream, 
+			@FormDataParam("file") FormDataContentDisposition fileDetail) {
+		
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			logger.debug("uploadFile");
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
+			String fileName = fileDetail.getFileName();
+			
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.uploadDoctorAgreement(uploadedInputStream, fileName);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			logger.debug("error");
+			e.getStackTrace();
+		}
+		logger.debug(gson.toJson(retVal));
+		return retVal;
+	}
 }
+
