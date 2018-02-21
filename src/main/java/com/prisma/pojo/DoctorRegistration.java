@@ -13,7 +13,7 @@ public class DoctorRegistration {
 	String currentRoles;
 	String speciality;
 	String experience;
-	//String email;
+	String registerDate;
 	//String phone;
 
 	public String getUsername() {
@@ -104,10 +104,18 @@ public class DoctorRegistration {
 		this.experience = experience;
 	}
 	
+	public String getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(String registerDate) {
+		this.registerDate = registerDate;
+	}
+
 	@Override
 	public String toString() {
 		return "[username:"+username+" fullName:"+fullName+" password:"+password+" gender:"+gender+
-				" age:"+age+" currentRoles:"+currentRoles+" speciality:"+speciality+" experience:"+
+				" age:"+age+" currentRoles:"+currentRoles+" speciality:"+speciality+" registerDate:"+registerDate+" experience:"+
 				experience+" questions:"+questions.toString()+"]";
 	}
 }

@@ -7,6 +7,7 @@ import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
 import com.google.gson.Gson;
 import com.prisma.api.GetApi;
+import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.PatientDetailsRaw;
@@ -135,6 +136,22 @@ public class CassandraTest {
 		
 		System.out.println(gson.toJson(patientDetailsRaw));
 	}
+	
+	public static void insertPatient(DoctorRegistration doctorRegistration) {
+		Gson gson = new Gson();
+		boolean isReturn = false;
+		try {
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isReturn 			= prismaManager.insertDoctorInfo(doctorRegistration);
+			
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+		
+		System.out.println(gson.toJson(isReturn));
+	}
 
 	public static void main(String[] args) throws Exception {
 		// getScores();
@@ -143,6 +160,19 @@ public class CassandraTest {
 		//testCql();
 		//getRiskAssessment();
 		//getMortality();
-		getPatientDetailRaw("7160");
+		//getPatientDetailRaw("7160");
+		DoctorRegistration doctorRegistration = new DoctorRegistration();
+		doctorRegistration.setAge("20");
+		doctorRegistration.setRegisterDate("12/12/2019");
+		doctorRegistration.setUsername("abc");
+		insertPatient(doctorRegistration);
 	}
 }
+
+
+
+
+
+
+
+

@@ -257,14 +257,15 @@ public class InsertdateApi {
 			String speciality = doctorRegistration.getSpeciality();
 			String experience = doctorRegistration.getExperience();
 			String name       = doctorRegistration.getFullName();
-			//String email      = doctorRegistration.getEmail();
+			String timestamp      = doctorRegistration.getRegisterDate();
 			//String phone      = doctorRegistration.getPhone();
 			
 			logger.debug("userName:" + userName+" password:"+password+" gender:"+gender+" age: "+age+" role:"+role+" speciality:"+
-							    speciality+" experience:"+experience+" name:"+name);			
+							    speciality+" experience:"+experience+" name:"+name+" timestamp:"+timestamp);			
 			
-			String insertQuery = "insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality) "
-					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+speciality+"')";
+			String insertQuery = "insert into prisma1.userinfo(id,age,experience,gender,name,password,role,speciality,registerdate) "
+					+ "values('"+userName+"','"+age+"','"+experience+"','"+gender+"','"+name+"','"+password+"','"+role+"','"+
+					speciality+"','"+timestamp+"')";
 			
 			logger.debug(insertQuery);
 			
