@@ -35,16 +35,28 @@ public class GetApi {
 	static boolean isFeatureMap = false;
 	static boolean isImpFeatureMap = false;
 	
+	public static boolean isNumeric(String str)  
+	{  
+	  try  
+	  {  
+	    double d = Double.parseDouble(str);  
+	  }  
+	  catch(Exception e)  
+	  {  
+	    return false;  
+	  }  
+	  return true;  
+	}
+	
 	public String executeQuery(Session session, String query, String colName){
 		String returnVal = "";
-		logger.debug("query="+query+" colName="+colName);
-		logger.debug("query="+query);
-		ResultSet results = session.execute(query.toLowerCase());
+		logger.debug("query="+query+" ; colName="+colName);
+		ResultSet results = session.execute(query);
 		for(Row row: results){
 			returnVal = row.getString(colName);
+			logger.debug("<<<<<<returnVal="+returnVal);
 		}
-		logger.debug("<<<<<<returnVal="+returnVal);
-
+	
 		return returnVal;
 	}
 	
@@ -52,7 +64,7 @@ public class GetApi {
 		ArrayList<String> returnVal = new ArrayList<String>();
 		String retVal = "";
 		//logger.debug("query="+query+" colName="+colName);
-		ResultSet results = session.execute(query.toLowerCase());
+		ResultSet results = session.execute(query);
 		for(Row row: results){
 			retVal=row.getString(colName);
 			returnVal.add(retVal);
@@ -300,10 +312,10 @@ public class GetApi {
 		
 		String docName= "";
 		int noOfAttempt=0;
-		String name, age, race, gender, cci, service, admission_type = "";
-		String attend_doc, pr1_temp, pr1="", mdcVal, mdc="", pr1_day, admit_day, admission_source = "";
-		String combordities, HGB, HCT, PROTUR, GLUURN, HGBUR, noBLOOD, noURINE, cr_base, eGFR_epi,MDRD_Cr ="";
-		String Medications, county, area, med_inc, total, Prop_pov, prop_black, prop_hisp, pay_grp, net_decisions="";
+		String name="", age="", race="", gender="", cci="", service="", admission_type="";
+		String attend_doc="", pr1_temp="", pr1="", mdcVal="", mdc="", pr1_day="", admit_day="", admission_source = "";
+		String combordities="", HGB="", HCT="", PROTUR="", GLUURN="", HGBUR="", noBLOOD="", noURINE="", cr_base="", eGFR_epi="",MDRD_Cr ="";
+		String Medications="", county="", area="", med_inc="", total="", Prop_pov="", prop_black="", prop_hisp="", pay_grp="", net_decisions="";
 		
 		String docNameQuery = "select name from prisma1.userinfo where id='"+doctorId+"'";
 		docName = executeQuery(session, docNameQuery,"name");
@@ -332,7 +344,7 @@ public class GetApi {
 		cci = executeQuery(session, cciQuery,"value");
 		logger.debug("cci:"+cci);
 		
-		if(cci!=null && Integer.parseInt(cci)==0){
+		if(cci!=null && !cci.isEmpty() && isNumeric(cci) && Integer.parseInt(cci)==0){
 			combordities = "with <b>no known combordities</b>";
 		}
 		else{		
@@ -367,7 +379,7 @@ public class GetApi {
 		String mdcValQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='mdc' allow filtering";
 		mdcVal = executeQuery(session, mdcValQuery,"value");
 		logger.debug("mdcVal:"+mdcVal);
-		if(mdcVal!=null && !mdcVal.isEmpty()){
+		if(mdcVal!=null && !mdcVal.isEmpty() && isNumeric(mdcVal)){
 			mdcVal = Integer.parseInt(mdcVal)+"";
 			logger.debug("mdcVal:"+mdcVal);
 			
@@ -379,7 +391,7 @@ public class GetApi {
 		
 		String pr1_dayQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='pr1_day' allow filtering";
 		pr1_day = executeQuery(session, pr1_dayQuery,"value");			
-		if(pr1_day!=null && !pr1_day.isEmpty() && Integer.parseInt(pr1_day)==0)pr1_day="Today";
+		if(pr1_day!=null && !pr1_day.isEmpty() && isNumeric(pr1_day) && Integer.parseInt(pr1_day)==0)pr1_day="Today";
 		else pr1_day=pr1_day+" day(s) ago";
 		logger.debug("pr1_day:"+pr1_day);
 		
@@ -432,13 +444,15 @@ public class GetApi {
 		
 		String noBloodQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='noblood' allow filtering";
 		noBLOOD = executeQuery(session, noBloodQuery,"value");		
-		if(noBLOOD.isEmpty() || Integer.parseInt(noBLOOD)==0)noBLOOD="no CBC analysis";
+		if(noBLOOD.isEmpty() || (isNumeric(noBLOOD) && Integer.parseInt(noBLOOD)==0))
+			noBLOOD="no CBC analysis";
 		else noBLOOD = noBLOOD+" blood tests";
 		logger.debug("noBLOOD:"+noBLOOD);
 		
 		String noUrineQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='nourine' allow filtering";
 		noURINE = executeQuery(session, noUrineQuery,"value");
-		if(noURINE.isEmpty() || Integer.parseInt(noURINE)==0)noURINE="no CBC analysis";
+		if(noURINE.isEmpty() || (isNumeric(noURINE) && Integer.parseInt(noURINE)==0))
+			noURINE="no CBC analysis";
 		else noURINE = noURINE+" urine tests";
 		logger.debug("noURINE:"+noURINE);
 		
@@ -504,19 +518,19 @@ public class GetApi {
 		
 		String Prop_povQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='prop_pov' allow filtering";
 		Prop_pov = executeQuery(session, Prop_povQuery,"value");
-		if(!Prop_pov.isEmpty())
+		if(!Prop_pov.isEmpty() && isNumeric(Prop_pov))
 			Prop_pov = Float.parseFloat(Prop_pov)*100+"";
 		logger.debug("Prop_pov:"+Prop_pov);
 		
 		String prop_blackQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='prop_black' allow filtering";
 		prop_black = executeQuery(session, prop_blackQuery,"value");
-		if(!prop_black.isEmpty())
+		if(!prop_black.isEmpty() && isNumeric(prop_black))
 			prop_black = Float.parseFloat(prop_black)*100+"";
 		logger.debug("prop_black:"+prop_black);
 		
 		String prop_hispQuery = "select value from prisma1.unprocessed_data where patient_id='"+patientId+"' and feature='prop_hisp' allow filtering";
 		prop_hisp = executeQuery(session, prop_hispQuery,"value");
-		if(!prop_hisp.isEmpty())
+		if(!prop_hisp.isEmpty() && isNumeric(prop_hisp))
 			prop_hisp= Float.parseFloat(prop_hisp)*100+"";
 		logger.debug("prop_hisp:"+prop_hisp);
 		
@@ -587,8 +601,8 @@ public class GetApi {
 		
 		//List<String>   ptId = Arrays.asList(patientID.get(0)); 
 		
-		String name, age, race, gender, cci, service, admission_type = "";
-		String attend_doc, pr1_temp, pr1, mdcVal, mdc, pr1_day, admit_day, admission_source = "", timestamp_val = "";
+		String name="", age="", race="", gender="", cci="", service="", admission_type ="", patient_name="";
+		String attend_doc="", pr1_temp="", pr1="", mdcVal="", mdc="", pr1_day="", admit_day="", admission_source="", timestamp_val="";
 		String combordities="";
 		int patientIdx=0;
 		
@@ -610,7 +624,7 @@ public class GetApi {
 			String cciQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='cci'";//
 			cci = executeQuery(session, cciQuery,"value");
 			logger.debug("cci:"+cci);
-			if(cci!=null && Integer.parseInt(cci)==0){
+			if(cci!=null && !cci.isEmpty() && Integer.parseInt(cci)==0){
 				combordities = "with <b>no known combordities</b>";
 			}
 			else{		
@@ -662,8 +676,13 @@ public class GetApi {
 			admission_source = executeQuery(session, admission_sourceQuery,"value");
 			logger.debug("admission_source:"+admission_source);
 			
+			String patientName_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='name'";//
+			patient_name = executeQuery(session, patientName_Query,"value");
+			logger.debug("patient_name:"+patient_name);
+					
 			String timestamp_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='timestamp'";//
 			timestamp_val = executeQuery(session, timestamp_Query,"value");
+			logger.debug("timestamp_val:"+timestamp_val);
 			
 			Long timestamp1=null, timestampCurrent = null;
 			String timestampDate = null;
@@ -700,6 +719,7 @@ public class GetApi {
 			
 			patientDetails.setDoctorId(doctorId);
 			patientDetails.setDoctorName(docName);
+			patientDetails.setPatientName(patient_name);
 			patientDetails.setEncounterId(encounterId);
 			patientDetails.setTimestamp(timestamp1);
 			patientDetails.setTimeStampDate(timestampDate);

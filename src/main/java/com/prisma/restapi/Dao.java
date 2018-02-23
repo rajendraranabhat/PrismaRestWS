@@ -60,8 +60,8 @@ public class Dao {
 			if(this.session==null){
 				//connect(db_url,9042);
 				//connect("172.17.0.5",9042);
-				connect("deepc04.acis.ufl.edu",9042); //"deepc04.acis.ufl.edu"
-				//connect("localhost",9042);
+				//connect("deepc04.acis.ufl.edu",9042); //"deepc04.acis.ufl.edu"
+				connect("localhost",9042);
 			}				
 		}
 		catch(Exception e){

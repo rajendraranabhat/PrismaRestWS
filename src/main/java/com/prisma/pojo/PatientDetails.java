@@ -7,6 +7,7 @@ public class PatientDetails {
 	
 	private String doctorId;
 	private String doctorName;
+	private String patientName="";
 	private String encounterId;
 	private String patientId;
 	private Long timestamp;
@@ -68,6 +69,12 @@ public class PatientDetails {
 	}
 	public void setTimeStampDate(String timeStampDate) {
 		this.timeStampDate = timeStampDate;
+	}
+	public String getPatientName() {
+		return patientName;
+	}
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
 	}
 	
 }

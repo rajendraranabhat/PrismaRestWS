@@ -69,7 +69,7 @@ public class PrismaService {
 			logger.debug(gson.toJson(scoreLists));
 
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 		}
 		//return feeds;
 		return scoreLists;
@@ -89,7 +89,7 @@ public class PrismaService {
 			//apiValues = gson.toJson(icuOutcomeLists);
 
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(icuOutcomeLists));
@@ -110,7 +110,7 @@ public class PrismaService {
 			attempt 			= prismaManager.noOfAttempt(username);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(attempt));
@@ -134,7 +134,7 @@ public class PrismaService {
 			review 			= prismaManager.reviewResults(outcomeID);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(review));
@@ -158,7 +158,7 @@ public class PrismaService {
 			logger.debug(gson.toJson(outcomeRankList));
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(outcomeRankList));
@@ -199,7 +199,7 @@ public class PrismaService {
 			patientDetails 			= prismaManager.onePatient(doctorId,patientId);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		
@@ -220,7 +220,7 @@ public class PrismaService {
 			patientDetails 			= prismaManager.patientDetail(doctorId);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(patientDetails));
@@ -240,7 +240,7 @@ public class PrismaService {
 			patientDetailsRaw 			= prismaManager.OnePatientDetailsRaw(patientId);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		
@@ -261,7 +261,7 @@ public class PrismaService {
 			noUsers 			= prismaManager.userCheck(userId);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(noUsers));
@@ -284,7 +284,7 @@ public class PrismaService {
 			noUsers 			= prismaManager.login(userId, password);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(noUsers));
@@ -309,7 +309,7 @@ public class PrismaService {
 
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -332,7 +332,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -355,7 +355,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -378,7 +378,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -402,7 +402,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -425,7 +425,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -448,7 +448,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -471,7 +471,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -496,7 +496,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess && isSuccessDoctorReg);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(doctorReg));
@@ -519,7 +519,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -542,7 +542,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -564,7 +564,7 @@ public class PrismaService {
 			riskAssessments 			= prismaManager.getRiskAssessment(doctorId, patientId, riskAssessmentType);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(riskAssessments));
@@ -587,7 +587,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -610,7 +610,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
@@ -630,7 +630,7 @@ public class PrismaService {
 			patientMortality 			= prismaManager.mortality(patientId);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(patientMortality));
@@ -651,7 +651,7 @@ public class PrismaService {
 			patientRecords 			= prismaManager.getPatienRecords(patientId);
 			
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(patientRecords));
@@ -677,7 +677,7 @@ public class PrismaService {
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {
-			logger.debug("error");
+			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
 		logger.debug(gson.toJson(retVal));
