@@ -48,20 +48,21 @@ public class Dao {
 			//input = new FileInputStream("src/main/resources/config.properties");
 			//input = new FileInputStream("config.properties");
 			//System.out.println("input"+input);
-			
+			prop.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
+
 			//InputStream input = Dao.class.getResourceAsStream("config.properties");
 			//load a properties file
 			//prop.load(input);
-			//String db_url = prop.getProperty("dburl");
+			String db_url = prop.getProperty("dburl");
 			// get the property value and print it out
-			//logger.debug("db_url:"+db_url);
+			logger.debug("db_url:"+db_url);
 			//System.out.println("db_url:"+db_url);
 			
 			if(this.session==null){
-				//connect(db_url,9042);
+				connect(db_url,9042);
 				//connect("172.17.0.5",9042);
 				//connect("deepc04.acis.ufl.edu",9042); //"deepc04.acis.ufl.edu"
-				connect("localhost",9042);
+				//connect("localhost",9042);
 			}				
 		}
 		catch(Exception e){
