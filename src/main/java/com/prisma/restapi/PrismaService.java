@@ -22,6 +22,7 @@ import com.prisma.pojo.DoctorInterventions;
 import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
+import com.prisma.pojo.Login;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRank1;
@@ -228,6 +229,26 @@ public class PrismaService {
 	}
 	
 	@GET
+	@Path("/patientsAdmin")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<PatientDetails> patientDetailAdmin(@QueryParam("doctorId") String doctorId) {
+		ArrayList<PatientDetails> patientDetails = null;
+		try {
+			//logger.debug("<<<<<<<<<<<<<<<userId="+userId+" password="+password);
+			logger.debug("patientDetail doctorId="+doctorId);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			patientDetails 			= prismaManager.patientDetailAdmin(doctorId);
+			
+		} catch (Exception e) {
+			logger.debug("error:"+e.getMessage());
+			e.getStackTrace();
+		}
+		logger.debug(gson.toJson(patientDetails));
+		return patientDetails;
+	}
+	
+	@GET
 	@Path("/patientDetailsRaw")
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<PatientDetailsRaw> OnePatientDetailsRaw(@QueryParam("patientId") String patientId) {
@@ -272,23 +293,24 @@ public class PrismaService {
 	@GET
 	@Path("/login")
 	@Produces(MediaType.APPLICATION_JSON)
-	public int loginDoctor(@QueryParam("user") String userId , @QueryParam("password") String password) {
+	public Login loginDoctor(@QueryParam("user") String userId , @QueryParam("password") String password) {
 		int noUsers = 0;
+		Login user = null;
 		try {			
 			/*if(logger.isDebugEnabled()){
 				logger.debug("This is debug : " + parameter);
 			}*/
-			logger.debug("loginDoctor userId="+userId);
+			logger.debug("loginDoctor userId="+userId+" password="+password);
 			PrismaManager prismaManager = new PrismaManager();			
 			
-			noUsers 			= prismaManager.login(userId, password);
+			user 			= prismaManager.login(userId, password);
 			
 		} catch (Exception e) {
 			logger.debug("error:"+e.getMessage());
 			e.getStackTrace();
 		}
-		logger.debug(gson.toJson(noUsers));
-		return noUsers;
+		logger.debug(gson.toJson(user));
+		return user;
 	}
 	
 	@POST
@@ -674,6 +696,49 @@ public class PrismaService {
 			PrismaManager prismaManager = new PrismaManager();			
 			
 			isSuccess 			= prismaManager.uploadDoctorAgreement(uploadedInputStream, fileName);
+			
+			retVal.setSuccess(isSuccess);
+		} catch (Exception e) {
+			logger.debug("error:"+e.getMessage());
+			e.getStackTrace();
+		}
+		logger.debug(gson.toJson(retVal));
+		return retVal;
+	}
+	
+	@GET
+	@Path("/getPageComplete")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getPageComplete(@QueryParam("doctorId") String doctorId, @QueryParam("patientId") String patientId) {
+		String page = "";
+		try {
+			logger.debug("getPageComplete");
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			page 			= prismaManager.getPageComplete(doctorId, patientId);
+			
+		} catch (Exception e) {
+			logger.debug("error:"+e.getMessage());
+			e.getStackTrace();
+		}
+		logger.debug(gson.toJson(page));
+		return page;
+	}
+	
+	@POST
+	@Path("/insertPageComplete")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ReturnVal insertPageComplete(@QueryParam("doctorId") String doctorId, @QueryParam("patientId") String patientId, @QueryParam("pagesComplete") String pagesComplete) {
+		retVal = new ReturnVal();
+		boolean isSuccess;
+		try {
+			logger.debug("insertPageComplete");
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			isSuccess 			= prismaManager.insertPageComplete(doctorId, patientId, pagesComplete);
 			
 			retVal.setSuccess(isSuccess);
 		} catch (Exception e) {

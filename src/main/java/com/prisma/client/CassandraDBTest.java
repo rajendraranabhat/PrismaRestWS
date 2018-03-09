@@ -3,6 +3,7 @@ package com.prisma.client;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import com.prisma.pojo.Login;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.PatientRecord;
 import com.prisma.restapi.PrismaManager;
@@ -11,7 +12,12 @@ public class CassandraDBTest {
 
 	public static void getPatientDetails() throws Exception{
 		PrismaManager manager = new PrismaManager();
-		manager.patientDetail("raj");
+		manager.patientDetail("10893");
+	}
+	
+	public static void getPatientDetailAdmin() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		manager.patientDetailAdmin("10893");
 	}
 	
 	public static void onePatient() throws Exception{
@@ -46,16 +52,38 @@ public class CassandraDBTest {
 		manager.OnePatientDetailsRaw("5059");
 	}
 	
+	public static Login getLogin() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		Login user = manager.login("10893", "10893");
+		return user;
+	}
+	
+	public static void getPage() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		String page = manager.getPageComplete("10893", "1232");
+		System.out.println("page="+page);
+	}
+	
+	public static void insertPageComplete() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		manager.insertPageComplete("10893", "123","2");
+	}
+
+	
 	public static void main(String[] args) throws Exception {
+		//System.out.println(getLogin());
+		//getPatientDetailAdmin();
 		//getPatientDetails();
 		//onePatient();
 		//patientPrediction();
 		//getPatienRecords();
-		getMortality();
+		//getMortality();
 		//Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		//System.out.println(timestamp.toString());
 		//System.out.println(new Timestamp(new Date().getTime()));
 		//getPatientRaw();
+		//insertPageComplete();
+		getPage();
 	}
 
 }

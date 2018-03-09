@@ -1,5 +1,8 @@
 package com.prisma.api;
 
+import java.io.IOException;
+
+
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,6 +12,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
@@ -19,6 +23,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.prisma.pojo.Login;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRankFeature;
@@ -27,6 +32,8 @@ import com.prisma.pojo.PatientDetailsRaw;
 import com.prisma.pojo.PatientRecord;
 import com.prisma.pojo.ReviewResult;
 import com.prisma.pojo.RiskAssessment;
+import java.util.StringTokenizer;
+import java.util.HashSet;
 
 
 public class GetApi {
@@ -34,6 +41,8 @@ public class GetApi {
 	final static Logger logger = Logger.getLogger(GetApi.class);
 	static boolean isFeatureMap = false;
 	static boolean isImpFeatureMap = false;
+	private Properties prop = new Properties();
+	
 	
 	public static boolean isNumeric(String str)  
 	{  
@@ -571,15 +580,150 @@ public class GetApi {
 		
 		return patient;
 	}
+	
+	ArrayList<String> removeDuplicates(ArrayList<String> list) {
 
-	public ArrayList<PatientDetails> getPatientDetail(Session session, String doctorId) {
+        // Store unique items in result.
+        ArrayList<String> result = new ArrayList<String>();
+
+        // Record encountered Strings in HashSet.
+        HashSet<String> set = new HashSet<String>();
+
+        // Loop over argument list.
+        for (String item : list) {
+
+            // If String is not in set, add it to the list and the set.
+            if (!set.contains(item)) {
+                result.add(item);
+                set.add(item);
+            }
+        }
+        return result;
+    }
+	
+	public ArrayList<PatientDetails> getPatientDetailAdmin(Session session, String doctorId) throws IOException {
 		
 		ResultSet results = null;
 		ArrayList<String> encounterIds = new ArrayList<String>();
 		ArrayList<String> patientIDs = new ArrayList<String>();
-		ArrayList<String> patientSummary = new ArrayList<String>();
 		ArrayList<PatientDetails> patientDetailsList = new ArrayList<PatientDetails>();
 		PatientDetails patientDetails = null;
+		HashMap featureValueMap = new HashMap();
+		
+		String docNameQuery = "select name from prisma1.userinfo where id='"+doctorId+"'";
+		String docName  = executeQuery(session, docNameQuery,"name");			
+		logger.debug("docName="+docName);
+		
+		String patentIdQuery = "select distinct encounter_id from prisma1.unprocessed_data allow filtering";//
+		
+		logger.debug("query2="+patentIdQuery);
+		encounterIds = executeQuery1(session, patentIdQuery, "encounter_id");
+		//encounterIds = removeDuplicates(encounterIds);
+		logger.debug("encounterIds=" + encounterIds);
+			
+		//patientIDs = executeQuery1(session, patentIdQuery, "patient_id");		
+		//logger.debug("patientIDs=" + patientIDs);
+		String age = "", sex="", race="", cci="", patientId="", timestamp_val="", patient_name="", assign_doc="";
+		
+		//encounterIds = new ArrayList(encounterIds.subList(0, 5)); //slice arraylist
+		
+		for(String encounterId:encounterIds){
+			//age, sex, race, cci
+			patientDetails = new PatientDetails();
+			
+			
+			String ageQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='age'";
+			age = executeQuery(session, ageQuery,"value");
+			logger.debug("age="+age);
+			featureValueMap.put("age", age);
+			
+			String sexQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='sex'";
+			sex = executeQuery(session, sexQuery,"value");
+			logger.debug("sex="+sex);
+			featureValueMap.put("sex", sex);
+			
+			String raceQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='race'";
+			race = executeQuery(session, raceQuery,"value");
+			logger.debug("race="+race);
+			featureValueMap.put("race", race);
+			
+			String cciQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='cci'";
+			cci = executeQuery(session, cciQuery,"value");
+			logger.debug("cci="+cci);
+			featureValueMap.put("cci", cci);
+			
+			String patientIdQuery = "select patient_id from prisma1.unprocessed_data where encounter_id='"+encounterId+"' limit 1 allow filtering";
+			patientId = executeQuery(session, patientIdQuery,"patient_id");
+			logger.debug("patientId="+patientId);
+			
+			String patientName_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='name'";//
+			patient_name = executeQuery(session, patientName_Query,"value");
+			logger.debug("patient_name:"+patient_name);
+			
+			String assignDocName_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='attend_doc'";//
+			assign_doc = executeQuery(session, assignDocName_Query,"value");
+			featureValueMap.put("assign_doc", assign_doc);
+			logger.debug("assign_doc:"+assign_doc);
+			
+			String timestamp_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='timestamp'";
+			timestamp_val = executeQuery(session, timestamp_Query,"value");
+			logger.debug("timestamp_val:"+timestamp_val);
+			
+			Long timestamp1=null, timestampCurrent = null;
+			String timestampDate = null;
+			timestampCurrent = System.currentTimeMillis();
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); //2018-01-30 20:27:49
+			try {
+			    Date parsedDate = dateFormat.parse(timestamp_val);
+			    timestamp1 = parsedDate.getTime();
+			    timestampDate = timestamp_val;
+			} catch(Exception e) { //this generic but you can control another types of exception
+			    // look the origin of excption 
+				logger.debug("Exception "+e.getMessage()+"timestamp_val:"+timestamp1);
+				try {
+					timestamp1 = dateFormat.parse(timestampCurrent.toString()).getTime();
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+				}
+			}
+			
+			logger.debug("timestamp_val:"+timestamp1);
+			
+			patientDetails.setDoctorId(doctorId);
+			patientDetails.setDoctorName(docName);
+			patientDetails.setFeatureValueMap(featureValueMap);
+			patientDetails.setEncounterId(encounterId);
+			patientDetails.setPatientId(patientId);
+			patientDetails.setPatientName(patient_name);
+			patientDetails.setTimestamp(timestamp1);
+			patientDetails.setTimeStampDate(timestampDate);
+			patientDetailsList.add(patientDetails);
+		}
+		
+		class SortbyOrderTimestamp implements Comparator<PatientDetails>
+		{
+		    // Used for sorting in ascending order of
+		    // Order Id
+		    public int compare(PatientDetails a, PatientDetails b)
+		    {
+		    	logger.debug("timestampb="+b.getTimestamp().intValue()+" timestampa="+a.getTimestamp().intValue());
+		        return  b.getTimestamp().intValue() - a.getTimestamp().intValue();
+		    }
+		}
+		Collections.sort(patientDetailsList, new SortbyOrderTimestamp());
+		
+		return patientDetailsList;
+	}
+
+	public ArrayList<PatientDetails> getPatientDetail(Session session, String doctorId) throws IOException {
+		
+		ResultSet results = null;
+		ArrayList<String> encounterIds = new ArrayList<String>();
+		ArrayList<String> patientIDs = new ArrayList<String>();
+		ArrayList<PatientDetails> patientDetailsList = new ArrayList<PatientDetails>();
+		PatientDetails patientDetails = null;
+		HashMap featureValueMap = new HashMap();
+		
 				
 		//BEGIN BATCH  select name from prisma1.userinfo where id='raj';select id from patientDetails where feature = 'attend_doc' and value ='raj' APPLY BATCH;
 		//APPLY BATCH;
@@ -591,10 +735,11 @@ public class GetApi {
 		
 		//doctorId = "raj";		select * from unprocessed_data where feature='attend_doc' allow filtering;
 		String patentIdQuery = "select encounter_id, patient_id from prisma1.unprocessed_data where feature='attend_doc' and value='"+doctorId+"' allow filtering";//
-		logger.debug("query2="+patentIdQuery);
-		encounterIds = executeQuery1(session, patentIdQuery, "encounter_id");		
-		logger.debug("encounterIds=" + encounterIds);
 		
+		logger.debug("query2="+patentIdQuery);
+		encounterIds = executeQuery1(session, patentIdQuery, "encounter_id");
+		logger.debug("encounterIds=" + encounterIds);
+			
 		patientIDs = executeQuery1(session, patentIdQuery, "patient_id");		
 		logger.debug("patientIDs=" + patientIDs);
 		
@@ -611,25 +756,30 @@ public class GetApi {
 			String ageQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='age'";//
 			age = executeQuery(session, ageQuery,"value");
 			logger.debug("age="+age);	
+			featureValueMap.put("age", age);
 			
 			String raceQuery1 = "SELECT VALUE FROM prisma1.unprocessed_data WHERE encounter_id='"+encounterId+"' AND feature='race'";//
 			String map_tmp = executeQuery(session, raceQuery1,"value");
+			featureValueMap.put("race", map_tmp);
 			
 			String raceQuery = "SELECT VALUE FROM prisma1.varMap WHERE id= 'race' AND map='"+map_tmp+"'";
 			race = executeQuery(session, raceQuery,"value");
 						
 			String genderQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='sex'";//
-			gender = executeQuery(session, genderQuery,"value");			
+			gender = executeQuery(session, genderQuery,"value");
+			featureValueMap.put("sex", gender);
 			
 			String cciQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='cci'";//
 			cci = executeQuery(session, cciQuery,"value");
 			logger.debug("cci:"+cci);
-			if(cci!=null && !cci.isEmpty() && Integer.parseInt(cci)==0){
+			featureValueMap.put("cci", cci);
+			
+			/*if(cci!=null && !cci.isEmpty() && Integer.parseInt(cci)==0){
 				combordities = "with <b>no known combordities</b>";
 			}
 			else{		
 				combordities = "has <b>"+cci+" combordities";
-			}	
+			}*/	
 			
 			/*
 			String serviceQuery = "SELECT value FROM prisma1.unprocessed_data WHERE encounter_id='"+encounterId+"' AND feature='service'";
@@ -640,10 +790,12 @@ public class GetApi {
 			String admissionTypeQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='admitting_type'";//
 			admission_type = executeQuery(session, admissionTypeQuery,"value");
 			logger.debug("admissionType:"+admission_type);
+			featureValueMap.put("admitting_type", admission_type);
 			
 			String attend_docQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='attend_doc'";//
 			attend_doc = executeQuery(session, attend_docQuery,"value");
 			logger.debug("attend_doc:"+attend_doc);
+			featureValueMap.put("attend_doc", attend_doc);
 			
 			/*
 			String pr1_tempQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='pr1'";
@@ -671,10 +823,12 @@ public class GetApi {
 			String admit_dayQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='admit_day'";//
 			admit_day = executeQuery(session, admit_dayQuery,"value");
 			logger.debug("admit_day:"+admit_day);
+			featureValueMap.put("admit_day", admit_day);
 			
 			String admission_sourceQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='admission_source'";//
 			admission_source = executeQuery(session, admission_sourceQuery,"value");
 			logger.debug("admission_source:"+admission_source);
+			featureValueMap.put("admission_source", admission_source);
 			
 			String patientName_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='name'";//
 			patient_name = executeQuery(session, patientName_Query,"value");
@@ -683,6 +837,7 @@ public class GetApi {
 			String timestamp_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='timestamp'";//
 			timestamp_val = executeQuery(session, timestamp_Query,"value");
 			logger.debug("timestamp_val:"+timestamp_val);
+			featureValueMap.put("timestamp", timestamp_val);
 			
 			Long timestamp1=null, timestampCurrent = null;
 			String timestampDate = null;
@@ -704,31 +859,20 @@ public class GetApi {
 			
 			logger.debug("timestamp_val:"+timestamp1);
 			
-			/*
-			String story = "Your patient is <b>"+name+"</b>, and is <b>"+ age+" year old "+race+" "+gender+" </b> "+ combordities+
-					" . The patient was admitted to hospital <b>"+pr1_day+" </b> on <b>"+admit_day+" </b> from <b>"+admission_source+
-					" </b> setting with primary diagnosis related to <b>"+mdc+"</b> and is scheduled to have a <b>"+
-					admission_type+" "+ service+" "+ pr1+"</b> by <b>Dr."+docName+"</b>.";*/
 			
-			String story = "Your patient is <b>"+ age+" year old "+race+" "+gender+" </b> "+ combordities+
-					" . The patient was admitted to hospital on <b>"+admit_day+" </b> from <b>"+admission_source+
-					" </b> setting with primary diagnosis by <b>Dr."+docName+"</b> on <b>"+timestampDate+"</b>.";
 			
-			patientSummary.add(story);
 			patientDetails = new PatientDetails();
 			
 			patientDetails.setDoctorId(doctorId);
 			patientDetails.setDoctorName(docName);
+			patientDetails.setFeatureValueMap(featureValueMap);
 			patientDetails.setPatientName(patient_name);
 			patientDetails.setEncounterId(encounterId);
 			patientDetails.setTimestamp(timestamp1);
 			patientDetails.setTimeStampDate(timestampDate);
 			patientDetails.setPatientId(patientIDs.get(patientIdx)); 
-			patientIdx++;
-			patientDetails.setStory1(story);
-			
+			patientIdx++;			
 			patientDetailsList.add(patientDetails);
-			logger.debug("story="+story);			
 		}		
 		
 		class SortbyOrderTimestamp implements Comparator<PatientDetails>
@@ -742,7 +886,7 @@ public class GetApi {
 		}
 		Collections.sort(patientDetailsList, new SortbyOrderTimestamp());
 		
-		logger.debug("patientSummary="+patientSummary.toString());
+		logger.debug("getPatientDetail end");
 
 		return patientDetailsList;		
 	}
@@ -766,32 +910,36 @@ public class GetApi {
 		}
 		
 		logger.debug("outcome="+outcome+" description="+description);
-		logger.debug("outcome="+outcome+" description="+description);
 		
 		return review;
 	}
 	
-	public int getLogin(Session session, String userId, String password) {
+	public Login getLogin(Session session, String userId, String password) {
 
+		Login user = new Login();
+		user.setRegistered(false);
+		
 		int noRow = 0;
 		
-		logger.debug("select count(*) as cnt from prisma1.userinfo where id='"+userId+"' and password='"+password+"' allow filtering");
-		
-		logger.debug("select count(*) as cnt from prisma1.userinfo where id='"+userId+"' and password='"+password+"' allow filtering");
+		logger.debug("select id, name, role from prisma1.userinfo where id='"+userId+"' and password='"+password+"' allow filtering");
 				
 		ResultSet results = session
-				.execute("select count(*) as cnt from prisma1.userinfo where id='"+userId+"' and password='"+password+"' allow filtering");
+				.execute("select id, name, role from prisma1.userinfo where id='"+userId+"' and password='"+password+"' allow filtering");
 			
 		logger.debug("results=" + results);
 		
 		for (Row row : results){
-			logger.debug("cnt="+row.getLong("cnt"));
-			noRow = (int)row.getLong("cnt");
-			logger.debug("noRow="+noRow);
+			//logger.debug("cnt="+row.getLong("cnt"));
+			//noRow = (int)row.getLong("cnt");
+			user.setId(row.getString("id"));
+			user.setName(row.getString("name"));
+			user.setRole(row.getString("role"));
+			user.setRegistered(true);
+			logger.debug("name="+user.getName());
 		}
 
-		logger.debug("results=" + results+" noRow="+noRow);
-		return noRow;		
+		logger.debug("results=" + results+"name="+user.getName());
+		return user;		
 	}
 
 	public ArrayList<OutComeICUPojo> GetICU_OutCome(Session session)// (Connection
@@ -846,9 +994,12 @@ public class GetApi {
 				riskAssessment.setRisktype(row.getInt("risktype"));
 				riskAssessment.setNumAttempts(row.getInt("numattempts"));
 				
-				riskAssessmentList.add(riskAssessment);
+				//riskAssessmentList.add(riskAssessment);
+				//break;  //Just take the first initial one.
 			}
-
+			
+			riskAssessmentList.add(riskAssessment); //Take the last one.
+			
 			return riskAssessmentList;
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
@@ -965,5 +1116,23 @@ public class GetApi {
 				e.printStackTrace(System.out);
 				throw e;
 			}
+	}
+
+	public String getPageComplete(Session session, String doctorId, String patientId) {
+		String page = "";
+		try {
+			String pageCompleteQuery = "select pagescomplete from prisma1.pagecomplete where docid='"+doctorId+"' and patientid='"+patientId+"'";
+			logger.debug(pageCompleteQuery);
+			ResultSet results = session.execute(pageCompleteQuery);
+						
+			for(Row row: results){
+				page = row.getString("pagescomplete");
+			}
+			logger.debug("page="+page);
+			
+			} catch (Exception e) {
+				e.printStackTrace(System.out);
+			}
+		return page;
 	}
 }

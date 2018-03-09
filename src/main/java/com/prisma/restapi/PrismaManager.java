@@ -10,6 +10,7 @@ import com.prisma.pojo.DoctorInterventions;
 import com.prisma.pojo.DoctorMitigation;
 import com.prisma.pojo.DoctorRegistration;
 import com.prisma.pojo.IndexPatient;
+import com.prisma.pojo.Login;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutComeResult;
@@ -192,6 +193,26 @@ public class PrismaManager {
 		}
 		return patientDetails;
 	}
+	
+	public ArrayList<PatientDetails> patientDetailAdmin(String doctorId) throws Exception {
+
+		ArrayList<PatientDetails> patientDetails = null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			patientDetails = api.getPatientDetailAdmin(session, doctorId);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return patientDetails;
+	}
 
 	public int userCheck(String userId) throws Exception {
 
@@ -233,16 +254,17 @@ public class PrismaManager {
 		return review;
 	}
 
-	public int login(String userId, String password) throws Exception {
+	public Login login(String userId, String password) throws Exception {
 
 		int noUsers = 0;
+		Login user = null;
 
 		Dao dao = null;
 		try {
 			dao = new Dao();
 			Session session = dao.getSession();
 			GetApi api = new GetApi();
-			noUsers = api.getLogin(session, userId, password);
+			user = api.getLogin(session, userId, password);
 
 		} catch (Exception e) {
 			throw e;
@@ -250,7 +272,7 @@ public class PrismaManager {
 			if (dao != null)
 				dao.close();
 		}
-		return noUsers;
+		return user;
 	}
 
 	public boolean insertDoctorInfo(DoctorRegistration doctorRegistration) throws Exception {
@@ -594,5 +616,42 @@ public class PrismaManager {
 				dao.close();
 		}
 		return patientDetailsRaw;
+	}
+
+	public boolean insertPageComplete(String doctorId, String patientId, String pagesComplete) throws Exception {
+		boolean isSuccess = false;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			InsertdateApi api = new InsertdateApi();
+			isSuccess = api.insertPageComplete(session, doctorId, patientId, pagesComplete);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+
+		return isSuccess;
+	}
+
+	public String getPageComplete(String doctorId, String patientId) throws Exception {
+		Dao dao = null;
+		String page = "";
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			page = api.getPageComplete(session, doctorId, patientId);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return page;
 	}
 }

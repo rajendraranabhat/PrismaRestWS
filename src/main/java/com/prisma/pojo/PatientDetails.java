@@ -10,6 +10,7 @@ public class PatientDetails {
 	private String patientName="";
 	private String encounterId;
 	private String patientId;
+	private HashMap featureValueMap;
 	private Long timestamp;
 	private String timeStampDate; 
 	private String story1;
@@ -76,5 +77,10 @@ public class PatientDetails {
 	public void setPatientName(String patientName) {
 		this.patientName = patientName;
 	}
-	
+	public HashMap getFeatureValueMap() {
+		return featureValueMap;
+	}
+	public void setFeatureValueMap(HashMap featureValueMap) {
+		this.featureValueMap = featureValueMap;
+	}
 }

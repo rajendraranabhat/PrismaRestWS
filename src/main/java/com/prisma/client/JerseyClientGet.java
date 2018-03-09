@@ -11,17 +11,19 @@ public class JerseyClientGet {
 
 			Client client = Client.create();
 			
-			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/login?user=raj1&password=raj1";
+			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/login?user=10893&password=10893";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/userCheck?user=raj1";
-			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patients?doctorId=raj";
+			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patients?doctorId=10893";
+			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientsAdmin?doctorId=10893";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientDetails?doctorId=raj&patientId=BB3XEDJ201";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=raj&patientId=BB3XEDJ201&outcomeId=1";
-			String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=10294&patientId=14675";
+			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/patientPrediction?doctorId=10294&patientId=14675";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/reviewResults?outcomeID=1";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/noOfAttempt?user=raj";
 			//String url = "http://localhost:8081/PrismaRestWS/rest/WebService/getRiskAssessment?doctorId=raj&patientId=A1F40528";
 			//String url="http://localhost:8081/PrismaRestWS/rest/WebService/mortality?patientId=826";
 			//String url="http://localhost:8081/PrismaRestWS/rest/WebService/patienRecords?patientId=3496";
+			String url="http://localhost:8081/PrismaRestWS/rest/WebService/getPageComplete?doctorId=10893&patientId=123";
 			
 			WebResource webResource = client.resource(url);
 

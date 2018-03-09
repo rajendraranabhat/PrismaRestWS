@@ -459,4 +459,23 @@ public class InsertdateApi {
 		}
 		return false;
 	}
+
+	public boolean insertPageComplete(Session session, String doctorId, String patientId, String pagesComplete) {
+		boolean isSuccess = false;
+		try {
+			
+			logger.debug("doctorId: " + doctorId+" patientId: " + patientId+" pagesComplete: " + pagesComplete);
+
+
+			logger.debug("insert into prisma1.pageComplete(docid,patientid,pagesComplete) values('"+doctorId+"','"+patientId+"','"+pagesComplete+"')");
+			session.execute("insert into prisma1.pageComplete(docid,patientid,pagesComplete) values('"+doctorId+"','"+patientId+"','"+pagesComplete+ "')");
+
+			isSuccess = true;
+
+		} catch (Exception e) {
+			logger.debug("Error: " + e.getMessage());
+			e.getStackTrace();
+		}
+		return isSuccess;
+	}
 }
