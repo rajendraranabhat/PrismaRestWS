@@ -68,6 +68,11 @@ public class CassandraDBTest {
 		PrismaManager manager = new PrismaManager();
 		manager.insertPageComplete("10893", "123","2");
 	}
+	
+	public static void getUserRole() throws Exception{
+		PrismaManager manager = new PrismaManager();
+		manager.getUserRole("10893");
+	}
 
 	
 	public static void main(String[] args) throws Exception {
@@ -83,7 +88,7 @@ public class CassandraDBTest {
 		//System.out.println(new Timestamp(new Date().getTime()));
 		//getPatientRaw();
 		//insertPageComplete();
-		getPage();
+		//getPage();
+		getUserRole();
 	}
-
 }

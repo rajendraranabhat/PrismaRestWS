@@ -33433,3 +33433,45 @@
 2018-03-07 22:51:16 DEBUG GetApi:1130 - page=
 2018-03-07 22:51:20 DEBUG PoolThreadCache:243 - Freed 28 thread-local buffer(s) from thread: cluster1-nio-worker-0
 2018-03-07 22:51:20 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1
+2018-03-09 19:17:40 DEBUG Dao:58 - db_url:10.15.128.21
+2018-03-09 19:17:41 DEBUG InternalLoggerFactory:46 - Using Log4J as the default logging framework
+2018-03-09 19:17:41 DEBUG PlatformDependent0:71 - java.nio.Buffer.address: available
+2018-03-09 19:17:41 DEBUG PlatformDependent0:79 - sun.misc.Unsafe.theUnsafe: available
+2018-03-09 19:17:41 DEBUG PlatformDependent0:88 - sun.misc.Unsafe.copyMemory: available
+2018-03-09 19:17:41 DEBUG PlatformDependent0:129 - java.nio.Bits.unaligned: true
+2018-03-09 19:17:41 DEBUG PlatformDependent:666 - Java version: 8
+2018-03-09 19:17:41 DEBUG PlatformDependent:673 - -Dio.netty.noUnsafe: false
+2018-03-09 19:17:41 DEBUG PlatformDependent:700 - sun.misc.Unsafe: available
+2018-03-09 19:17:41 DEBUG PlatformDependent:783 - -Dio.netty.noJavassist: false
+2018-03-09 19:17:41 DEBUG PlatformDependent:796 - Javassist: unavailable
+2018-03-09 19:17:41 DEBUG PlatformDependent:797 - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2018-03-09 19:17:41 DEBUG PlatformDependent:815 - -Dio.netty.tmpdir: /var/folders/b_/n63lx0wx3fl6nzts1fs1qndh0000gn/T (java.io.tmpdir)
+2018-03-09 19:17:41 DEBUG PlatformDependent:894 - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-03-09 19:17:41 DEBUG PlatformDependent:95 - -Dio.netty.noPreferDirect: false
+2018-03-09 19:17:41 DEBUG MultithreadEventLoopGroup:41 - -Dio.netty.eventLoopThreads: 16
+2018-03-09 19:17:41 DEBUG NioEventLoop:89 - -Dio.netty.noKeySetOptimization: false
+2018-03-09 19:17:41 DEBUG NioEventLoop:90 - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-03-09 19:17:41 DEBUG ResourceLeakDetector:104 - -Dio.netty.leakDetection.level: simple
+2018-03-09 19:17:41 DEBUG ResourceLeakDetector:105 - -Dio.netty.leakDetection.maxRecords: 4
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:107 - -Dio.netty.allocator.numHeapArenas: 16
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:108 - -Dio.netty.allocator.numDirectArenas: 16
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:110 - -Dio.netty.allocator.pageSize: 8192
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:115 - -Dio.netty.allocator.maxOrder: 11
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:119 - -Dio.netty.allocator.chunkSize: 16777216
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:120 - -Dio.netty.allocator.tinyCacheSize: 512
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:121 - -Dio.netty.allocator.smallCacheSize: 256
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:122 - -Dio.netty.allocator.normalCacheSize: 64
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:123 - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2018-03-09 19:17:41 DEBUG PooledByteBufAllocator:124 - -Dio.netty.allocator.cacheTrimInterval: 8192
+2018-03-09 19:17:41 DEBUG ThreadLocalRandom:169 - -Dio.netty.initialSeedUniquifier: 0x67dd8da64e3f0433 (took 8 ms)
+2018-03-09 19:17:41 DEBUG ByteBufUtil:123 - -Dio.netty.allocator.type: unpooled
+2018-03-09 19:17:41 DEBUG ByteBufUtil:135 - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-03-09 19:17:41 DEBUG ByteBufUtil:138 - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2018-03-09 19:17:41 DEBUG Recycler:62 - -Dio.netty.recycler.maxCapacity.default: 262144
+2018-03-09 19:17:41 DEBUG AbstractByteBuf:48 - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2018-03-09 19:17:41 DEBUG GetApi:1145 - select id, name, role from prisma1.userinfo where id='10893'
+2018-03-09 19:17:42 DEBUG GetApi:1150 - results=ResultSet[ exhausted: false, Columns[id(varchar), name(varchar), role(varchar)]]
+2018-03-09 19:17:42 DEBUG GetApi:1159 - name=Bihorac
+2018-03-09 19:17:42 DEBUG GetApi:1162 - results=ResultSet[ exhausted: true, Columns[id(varchar), name(varchar), role(varchar)]]name=Bihorac
+2018-03-09 19:17:44 DEBUG PoolThreadCache:243 - Freed 27 thread-local buffer(s) from thread: cluster1-nio-worker-0
+2018-03-09 19:17:44 DEBUG PoolThreadCache:243 - Freed 7 thread-local buffer(s) from thread: cluster1-nio-worker-1

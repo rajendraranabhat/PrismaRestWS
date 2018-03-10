@@ -654,4 +654,24 @@ public class PrismaManager {
 		}
 		return page;
 	}
+
+	public Login getUserRole(String doctorId) throws Exception {
+		int noUsers = 0;
+		Login user = null;
+
+		Dao dao = null;
+		try {
+			dao = new Dao();
+			Session session = dao.getSession();
+			GetApi api = new GetApi();
+			user = api.getUserRole(session, doctorId);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (dao != null)
+				dao.close();
+		}
+		return user;
+	}
 }

@@ -748,5 +748,26 @@ public class PrismaService {
 		logger.debug(gson.toJson(retVal));
 		return retVal;
 	}
+	
+	@GET
+	@Path("/getUserRole")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Login getUserRole(@QueryParam("doctorId") String doctorId) {
+		
+		Login user = null;
+		try {
+			logger.debug("getUserRole");
+			//logger.debug("<<<<<<<<<<<<<<<"+doctorReg);
+			PrismaManager prismaManager = new PrismaManager();			
+			
+			user 			= prismaManager.getUserRole(doctorId);
+			
+		} catch (Exception e) {
+			logger.debug("error:"+e.getMessage());
+			e.getStackTrace();
+		}
+		logger.debug(gson.toJson(user));
+		return user;
+	}
 }
 

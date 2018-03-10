@@ -706,8 +706,17 @@ public class GetApi {
 		    // Order Id
 		    public int compare(PatientDetails a, PatientDetails b)
 		    {
-		    	logger.debug("timestampb="+b.getTimestamp().intValue()+" timestampa="+a.getTimestamp().intValue());
-		        return  b.getTimestamp().intValue() - a.getTimestamp().intValue();
+		    	long ta = a.getTimestamp().longValue();
+		    	long tb = b.getTimestamp().longValue();
+		    	
+		    	logger.debug("timestampb="+tb+" timestampa="+ta+" diff= "+ (tb-ta));
+		    	if(tb>ta)
+		    		return 1;
+		    	else if(ta>tb)
+		    		return -1;
+		    	else
+		    		return 0;
+		        //return  b.getTimestamp().intValue() - a.getTimestamp().intValue();
 		    }
 		}
 		Collections.sort(patientDetailsList, new SortbyOrderTimestamp());
@@ -1134,5 +1143,32 @@ public class GetApi {
 				e.printStackTrace(System.out);
 			}
 		return page;
+	}
+
+	public Login getUserRole(Session session, String doctorId) {
+		Login user = new Login();
+		user.setRegistered(false);
+		
+		int noRow = 0;
+		
+		logger.debug("select id, name, role from prisma1.userinfo where id='"+doctorId+"'");
+				
+		ResultSet results = session
+				.execute("select id, name, role from prisma1.userinfo where id='"+doctorId+"'");
+			
+		logger.debug("results=" + results);
+		
+		for (Row row : results){
+			//logger.debug("cnt="+row.getLong("cnt"));
+			//noRow = (int)row.getLong("cnt");
+			user.setId(row.getString("id"));
+			user.setName(row.getString("name"));
+			user.setRole(row.getString("role"));
+			user.setRegistered(true);
+			logger.debug("name="+user.getName());
+		}
+
+		logger.debug("results=" + results+"name="+user.getName());
+		return user;		
 	}
 }
