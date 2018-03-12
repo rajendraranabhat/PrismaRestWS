@@ -608,7 +608,7 @@ public class GetApi {
 		ArrayList<String> patientIDs = new ArrayList<String>();
 		ArrayList<PatientDetails> patientDetailsList = new ArrayList<PatientDetails>();
 		PatientDetails patientDetails = null;
-		HashMap featureValueMap = new HashMap();
+		HashMap featureValueMap1 = null; 
 		
 		String docNameQuery = "select name from prisma1.userinfo where id='"+doctorId+"'";
 		String docName  = executeQuery(session, docNameQuery,"name");			
@@ -630,27 +630,27 @@ public class GetApi {
 		for(String encounterId:encounterIds){
 			//age, sex, race, cci
 			patientDetails = new PatientDetails();
-			
+			featureValueMap1 = new HashMap();
 			
 			String ageQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='age'";
 			age = executeQuery(session, ageQuery,"value");
 			logger.debug("age="+age);
-			featureValueMap.put("age", age);
+			featureValueMap1.put("age", age);
 			
 			String sexQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='sex'";
 			sex = executeQuery(session, sexQuery,"value");
 			logger.debug("sex="+sex);
-			featureValueMap.put("sex", sex);
+			featureValueMap1.put("sex", sex);
 			
 			String raceQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='race'";
 			race = executeQuery(session, raceQuery,"value");
 			logger.debug("race="+race);
-			featureValueMap.put("race", race);
+			featureValueMap1.put("race", race);
 			
 			String cciQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='cci'";
 			cci = executeQuery(session, cciQuery,"value");
 			logger.debug("cci="+cci);
-			featureValueMap.put("cci", cci);
+			featureValueMap1.put("cci", cci);
 			
 			String patientIdQuery = "select patient_id from prisma1.unprocessed_data where encounter_id='"+encounterId+"' limit 1 allow filtering";
 			patientId = executeQuery(session, patientIdQuery,"patient_id");
@@ -662,7 +662,7 @@ public class GetApi {
 			
 			String assignDocName_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='attend_doc'";//
 			assign_doc = executeQuery(session, assignDocName_Query,"value");
-			featureValueMap.put("assign_doc", assign_doc);
+			featureValueMap1.put("assign_doc", assign_doc);
 			logger.debug("assign_doc:"+assign_doc);
 			
 			String timestamp_Query = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='timestamp'";
@@ -691,7 +691,7 @@ public class GetApi {
 			
 			patientDetails.setDoctorId(doctorId);
 			patientDetails.setDoctorName(docName);
-			patientDetails.setFeatureValueMap(featureValueMap);
+			patientDetails.setFeatureValueMap(featureValueMap1);
 			patientDetails.setEncounterId(encounterId);
 			patientDetails.setPatientId(patientId);
 			patientDetails.setPatientName(patient_name);
@@ -731,7 +731,7 @@ public class GetApi {
 		ArrayList<String> patientIDs = new ArrayList<String>();
 		ArrayList<PatientDetails> patientDetailsList = new ArrayList<PatientDetails>();
 		PatientDetails patientDetails = null;
-		HashMap featureValueMap = new HashMap();
+		HashMap featureValueMap = null;
 		
 				
 		//BEGIN BATCH  select name from prisma1.userinfo where id='raj';select id from patientDetails where feature = 'attend_doc' and value ='raj' APPLY BATCH;
@@ -761,6 +761,8 @@ public class GetApi {
 		int patientIdx=0;
 		
 		for(String encounterId:encounterIds){
+			
+			featureValueMap = new HashMap();
 					
 			String ageQuery = "select value from prisma1.unprocessed_data where encounter_id='"+encounterId+"' and feature='age'";//
 			age = executeQuery(session, ageQuery,"value");

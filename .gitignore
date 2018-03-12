@@ -1,3 +1,3 @@
 /bin/
 target/
-prisma.log
+*.log
