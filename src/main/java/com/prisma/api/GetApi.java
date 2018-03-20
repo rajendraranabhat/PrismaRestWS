@@ -23,16 +23,17 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.prisma.pojo.PatientDetails;
+import java.util.StringTokenizer;
 import com.prisma.pojo.Login;
 import com.prisma.pojo.Mortality;
 import com.prisma.pojo.OutComeICUPojo;
 import com.prisma.pojo.OutcomeRankFeature;
-import com.prisma.pojo.PatientDetails;
 import com.prisma.pojo.PatientDetailsRaw;
 import com.prisma.pojo.PatientRecord;
 import com.prisma.pojo.ReviewResult;
 import com.prisma.pojo.RiskAssessment;
-import java.util.StringTokenizer;
+
 import java.util.HashSet;
 
 
@@ -1102,7 +1103,19 @@ public class GetApi {
 				//patientDetailsRaw.setFeatureName(row.getString("feature"));
 				patientDetailsRaw.setPatientId(row.getString("patient_id"));
 				featureValueMap.put(row.getString("feature"), row.getString("value"));
-				
+				if(row.getString("feature").equalsIgnoreCase("primary_proc")) {
+					if(row.getString("value").equalsIgnoreCase("missing")){
+						featureValueMap.put("primary_proc_description","missing");
+					}
+					else {
+						String outcome = "select description from  prisma1.cptcode where cptid='"+row.getString("value")+"' allow filtering";
+						ResultSet result = session.execute(outcome);
+						for(Row row_description:result) {
+							featureValueMap.put("primary_proc_description",row_description.getString("description"));
+						}
+
+					}
+				}
 				//featureValue = row.getString("value");
 				//featureValue = featureValue.replaceAll("u'","'");
 				//System.out.println("featureValue: "+featureValue);
