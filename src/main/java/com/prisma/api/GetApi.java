@@ -1103,17 +1103,14 @@ public class GetApi {
 				//patientDetailsRaw.setFeatureName(row.getString("feature"));
 				patientDetailsRaw.setPatientId(row.getString("patient_id"));
 				featureValueMap.put(row.getString("feature"), row.getString("value"));
+				
+				featureValueMap.put("primary_proc_description","missing");
+				
 				if(row.getString("feature").equalsIgnoreCase("primary_proc")) {
-					if(row.getString("value").equalsIgnoreCase("missing")){
-						featureValueMap.put("primary_proc_description","missing");
-					}
-					else {
-						String outcome = "select description from  prisma1.cptcode where cptid='"+row.getString("value")+"' allow filtering";
-						ResultSet result = session.execute(outcome);
-						for(Row row_description:result) {
-							featureValueMap.put("primary_proc_description",row_description.getString("description"));
-						}
-
+					String outcome = "select description from  prisma1.cptcode where cptid='"+row.getString("value")+"' allow filtering";
+					ResultSet result = session.execute(outcome);
+					for(Row row_description:result) {
+						featureValueMap.put("primary_proc_description",row_description.getString("description"));
 					}
 				}
 				//featureValue = row.getString("value");
