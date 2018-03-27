@@ -1104,14 +1104,28 @@ public class GetApi {
 				patientDetailsRaw.setPatientId(row.getString("patient_id"));
 				featureValueMap.put(row.getString("feature"), row.getString("value"));
 				
-				featureValueMap.put("primary_proc_description","missing");
+				//featureValueMap.put("primary_proc_description","missing");
 				
 				if(row.getString("feature").equalsIgnoreCase("primary_proc")) {
+					
+					if(!row.getString("value").equalsIgnoreCase("missing")){
 					String outcome = "select description from  prisma1.cptcode where cptid='"+row.getString("value")+"' allow filtering";
+					logger.debug(outcome);
 					ResultSet result = session.execute(outcome);
-					for(Row row_description:result) {
-						featureValueMap.put("primary_proc_description",row_description.getString("description"));
+					logger.debug(result);
+						for(Row row_description:result) {
+							logger.debug(row_description.getString("description"));
+
+							featureValueMap.put("primary_proc_description",row_description.getString("description"));
+						}
 					}
+					else {
+						featureValueMap.put("primary_proc_description","missing");
+					}
+				}
+				
+				if(!featureValueMap.containsKey("primary_proc_description")){
+					featureValueMap.put("primary_proc_description","missing");
 				}
 				//featureValue = row.getString("value");
 				//featureValue = featureValue.replaceAll("u'","'");
